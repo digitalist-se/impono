@@ -53,7 +53,7 @@ class GuzzleDownloader implements DownloaderInterface
     {
         $tarFile = tempnam(
             sys_get_temp_dir(),
-            uniqid('7tag_updater_newest_version_downloader_', true)
+            uniqid('impono_updater_newest_version_downloader_', true)
         );
         $handle = fopen($tarFile, 'w');
 
@@ -64,7 +64,7 @@ class GuzzleDownloader implements DownloaderInterface
             'CURLOPT_FILE' => $handle
         ]]);
 
-        $client->get(sprintf('http://download.7tag.org/seventag-%s.zip?version=%s&domain=%s', $version, $currentVersion, $this->downloader->getDomain()))
+        $client->get(sprintf('http://download.impono.org/seventag-%s.zip?version=%s&domain=%s', $version, $currentVersion, $this->downloader->getDomain()))
             ->send();
 
         fclose($handle);

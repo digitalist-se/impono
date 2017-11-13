@@ -1,6 +1,6 @@
 **This is a backup of seventag when it was still open source from https://github.com/seventag/seventag**
 
-7tag is the easy-to-use tag manager for the busy marketer.
+impono is the easy-to-use tag manager for the busy marketer.
 
 # Features:
 
@@ -14,23 +14,23 @@
 
 - Control User Access & Permissions - Create numerous user accounts and set granular permissions for viewing, editing, and publishing tags.
 
-- Fast Loading with CDN Hosting - Your tags will always load instantly thanks to 7tag’s integration with all the popular Content Delivery Networks (CDN).
+- Fast Loading with CDN Hosting - Your tags will always load instantly thanks to impono’s integration with all the popular Content Delivery Networks (CDN).
 
-- API available - Keep all your marketing tools in one place by adding 7tag to your marketing stack with the 7tag API.
+- API available - Keep all your marketing tools in one place by adding impono to your marketing stack with the impono API.
 
-# How to install 7tag?
+# How to install impono?
 
-- You can find installation instructions at: [https://web.archive.org/web/20160803173643/https://7tag.org/docs/installation/](https://web.archive.org/web/20160803173643/https://7tag.org/docs/installation/).
+- You can find installation instructions at: [https://web.archive.org/web/20160803173643/https://impono.org/docs/installation/](https://web.archive.org/web/20160803173643/https://impono.org/docs/installation/).
 
 - There is also another way of building project from scratch for advanced users: [instructions](doc/INSTALLATION.md).
 
 ## Documentation
 
-Documentation is available at [https://web.archive.org/web/20160803173703/https://7tag.org/docs/introduction/](https://web.archive.org/web/20160803173703/https://7tag.org/docs/introduction/).
+Documentation is available at [https://web.archive.org/web/20160803173703/https://impono.org/docs/introduction/](https://web.archive.org/web/20160803173703/https://impono.org/docs/introduction/).
 
 ## Technology stack
 
-**7tag** is an application composed of components mostly written in: 
+**impono** is an application composed of components mostly written in: 
 
 - Javascript (CORE), 
 
@@ -39,7 +39,7 @@ Documentation is available at [https://web.archive.org/web/20160803173703/https:
 - [Symfony2](http://symfony.com) framework (API)
 
 ## Bug tracking
-7tag uses GitHub issues. If you have found bug, please create an issue.
+impono uses GitHub issues. If you have found bug, please create an issue.
 
 ## License
 - Free Software Foundation’s [GNU AGPL, Version 3](LICENSE).

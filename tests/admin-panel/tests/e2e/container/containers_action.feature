@@ -5,7 +5,7 @@ Feature: Edit, Delete containers
 
   Background:
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
       And I press show action container button
 
   Scenario Outline: Edit container

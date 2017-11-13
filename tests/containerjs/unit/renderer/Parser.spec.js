@@ -141,7 +141,7 @@ describe('Unit: Parser Service', function () {
         it('should return context call for Regex', function () {
 
             var template = '<script>{{ variable1 }}</script>';
-            var variable = /7tag/i;
+            var variable = /impono/i;
 
             expect($parser.parse(template, {variable1: variable}, $contextId)).toEqual($variablesHistoryCall($contextId, 'variable1'));
             expect($variablesHistory.get($contextId, 'variable1')).toBe(variable);

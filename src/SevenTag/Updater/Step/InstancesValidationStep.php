@@ -43,7 +43,7 @@ class InstancesValidationStep extends LocalInstanceStep
      */
     public function getDescription()
     {
-        return 'Validate newest and current 7tag instances';
+        return 'Validate newest and current impono instances';
     }
 
     /**
@@ -56,7 +56,7 @@ class InstancesValidationStep extends LocalInstanceStep
         if (!$instance->isValid()) {
             throw new InvalidInstanceException(
                 sprintf(
-                    'This is not valid %s 7tag instance. Cannot recognize valid composer.json.',
+                    'This is not valid %s impono instance. Cannot recognize valid composer.json.',
                     $name
                 )
             );

@@ -5,7 +5,7 @@ Feature: Preview & debug mode
 
     Background:
       Given I go to homepage
-       When I am logged in as a "user1@example.com"
+       When I am logged in as a "user@example.com"
         And I go to page "#/containers/1/tags"
         And I go to Debug tab
 

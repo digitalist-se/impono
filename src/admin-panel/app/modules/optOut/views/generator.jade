@@ -12,7 +12,7 @@ block fields
                 | {{ "Embedding the Opt-out snippet in your website’s HTML helps you to respect your visitors' privacy." | translate }}
                 | {{ "There are two types of the Opt-out snippet:" | translate }}
                 | {{ "Domain - if you assign the “Opt-out” to a domain, it will turn off all tracking tags within that domain." | translate }}
-                | {{ "Global - if you choose “global Opt out“,  then it will turn off all tracking tags in all your containers within your current 7tag instance (this will apply to all containers - even those created after generating the opt-out code)." | translate }}
+                | {{ "Global - if you choose “global Opt out“,  then it will turn off all tracking tags in all your containers within your current impono instance (this will apply to all containers - even those created after generating the opt-out code)." | translate }}
         .col-lg-4
             // Place for help
 
@@ -56,7 +56,7 @@ block fields
                 label(translate='Opt-out scope', class="control-label")
                 cc-help(
                     placement="right",
-                    content="{{ 'There are two types of the Opt-out snippet:' | translate }}" + "<br><br>" + "{{'Domain - if you assign the “Opt-out” to a domain, it will turn off all tracking tags within that domain.'|translate}}" + "<br><br>" + "{{'Global - if you choose “global Opt out“,  then it will turn off all tracking tags in all your containers within your current 7tag instance (this will apply to all containers - even those created after generating the opt-out code).'|translate}}"
+                    content="{{ 'There are two types of the Opt-out snippet:' | translate }}" + "<br><br>" + "{{'Domain - if you assign the “Opt-out” to a domain, it will turn off all tracking tags within that domain.'|translate}}" + "<br><br>" + "{{'Global - if you choose “global Opt out“,  then it will turn off all tracking tags in all your containers within your current impono instance (this will apply to all containers - even those created after generating the opt-out code).'|translate}}"
                 )
                 select.form-control(
                     ng-model="view.option",

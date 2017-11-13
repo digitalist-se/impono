@@ -11,7 +11,7 @@ Feature: As a admin user I want to see user
     And response should contains valid user
     And I should see user data
       | username          |  email             | first_name      | last_name       | status |
-      | user1@example.com |  user1@example.com | FirstName user1 | LastName user1  | true   |
+      | user@example.com |  user@example.com | FirstName user1 | LastName user1  | true   |
     And I should see user roles
       | role                  |
       | ROLE_SUPER_ADMIN      |

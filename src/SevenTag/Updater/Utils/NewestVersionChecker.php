@@ -24,7 +24,7 @@ namespace SevenTag\Updater\Utils;
  */
 class NewestVersionChecker implements NewestVersionCheckerInterface
 {
-    const VERSION_RESOURCE = 'http://download.7tag.org/version.json';
+    const VERSION_RESOURCE = 'http://download.impono.org/version.json';
 
     /**
      * @var string

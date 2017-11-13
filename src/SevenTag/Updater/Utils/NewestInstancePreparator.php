@@ -37,7 +37,7 @@ class NewestInstancePreparator implements NewestInstancePreparatorInterface
             throw new UpdaterException(sprintf('Cannot open ZIP archive from path "%s".', $downloadedFile));
         }
 
-        $zip->extractTo($this->normalize7TagPath($newestInstance->getRootPath()));
+        $zip->extractTo($this->normalizeimponoPath($newestInstance->getRootPath()));
         $zip->close();
     }
 
@@ -45,7 +45,7 @@ class NewestInstancePreparator implements NewestInstancePreparatorInterface
      * @param string $path
      * @return string
      */
-    protected function normalize7TagPath($path)
+    protected function normalizeimponoPath($path)
     {
         return rtrim($path, 'seventag');
     }

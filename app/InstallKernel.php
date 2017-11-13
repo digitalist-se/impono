@@ -59,7 +59,7 @@ class InstallKernel extends AppKernel
     protected function getPath()
     {
         if (!isset($_COOKIE['install_path'])) {
-            $path = sprintf('7tag_%s', md5(get_current_user() . getmypid() . uniqid() . str_replace('/', '_', __DIR__)));
+            $path = sprintf('impono_%s', md5(get_current_user() . getmypid() . uniqid() . str_replace('/', '_', __DIR__)));
             setcookie('install_path', $path);
         } else {
             $path = $_COOKIE['install_path'];

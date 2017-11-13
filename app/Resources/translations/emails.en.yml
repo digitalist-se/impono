@@ -1,28 +1,28 @@
 registration:
     email:
-        subject: 7tag activation message
+        subject: impono activation message
         message: |
             Hello %firstName%,
 
-            to activate your 7tag account, please click the link below or copy it and paste into your browser:
+            to activate your impono account, please click the link below or copy it and paste into your browser:
             %confirmationUrl%
 
-            We hope you enjoy using 7tag.
+            We hope you enjoy using impono.
 
             Best Regards,
-            7tag team
+            impono team
 
-            7tag.org
+            impono.org
     resetting:
-        subject: 7tag reset password
+        subject: impono reset password
         message: |
             Hello %firstName%,
 
             To reset your password - please visit %confirmationUrl%
 
-            We hope you enjoy using 7tag.
+            We hope you enjoy using impono.
 
             Best Regards,
-            7tag team
+            impono team
 
-            7tag.org
+            impono.org

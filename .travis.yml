@@ -19,7 +19,7 @@ script:
 
 addons:
    hosts:
-     - 7tag.dev
+     - impono.dev
 
 notifications:
   email: false

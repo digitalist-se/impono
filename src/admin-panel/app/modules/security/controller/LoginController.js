@@ -20,7 +20,7 @@ let $tokenStorage;
 let state;
 let $alertForm;
 
-const BREADCRUMB_TEXT = '7tag Welcome';
+const BREADCRUMB_TEXT = 'impono Welcome';
 
 /**
  * @name security#LoginController

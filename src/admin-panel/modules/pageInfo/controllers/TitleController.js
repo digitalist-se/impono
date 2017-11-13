@@ -18,7 +18,7 @@
 /**
  * @type {String}
  */
-const DEFAULT_TITLE = '7tag Welcome';
+const DEFAULT_TITLE = 'impono Welcome';
 
 class TitleController {
     /**

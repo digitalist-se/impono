@@ -18,7 +18,7 @@
   "Piwik allows you manual execute events if you call special code fragments in tracking code.": "Piwik pozwala na ręczne wykonanie zdarzeń jeśli twój uruchomiony fragment kodu znajduje się w kodzie trakującym",
   "If you want track Goals, first you need to add example Goal in Piwik.": "Jeśli potrzebujesz trakować cele, najpierw potrzebujesz dodać przykładowy cel w Piwiku",
   "Ecommerce settings": "Ustawienia sklepu internetowego",
-  "Piwik allows you to order and cart tracking on your website. 7tag support two operations: cart update and order.": "Piwik pozwala Ci na ustawienia trakowania po złożeniu zamówienia i uaktualnieniu koszyka na Twojej stronie.",
+  "Piwik allows you to order and cart tracking on your website. impono support two operations: cart update and order.": "Piwik pozwala Ci na ustawienia trakowania po złożeniu zamówienia i uaktualnieniu koszyka na Twojej stronie.",
   "Track ecommerce cart": "Trakuj koszyk w sklepie internetowym",
   "Track ecommerce order": "Trakuj zamówienie w sklepie internetowym",
   "Track content": "Trakuj treść",

@@ -48,7 +48,7 @@ if (!$httpRequestChecker->checkHttpRequest($request, true)) {
 
 $bootstrap = new Bootstrap(
     __DIR__ . '/..',
-    sys_get_temp_dir() . uniqid('7tag_updater', true) . DIRECTORY_SEPARATOR . 'seventag'
+    sys_get_temp_dir() . uniqid('impono_updater', true) . DIRECTORY_SEPARATOR . 'seventag'
 );
 $bootstrap->bootstrap();
 

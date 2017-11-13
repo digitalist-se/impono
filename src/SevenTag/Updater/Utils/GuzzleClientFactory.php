@@ -32,7 +32,7 @@ class GuzzleClientFactory implements GuzzleClientFactoryInterface
     public function createClient()
     {
         $client = new Client();
-        $client->setUserAgent('7tag updater');
+        $client->setUserAgent('impono updater');
         $client->setSslVerification(false, false);
 
         return $client;

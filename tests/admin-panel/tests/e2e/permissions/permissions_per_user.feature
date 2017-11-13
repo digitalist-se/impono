@@ -4,7 +4,7 @@ Feature: Users permissions
 
   Background: Login as admin
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
      Then I should be on page "#/containers"
      When I go to page "#/containers-edit/1"
       And I click permissions tab

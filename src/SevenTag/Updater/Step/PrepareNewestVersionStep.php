@@ -30,7 +30,7 @@ use SevenTag\Updater\Utils\NewestVersionCheckerInterface;
  */
 class PrepareNewestVersionStep extends LocalInstanceStep
 {
-    const VERSION_RESOURCE = '//download.7tag.org/version.json';
+    const VERSION_RESOURCE = '//download.impono.org/version.json';
 
     /**
      * @var NewestVersionCheckerInterface
@@ -72,7 +72,7 @@ class PrepareNewestVersionStep extends LocalInstanceStep
             if (!version_compare($newestVersion, $currentVersion, ">")) {
                 throw new AbortedStepException(
                     sprintf(
-                        'Your 7tag version "%s" is newest.',
+                        'Your impono version "%s" is newest.',
                         $environment->getCurrentInstance()->getVersion()
                     )
                 );
@@ -108,7 +108,7 @@ class PrepareNewestVersionStep extends LocalInstanceStep
             return;
         }
 
-        throw new AbortedStepException(sprintf('Your current version "%s" of 7tag instance is newest.', $currentVersion));
+        throw new AbortedStepException(sprintf('Your current version "%s" of impono instance is newest.', $currentVersion));
     }
 
     /**

@@ -88,7 +88,7 @@ class UserFixture extends AbstractFixture implements OrderedFixtureInterface
         return [[
             'username' => 'user1',
             'password' => 'testing',
-            'email' => 'user1@example.com',
+            'email' => 'user@example.com',
             'roles' => [UserInterface::ROLE_SUPER_ADMIN, UserInterface::ROLE_CONTAINERS_CREATE],
             'enabled' => true
         ]];

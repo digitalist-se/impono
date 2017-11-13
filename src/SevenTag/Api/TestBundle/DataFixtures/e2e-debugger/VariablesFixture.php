@@ -91,7 +91,7 @@ class VariablesFixture extends AbstractFixture implements OrderedFixtureInterfac
             ],
             'url variable' => [
                 'type' => 'url',
-                'value' => '7tag.test.com'
+                'value' => 'impono.test.com'
             ]
         ];
     }

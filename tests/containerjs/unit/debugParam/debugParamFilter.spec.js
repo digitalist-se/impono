@@ -80,7 +80,7 @@ describe('Unit: debugParamFilter service', function () {
 
         it('should return same url string when pass url without parameter', function () {
 
-            var url = 'http://7tag.dev/?query=1&test=2';
+            var url = 'http://impono.dev/?query=1&test=2';
 
             expect(filter.filterFromQuery(url)).toBe(url);
 
@@ -88,8 +88,8 @@ describe('Unit: debugParamFilter service', function () {
 
         it('should return url with filter debug parameter when pass few parameters and debug parameter', function () {
 
-            expect(filter.filterFromQuery('http://7tag.dev/?query=1&' + DEBUG_PARAM_NAME + '=true&test=2'))
-                .toBe('http://7tag.dev/?query=1&test=2');
+            expect(filter.filterFromQuery('http://impono.dev/?query=1&' + DEBUG_PARAM_NAME + '=true&test=2'))
+                .toBe('http://impono.dev/?query=1&test=2');
 
         });
 

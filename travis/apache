@@ -1,6 +1,6 @@
 <VirtualHost *:80>
-  ServerName www.7tag.dev
-  ServerAlias 7tag.dev
+  ServerName www.impono.dev
+  ServerAlias impono.dev
 
   DocumentRoot %TRAVIS_BUILD_DIR%/web
 

@@ -61,7 +61,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function itShouldReturnEmailAsDisplayNameIfFullNameIsNotDefined()
     {
-        $expectedResult = 'user1@example.com';
+        $expectedResult = 'user@example.com';
 
         $testedUser = new User();
         $testedUser->setEmail($expectedResult);
@@ -75,7 +75,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
     public function itShouldReturnFullNameAsDisplayNameIfIsDefined()
     {
         $testedUser = new User();
-        $testedUser->setEmail('user1@example.com');
+        $testedUser->setEmail('user@example.com');
         $testedUser->setFirstName('Jean');
         $testedUser->setLastName('Doe');
 

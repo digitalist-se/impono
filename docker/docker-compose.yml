@@ -6,7 +6,7 @@ mysql:
         - 3306:3306
     environment:
         MYSQL_ROOT_PASSWORD: root
-        MYSQL_DATABASE: 7tag
+        MYSQL_DATABASE: impono
         MYSQL_USER: root
         MYSQL_PASSWORD: root
     volumes:
@@ -20,7 +20,7 @@ php:
     ports:
         - 80:80
     volumes:
-        - /var/www/7tag:/var/www/7tag
+        - /var/www/impono:/var/www/impono
         - /var/log/apache2/:/var/log/apache2
 
 firefox:

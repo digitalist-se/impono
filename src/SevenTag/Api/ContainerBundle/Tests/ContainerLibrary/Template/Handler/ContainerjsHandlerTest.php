@@ -28,7 +28,7 @@ use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\ContainerJsHa
 class ContainerJsHandlerTest extends \PHPUnit_Framework_TestCase
 {
     const RAW_CONTENT = '##id##, ##domain##, ##host##, ##delay##';
-    const DOMAIN = '7tag.dev.clearcode.cc';
+    const DOMAIN = 'impono.dev.clearcode.cc';
     const CONTAINER_ID = 44;
     const DELAY = 700;
 

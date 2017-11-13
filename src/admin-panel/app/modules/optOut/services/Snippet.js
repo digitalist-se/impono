@@ -15,8 +15,8 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-const  optOutOpeningComment = '<!-- Start 7Tag privacy opt-out code -->',
-    optOutClosingComment = '<!-- End 7Tag privacy opt-out code -->',
+const  optOutOpeningComment = '<!-- Start impono privacy opt-out code -->',
+    optOutClosingComment = '<!-- End impono privacy opt-out code -->',
     hostname = window.location.hostname;
 
 class Snippet {

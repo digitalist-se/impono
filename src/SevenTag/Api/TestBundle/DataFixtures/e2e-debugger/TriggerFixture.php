@@ -116,7 +116,7 @@ class TriggerFixture extends AbstractFixture implements OrderedFixtureInterface
             [
                 'name' => 'page hostname',
                 'type' => TypeInterface::TYPE_PAGE_VIEW,
-                'conditions' => [['Page Hostname', TypeInterface::ACTION_CONTAINS, '7tag']],
+                'conditions' => [['Page Hostname', TypeInterface::ACTION_CONTAINS, 'impono']],
                 'tags' => ['Tag name 6: google_analytics']
             ],
             [

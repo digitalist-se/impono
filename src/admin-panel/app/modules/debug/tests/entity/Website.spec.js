@@ -120,7 +120,7 @@ describe('Unit: Website entity', () => {
         });
 
         it('should add hash parameter', () => {
-            website.url = 'http://7tag.dev.clearcode.cc';
+            website.url = 'http://impono.dev.clearcode.cc';
             website.parameterType = 1;
             var urlWithParameter = website.getUrlWithParameter();
 
@@ -128,7 +128,7 @@ describe('Unit: Website entity', () => {
         });
 
         it('should add query parameter', () => {
-            website.url = 'http://7tag.dev.clearcode.cc';
+            website.url = 'http://impono.dev.clearcode.cc';
             website.parameterType = 0;
             var urlWithParameter = website.getUrlWithParameter();
 
@@ -136,7 +136,7 @@ describe('Unit: Website entity', () => {
         });
 
         it('should concat query parameters', () => {
-            website.url = 'http://7tag.dev.clearcode.cc?a=1&b=2';
+            website.url = 'http://impono.dev.clearcode.cc?a=1&b=2';
             website.parameterType = 0;
             var urlWithParameter = website.getUrlWithParameter();
 
@@ -144,7 +144,7 @@ describe('Unit: Website entity', () => {
         });
 
         it('should concat hash parameters', () => {
-            website.url = 'http://7tag.dev.clearcode.cc#a=1&b=2';
+            website.url = 'http://impono.dev.clearcode.cc#a=1&b=2';
             website.parameterType = 1;
             var urlWithParameter = website.getUrlWithParameter();
 

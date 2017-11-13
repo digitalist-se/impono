@@ -5,7 +5,7 @@ Feature: Change my credentials
 
   Scenario: Change my password
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
      When I press user menu button
       And I press "#user-menu-my-account" button
       And I choose Change Password tab

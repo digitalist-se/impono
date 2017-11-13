@@ -5,7 +5,7 @@ Feature: I fill in value condition field withFeature: Create new trigger
 
   Background:
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
 
 
   Scenario: Add new trigger related to tag

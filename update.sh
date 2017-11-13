@@ -12,7 +12,7 @@ then
   rm updater.phar
 fi
 
-wget http://download.7tag.org/updater.tar.gz
+wget http://download.impono.org/updater.tar.gz
 tar -xf updater.tar.gz
 
 php updater.phar update

@@ -42,7 +42,7 @@ describe('Unit: Integration entity', () => {
         it('should call put method of resource when id is defined', () => {
             integration.id = 44;
             integration.user = {
-                email: 'user1@example.com'
+                email: 'user@example.com'
             };
 
             integration.save();
@@ -52,7 +52,7 @@ describe('Unit: Integration entity', () => {
 
         it('should call post method of resource when id is defined', () => {
             integration.user = {
-                email: 'user1@example.com'
+                email: 'user@example.com'
             };
 
             integration.save();

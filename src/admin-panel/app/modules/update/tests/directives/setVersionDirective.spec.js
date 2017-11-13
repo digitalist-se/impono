@@ -42,7 +42,7 @@ describe('Unit: setVersionDirective', () => {
         Version = $injector.get('clearcode.tm.update.version');
 
         $httpBackend
-          .whenGET(/\/\/download.7tag.org\/version.json?(.*)/)
+          .whenGET(/\/\/download.impono.org\/version.json?(.*)/)
           .respond(responseGetLatest);
     }));
 

@@ -34,7 +34,7 @@ class RestContext extends BaseContext
      */
     public function iAmLoggedInAsAdmin()
     {
-        $this->iAmLoggedInAs('user1@example.com', 'testing');
+        $this->iAmLoggedInAs('user@example.com', 'testing');
     }
 
     /**

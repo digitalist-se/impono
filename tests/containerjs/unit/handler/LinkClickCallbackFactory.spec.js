@@ -45,7 +45,7 @@ describe('Unit: link click callback factory module', function () {
 
         anchorElement = {
             tagName: 'a',
-            href: 'http://7tag.dev.clearcode.cc/'
+            href: 'http://impono.dev.clearcode.cc/'
         };
 
         invokeImmediate = function (element, callback) {

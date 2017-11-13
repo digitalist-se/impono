@@ -6,7 +6,7 @@ Feature: Integration with oAuth
   Scenario: Create/Edit new an integration
 
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
       And I go to page "#/integration"
       And I should see empty integration list
       And I click Create Integration button
@@ -33,7 +33,7 @@ Feature: Integration with oAuth
   Scenario Outline: Check validation in form Create new an integration
 
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
       And I go to page "#/integration"
       And I should see empty integration list
       And I click Create Integration button

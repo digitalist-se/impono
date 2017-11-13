@@ -4,9 +4,9 @@ Feature: Check all steps in install manager
   I want to install tag manager
   So that I can access to all steps about configuration
 
-  Scenario: All steps about configuration 7tag
+  Scenario: All steps about configuration impono
     Given I am on "/install.php"
-     Then I should see "7Tag Manager installer"
+     Then I should see "impono Manager installer"
       And I should see correct setup System
       And I should see correct setup Php Version
       And I should see error setup Database
@@ -29,6 +29,6 @@ Feature: Check all steps in install manager
       And I fill password field with "testing"
       And I fill confirm password field with "testing"
       And I click Continue button
-     Then I should see "7Tag configured!"
+     Then I should see "impono configured!"
      When I click Start button
      Then I should be on "/#/sign-in"

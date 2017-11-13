@@ -114,7 +114,7 @@ default:
 chrome:
     extensions:
         Behat\MinkExtension:
-            base_url: 'http://7tag.dev'
+            base_url: 'http://impono.dev'
             #browser_name: phantomjs
             browser_name: chrome
             selenium2:

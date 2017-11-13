@@ -6,7 +6,7 @@ Feature: Create new container
 
   Scenario Outline: Create new container as a admin role
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
       And I press Create New Container button
      When I fill in container name field with "<container_name>"
       And I press Save container button
@@ -25,7 +25,7 @@ Feature: Create new container
 
   Scenario Outline: Check validation new container form
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
       And I press Create New Container button
       And I fill in container name field with "<container_name>"
       And I press Save container button

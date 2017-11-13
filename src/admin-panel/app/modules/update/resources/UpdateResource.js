@@ -48,7 +48,7 @@ class UpdateResource {
 
         this.http({
             method: 'GET',
-            url: '//download.7tag.org/version.json',
+            url: '//download.impono.org/version.json',
             params: {
                 version: version,
                 domain: domain

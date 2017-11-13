@@ -51,5 +51,5 @@ Feature: As a admin user I want to create user
   Scenario: Create user with email that exists
     When I create user with data
       | firstName               |  lastName          |  email             | roles            |
-      | FirstName123            |  LastName123       |  user1@example.com | ROLE_SUPER_ADMIN |
+      | FirstName123            |  LastName123       |  user@example.com | ROLE_SUPER_ADMIN |
     Then response should contains form errors

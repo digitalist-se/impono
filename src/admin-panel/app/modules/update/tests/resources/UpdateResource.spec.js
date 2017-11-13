@@ -84,7 +84,7 @@ describe('Unit: UpdateResource', () => {
         var httpRequestHandler, currentVersion;
 
         beforeEach(() => {
-            httpRequestHandler = $httpBackend.whenGET(/\/\/download.7tag.org\/version.json?(.*)/);
+            httpRequestHandler = $httpBackend.whenGET(/\/\/download.impono.org\/version.json?(.*)/);
             currentVersion = '1.0.0';
         });
 

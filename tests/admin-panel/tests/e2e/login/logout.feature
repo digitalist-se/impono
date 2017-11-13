@@ -5,7 +5,7 @@ Feature: Logout
 
   Scenario: Logout
     Given I go to homepage
-     When I am logged in as a "user1@example.com"
+     When I am logged in as a "user@example.com"
      Then I should be on page "#/containers"
      When I press user menu button
      And  I press Logout button

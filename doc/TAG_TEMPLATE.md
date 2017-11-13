@@ -1,8 +1,8 @@
 # Custom Templates Technical Documentation
 
-###Basic concept of 7tag pluggins
+###Basic concept of impono pluggins
 
-Plugins in 7tag are possible to obtain by adding additional Symfony2 bundles. We have only one requirement, bundle should implements `SevenTag\Api\AppBundle\Plugin\PluginInterface` or extends `SevenTag\Api\AppBundle\Plugin\PluginAwareBundle`.
+Plugins in impono are possible to obtain by adding additional Symfony2 bundles. We have only one requirement, bundle should implements `SevenTag\Api\AppBundle\Plugin\PluginInterface` or extends `SevenTag\Api\AppBundle\Plugin\PluginAwareBundle`.
 This is necessary for retriving plugin manifest information. For example, in SevenTagPluginGoogleAnalyticsCustomTemplateBundle we extends `SevenTag\Api\AppBundle\Plugin\PluginAwareBundle` and add simple manifest.json file.
 Manifest contains basic information about plugin like name, version and relative paths to assets that are dynamically passed to Angular application, for example:
 
@@ -19,7 +19,7 @@ Section "assets-js" contains paths to JavaScript scripts. They should be stored 
 ###Adding custom template
 
 All you need to add custom template is implement special Symfony2 tagged service. More about tagged services you can read in Symfony2 [documentation](http://symfony.com/doc/current/components/dependency_injection/tags.html).<br>
-Services tagged <b>seven_tag_tag_template_provider</b> are added to holder that keep all custom templates providers and dynamically add them to 7tag instance.<br>
+Services tagged <b>seven_tag_tag_template_provider</b> are added to holder that keep all custom templates providers and dynamically add them to impono instance.<br>
 Service should also implements `SevenTag\Api\TagBundle\Template\ProviderInterface` which contains four methods:
 
 1. getKey - should return unique provider key (eq. google_adwords)

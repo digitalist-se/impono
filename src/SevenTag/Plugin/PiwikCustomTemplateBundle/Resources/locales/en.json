@@ -18,7 +18,7 @@
   "Piwik allows you manual execute events if you call special code fragments in tracking code.": "Piwik allows you manual execute events if you call special code fragments in tracking code.",
   "If you want track Goals, first you need to add example Goal in Piwik.": "If you want track Goals, first you need to add example Goal in Piwik.",
   "Ecommerce settings": "Ecommerce settings",
-  "Piwik allows you to order and cart tracking on your website. 7tag support two operations: cart update and order.": "Piwik allows you to order and cart tracking on your website. 7tag support two operations: cart update and order.",
+  "Piwik allows you to order and cart tracking on your website. impono support two operations: cart update and order.": "Piwik allows you to order and cart tracking on your website. impono support two operations: cart update and order.",
   "Track ecommerce cart": "Track ecommerce cart",
   "Track ecommerce order": "Track ecommerce order",
   "Track content": "Track content",

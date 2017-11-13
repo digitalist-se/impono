@@ -418,7 +418,7 @@ module.exports = function () {
                 case 'page view':
                     elementId = '#tag-fired-count-4 div:nth-of-type(1) span';
                     break;
-                case 'page hostname contains 7tag':
+                case 'page hostname contains impono':
                     elementId = '#tag-fired-count-5 div:nth-of-type(1) span';
                     break;
                 case 'page path does not contains referrer':
@@ -924,31 +924,31 @@ module.exports = function () {
             switch (variableName) {
                 case 'urlVariable':
                     var variablesValueSelector = 'tbody tr.ng-scope:nth-of-type(18) td.size-70 span.ng-binding.ng-scope';
-                    var valueVariable = '"7tag.test.com"';
+                    var valueVariable = '"impono.test.com"';
                     var variablesNameSelector = 'tbody tr.ng-scope:nth-of-type(18) td.size-30';
                     var nameVariable = 'url variable';
                     break;
                 case 'pageUrl':
                     var variablesValueSelector = 'tbody tr.ng-scope:nth-of-type(11) td.size-70 span.ng-binding.ng-scope';
-                    var valueVariable = '"http://7tag.dev/container-debugger/index.test.html#/overview/tags"';
+                    var valueVariable = '"http://impono.dev/container-debugger/index.test.html#/overview/tags"';
                     var variablesNameSelector = 'tbody tr.ng-scope:nth-of-type(11) td.size-30';
                     var nameVariable = 'Page Url';
                     break;
                 case 'pageHostname':
                     var variablesValueSelector = 'tbody tr.ng-scope:nth-of-type(9) td.size-70 span.ng-binding.ng-scope';
-                    var valueVariable = '"7tag.dev"';
+                    var valueVariable = '"impono.dev"';
                     var variablesNameSelector = 'tbody tr.ng-scope:nth-of-type(9) td.size-30';
                     var nameVariable = 'Page Hostname';
                     break;
                 case 'pagePath':
                     var variablesValueSelector = 'tbody tr.ng-scope:nth-of-type(10) td.size-70 span.ng-binding.ng-scope';
-                    var valueVariable = '"7tag.dev"';
+                    var valueVariable = '"impono.dev"';
                     var variablesNameSelector = 'tbody tr.ng-scope:nth-of-type(10) td.size-30';
                     var nameVariable = 'Page Path';
                     break;
                 case 'clickUrl':
                     var variablesValueSelector = 'tbody tr.ng-scope:nth-of-type(4) td.size-70 span.ng-binding.ng-scope';
-                    var valueVariable = '"http://7tag.dev/container-debugger/index.test.html#/events-log/list"';
+                    var valueVariable = '"http://impono.dev/container-debugger/index.test.html#/events-log/list"';
                     var variablesNameSelector = 'tbody tr.ng-scope:nth-of-type(4) td.size-30';
                     var nameVariable = 'Click Url';
                     break;
@@ -996,7 +996,7 @@ module.exports = function () {
                     break;
                 case 'document':
                     var variablesValueSelector = 'tbody tr.ng-scope:nth-of-type(16) td.size-70 span.ng-binding.ng-scope';
-                    var valueVariable = '"http://7tag.dev/container-debugger/index.test.html#/overview/tags"';
+                    var valueVariable = '"http://impono.dev/container-debugger/index.test.html#/overview/tags"';
                     var variablesNameSelector = 'tbody tr.ng-scope:nth-of-type(16) td.size-30';
                     var nameVariable = 'document';
                     break;

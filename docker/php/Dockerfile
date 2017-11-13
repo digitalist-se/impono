@@ -14,4 +14,4 @@ COPY apache2.conf /etc/apache2/apache2.conf
 RUN a2enmod rewrite
 RUN a2enmod headers
 
-WORKDIR /var/www/7tag
+WORKDIR /var/www/impono
