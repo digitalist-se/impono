@@ -1,0 +1,18 @@
+---
+wk_box:
+  ip: 192.168.10.78
+  hostname: tagmanager # Cannot contain any special characters.
+  memory: 2048
+  server:
+    hostnames: tagmanager.dev
+    hostname: tagmanager.dev
+    webroot: /srv/www/open-source-tag-manager/web
+    database:
+      name: tag_db1
+      user: root
+      password: password
+      host: localhost
+      port: 3306
+  sync_folder:
+    host: ./
+    guest: /srv/www/open-source-tag-manager

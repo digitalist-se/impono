@@ -1,0 +1,30 @@
+---
+- name: Checking if composer is installed.
+  stat:
+    path: /usr/local/bin/composer
+  register: composer_bin
+
+- name: Downloading composer.
+  get_url:
+    url: https://getcomposer.org/installer
+    dest: /home/vagrant/composer-installer.php
+  when: composer_bin.stat.exists == False
+
+- name: Installing composer.
+  shell: php composer-installer.php
+  args:
+   chdir: /home/vagrant
+  when: composer_bin.stat.exists == False
+
+- name: Installing composer.
+  shell: mv composer.phar /usr/local/bin/composer
+  args:
+   chdir: /home/vagrant
+  when: composer_bin.stat.exists == False
+  become: true
+
+- name: Removing installer.
+  file:
+    path: /home/vagrant/composer-installer.php
+    state: absent
+  when: composer_bin.stat.exists == False

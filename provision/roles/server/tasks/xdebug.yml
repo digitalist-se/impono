@@ -1,0 +1,12 @@
+---
+- name: Installing xdebug.
+  pear:
+    name: pecl/xdebug
+    state: present
+  become: true
+
+- name: Copy xdebug configuration.
+  template:
+    src: xdebug.ini.j2
+    dest: /etc/php.d/xdebug.ini
+  become: true

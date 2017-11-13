@@ -1,0 +1,43 @@
+---
+- name: Install Apache.
+  yum:
+    name: httpd
+    state: present
+  become: true
+
+- name: Copy default apache configuration.
+  template:
+    src: apache.httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+  become: true
+
+- name: Copy apache mime types.
+  template:
+    src: apache.mime.types.j2
+    dest: /etc/mime.types
+  become: true
+
+- name: Copy default virtual host configuration.
+  template:
+    src: apache.vhost.conf.j2
+    dest: /etc/httpd/conf.d/drupal.conf
+  become: true
+
+- name: Copy apache server name conf.
+  template:
+    src: apache.servername.conf.j2
+    dest: /etc/httpd/conf.d/servername.conf
+  become: true
+
+- name: Ensure Apache is running and make sure it is enabled at boot.
+  service:
+    name: httpd
+    state: started
+    enabled: yes
+  become: true
+
+- name: (Re)start apache
+  service:
+    name: httpd
+    state: restarted
+  become: true

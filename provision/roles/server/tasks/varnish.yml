@@ -1,0 +1,40 @@
+---
+- name: Install varnish.
+  yum:
+    name: varnish
+    state: present
+  become: true
+
+- name: Add default varnish configuration.
+  template:
+    src: varnish.default.vcl.j2
+    dest: /etc/varnish/default.vcl
+  become: true
+
+- name: Add default varnish params file.
+  template:
+    src: varnish.params.j2
+    dest: /etc/varnish/varnish.params
+  become: true
+
+- name: Add varnish secret file.
+  template:
+    src: varnish.secret.j2
+    dest: /etc/varnish/secret
+  become: true
+
+- name: Copy Varnish configuration (sysvinit).
+  template:
+    src: varnish.daemon.config.j2
+    dest: /etc/sysconfig/varnish
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+
+- name: Ensure varnish is started and runs on startup.
+  service:
+    name: varnish
+    state: restarted
+    enabled: yes
+  become: true

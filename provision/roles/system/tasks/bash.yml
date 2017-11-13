@@ -1,0 +1,9 @@
+---
+- name: Adding bashrc to vagrant-user.
+  template: src=bashrc.j2 dest=/home/vagrant/.bashrc
+
+- name: Source the bashrc-file.
+  shell: source /home/vagrant/.bashrc
+  args:
+    executable: /bin/bash
+  become: true

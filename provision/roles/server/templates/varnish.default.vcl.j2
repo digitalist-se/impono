@@ -1,0 +1,205 @@
+vcl 4.0;
+import std;
+import directors;
+
+backend prod {
+  .host = "{{ wk_box.ip }}";
+  .port = "8080";
+}
+
+
+sub vcl_init {
+  new lb_prod = directors.hash();
+  lb_prod.add_backend(prod, 1);
+}
+
+sub vcl_recv {
+
+  set req.backend_hint = prod;
+
+
+  # allow PURGE from localhost
+  if (req.method == "PURGE") {
+    if (!client.ip ~ purge) {
+      return(synth(405,"Not allowed."));
+    }
+    return (hash);
+  }
+
+  if (req.method == "BAN") {
+          # Same ACL check as above:
+          if (!client.ip ~ purge) {
+              return (synth(403, "Not allowed."));
+          }
+          # Logic for the ban, using the Cache-Tags header. For more info
+          # see https://github.com/geerlingguy/drupal-vm/issues/397.
+          if (req.http.Cache-Tags) {
+              ban("obj.http.Cache-Tags ~ " + req.http.Cache-Tags);
+          }
+          else {
+              return (synth(403, "Cache-Tags header missing."));
+          }
+          # Throw a synthetic page so the request won't go to the backend.
+          return (synth(200, "Ban added."));
+  }
+  # Return (pass) instructs Varnish not to cache the request
+  # when the condition is met.
+
+  ## Do not cache ##
+  # Here we filter out all URLs containing Drupal administrative sections and ajax calls
+  if (req.url ~ "^/status\.php$" ||
+      req.url ~ "^/update\.php$" ||
+      req.url ~ "^/admin$" ||
+      req.url ~ "^/admin/.*$" ||
+      req.url ~ "^/misc/ajax.*$" ||
+      req.url ~ "^/user$" ||
+      req.url ~ "^/user/.*$" ||
+      req.url ~ "^.*/ajax/.*$" ||
+      req.url ~ "^.*/ahah/.*$") {
+    return (pass);
+  }
+
+  # Keep track of grace
+  set req.http.grace = "none";
+
+  ## COOKIES ##
+
+  # Remove cookies for stylesheets, scripts, and images used throughout the site.
+  # Removing cookies will allow Varnish to cache those files.
+  if (req.url ~ "(?i)\.(pdf|asc|dat|txt|doc|xls|ppt|tgz|csv|png|gif|jpeg|jpg|ico|swf|css|js)(\?.*)?$") {
+    unset req.http.Cookie;
+  }
+
+  # Remove all cookies that Drupal doesn't need to know about. We explicitly
+  # list the ones that Drupal does need, the SESS and NO_CACHE. If, after
+  # running this code we find that either of these two cookies remains, we
+  # will pass as the page cannot be cached.
+  if (req.http.Cookie) {
+
+    # debug
+    # std.log( "DEBUG1: " + req.http.Cookie );
+
+    # 1. Append a semi-colon to the front of the cookie string.
+    # 2. Remove all spaces that appear after semi-colons.
+    # 3. Match the cookies we want to keep, adding the space we removed
+    #    previously back. (\1) is first matching group in the regsuball.
+    # 4. Remove all other cookies, identifying them by the fact that they have
+    #    no space after the preceding semi-colon.
+    # 5. Remove all spaces and semi-colons from the beginning and end of the
+    #    cookie string.
+    set req.http.Cookie = ";" + req.http.Cookie;
+    set req.http.Cookie = regsuball(req.http.Cookie, "; +", ";");
+    set req.http.Cookie = regsuball(req.http.Cookie, ";(SESS[a-z0-9]+|SSESS[a-z0-9]+|NO_CACHE|Drupal.visitor.personalize)=", "; \1=");
+    set req.http.Cookie = regsuball(req.http.Cookie, ";[^ ][^;]*", "");
+    set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
+
+    # debug
+    # std.log( "DEBUG2: " + req.http.Cookie );
+
+    if (req.http.Cookie == "") {
+      unset req.http.Cookie;
+    }
+    # if any of our cookies of interest are still there, we disable caching and pass the request
+    # straight to Apache and Drupal
+    else {
+      return (pass);
+    }
+  }
+}
+
+sub vcl_hit {
+  # stale-while-revalidate
+  # Varnish will prefer a fresh object, but when one cannot be found Varnish will look for
+  # stale one. When it is found it will be delivered and Varnish will kick off the asynchronous
+  # request. Thereby removing the penalty the first user gets when hitting a stale object
+  #
+  # And, if backend is down, let's prolong the life of grace so we can still serve stale objects
+  # and don't have a full blown down site.
+  if (obj.ttl >= 0s) {
+    return (deliver);
+  }
+  if (std.healthy(req.backend_hint)) {
+    # Backend is healthy. Limit age to 10s. Might be longer because 10s after objs ttl might be a bit tight
+    if (obj.ttl + 10s > 0s) {
+    set req.http.grace = "normal(limited)";
+    return (deliver);
+    } else {
+      # No candidate for grace. Fetch a fresh object.
+      return(fetch);
+      }
+  } else {
+    # backend is sick - use full grace
+    if (obj.ttl + obj.grace > 0s) {
+      set req.http.grace = "full";
+      return (deliver);
+    } else {
+      # no graced object.
+      return (fetch);
+    }
+  }
+  if (req.http.Authorization) {
+    # Not cacheable by default
+    return (pass);
+  }
+}
+
+sub vcl_deliver {
+    # Remove ban-lurker friendly custom headers when delivering to client.
+    unset resp.http.X-Url;
+    unset resp.http.X-Host;
+    # Comment these for easier Drupal cache tag debugging in development.
+    unset resp.http.Cache-Tags;
+    unset resp.http.X-Drupal-Cache-Contexts;
+    if (obj.hits > 0) {
+        set resp.http.Cache-Tags = "HIT";
+    }
+    else {
+        set resp.http.Cache-Tags = "MISS";
+    }
+}
+
+sub vcl_backend_response {
+  # Remove cookies for stylesheets, scripts and images used throughout the site.
+  # Removing cookies will allow Varnish to cache those files. It is uncommon for
+  # static files to contain cookies, but it is possible for files generated
+  # dynamically by Drupal. Those cookies are unnecessary, but could prevent files
+  # from being cached.
+  if (bereq.url ~ "(?i)\.(pdf|asc|dat|txt|doc|xls|ppt|tgz|csv|png|gif|jpeg|jpg|ico|swf|css|js)(\?.*)?$") {
+    unset beresp.http.set-cookie;
+  }
+
+  # Set to maxiumum grace set in vcl_recv
+  # lets see if we respect drupals ttl otherwise: set beresp.ttl = 10s;
+  set beresp.grace = 2h;
+}
+
+sub vcl_backend_fetch {
+}
+
+sub vcl_backend_error {
+  set beresp.http.Content-Type = "text/html; charset=utf-8";
+  synthetic( {"{{ wk_box.server.hostname }} uppdateras just nu, eller har ett tillfälligt problem. Vi är snart tillbaka!"} );
+  return (deliver);
+}
+
+# When status is 401, prompt user for password
+sub vcl_synth {
+  if (resp.status == 750) {
+     set resp.http.Location = resp.reason;
+     set resp.status = 301;
+     return(deliver);
+  }
+  if (resp.status == 704) {
+    set resp.status = 404;
+    set resp.http.Content-Type = "text/plain; charset=utf-8";
+    synthetic("Page not found");
+  }
+}
+
+acl purge {
+  # ACL we'll use to allow purges
+  "localhost";
+  "127.0.0.1";
+  "{{ wk_box.ip }}";
+  "10.0.2.15";
+}

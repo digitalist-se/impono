@@ -1,8 +1,8 @@
 {
-    "name": "seventag/seventag",
+    "name": "wkse/open-source-tag-manager",
     "license": "AGPLv3",
     "type": "project",
-    "description": "The \"7Tag\" application",
+    "description": "Open source tag manager",
     "autoload": {
         "psr-4": {
             "": "src/",
@@ -43,7 +43,8 @@
         "raven/raven": "^0.13.0",
         "sonata-project/notification-bundle": "^2.3",
         "liip/monitor-bundle": "^2.3",
-        "symfony/dom-crawler" : "2.7.*"
+        "symfony/dom-crawler" : "2.7.*",
+        "php-coveralls/php-coveralls": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "4.5.*",
@@ -74,8 +75,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Liip\\MonitorBundle\\Composer\\ScriptHandler::checkHealth"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -84,8 +84,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Liip\\MonitorBundle\\Composer\\ScriptHandler::checkHealth"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ]
     },
     "config": {

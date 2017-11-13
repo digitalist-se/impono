@@ -1,0 +1,22 @@
+<VirtualHost *:8080>
+    ServerAdmin kontakt@wunderkraut.se
+    ServerName {{ wk_box.server.hostname }}
+    ServerAlias {{ wk_box.server.hostnames }}
+    DocumentRoot {{ wk_box.server.webroot }}
+    CustomLog /var/log/httpd/{{ wk_box.server.hostname }}.access.log combined
+    ErrorLog /var/log/httpd/{{ wk_box.server.hostname }}.error.log
+    <Directory {{ wk_box.server.webroot }}>
+        # Allow from all as default.
+        Require all granted
+        AllowOverride All
+
+        # Allow symlinks.
+        Options FollowSymLinks
+
+        # Set the default handler.
+        DirectoryIndex index.php
+
+        # Make Drupal handle any 404 errors.
+        ErrorDocument 404 /index.php
+    </Directory>
+</VirtualHost>

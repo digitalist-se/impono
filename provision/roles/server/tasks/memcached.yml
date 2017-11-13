@@ -1,0 +1,50 @@
+---
+- name: Installing php-memcached.
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - memcached
+    - libmemcached-devel
+  become: true
+
+- name: Download php7-memcached from repo.
+  git:
+    repo: https://github.com/php-memcached-dev/php-memcached.git
+    dest: /tmp/php-memcached
+    version: php7
+    accept_hostkey: yes
+
+- name: Install php7-memcached.
+  shell: "{{ item }}"
+  args:
+    chdir: /tmp/php-memcached
+  with_items:
+    - phpize
+    - ./configure
+    - make
+
+- name: Install php7-memcached
+  shell: make install
+  args:
+    chdir: /tmp/php-memcached
+  become: true
+
+- name: Add memcached php ini-file.
+  template:
+    src: memcached.ini.j2
+    dest: /etc/php.d/memcached.ini
+  become: true
+
+- name: Ensure memcached is started and runs on startup.
+  service:
+    name: memcached
+    state: restarted
+    enabled: yes
+  become: true
+
+- name: Restarting apache.
+  service:
+    name: httpd
+    state: restarted
+  become: true

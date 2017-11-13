@@ -1,0 +1,19 @@
+---
+- name: Checking if dropcat is installed.
+  stat:
+    path: /usr/local/bin/dropcat
+  register: dropcat_bin
+
+- name: Downloading dropcat.
+  get_url:
+    url: https://dropcat.org/dropcat.phar
+    dest: /home/vagrant
+    mode: "u+rwx,g+rwx,o+rwx"
+  when: composer_bin.stat.exists == False
+
+- name: Installing dropcat.
+  command: mv dropcat.phar /usr/local/bin/dropcat
+  args:
+   chdir: /home/vagrant
+  when: composer_bin.stat.exists == False
+  become: true

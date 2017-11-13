@@ -1,0 +1,37 @@
+---
+- name: Add repo for varnish-agent
+  template: >
+    src=varnishcache_varnish40.repo.j2
+    dest=/etc/yum.repos.d/varnishcache_varnish40.repo
+    owner=root group=root mode=644
+  become: true
+
+- name: blash
+  shell: yum -q makecache -y --disablerepo='*' --enablerepo='varnishcache_varnish40'
+  become: true 
+
+- name: Install Varnish agent.
+  yum: name=varnish-agent state=latest enablerepo=varnishcache_varnish40 
+  become: true
+
+- name: Copy varnish agent secret.
+  template: >
+    src=agent_secret.j2
+    dest=/etc/varnish/agent_secret
+    owner=root group=root mode=644
+  become: true
+
+- name: clone varnish-dashboard
+  git:
+    repo: https://github.com/brandonwamboldt/varnish-dashboard.git
+    dest: /var/www/varnish-dashboard
+    version: master
+  become: true
+
+- name: stop varnish-agent
+  command: service varnish-agent stop
+  become: true
+
+- name: start varnish-agent
+  command: varnish-agent -H /var/www/varnish-dashboard
+  become: true

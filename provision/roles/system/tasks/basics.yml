@@ -1,0 +1,59 @@
+---
+- name: Install libselinux so ansible can control selinux.
+  yum:
+    name: libselinux-python
+    state: present
+    validate_certs: no
+  become: true
+
+- name: Disable SELinux
+  selinux:
+    state: disabled
+  become: true
+
+- name: Add epel and webtatic.
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    - https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+  become: true
+
+- name: Installs box dependencies.
+  yum:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - git
+    - zip
+    - unzip
+    - htop
+    - mariadb-devel
+    - python-pip
+    - python-devel
+    - gcc
+    - telnet
+  become: true
+
+- name: Install mysql python to be able to control mysql via ansible.
+  pip:
+    name: MySQL-python
+  become: true
+
+- name: Adding bash-alias-file.
+  template:
+    src: bash-aliases.j2
+    dest: /home/vagrant/.bash_aliases
+
+- name: Set hostname to project hostname.
+  hostname:
+    name: "{{ wk_box.hostname }}"
+  become: true
+
+- name: Copy etc-hosts-file to guest.
+  template:
+    src: etc-hosts.j2
+    dest: /etc/hosts
+  become: true

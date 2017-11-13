@@ -1,0 +1,30 @@
+- hosts: all
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+
+    - name: Ensure build dependencies are installed (RedHat).
+      package: 'name="{{ item }}" state=present'
+      with_items:
+        - "@Development tools"
+        - tar
+        - unzip
+        - net-tools
+        - curl
+      when: ansible_os_family == 'RedHat'
+
+    - name: Ensure build dependencies are installed (Debian).
+      apt: 'name="{{ item }}" state=installed'
+      with_items:
+        - build-essential
+        - tar
+        - unzip
+        - net-tools
+        - curl
+      when: ansible_os_family == 'Debian'
+
+  roles:
+    - geerlingguy.daemonize
+    - role_under_test

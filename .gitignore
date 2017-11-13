@@ -78,3 +78,4 @@ node_modules
 
 tests/container-debugger/tests/mock/stg.js
 tests/containerjs/mock/tagTree.js
+.vagrant

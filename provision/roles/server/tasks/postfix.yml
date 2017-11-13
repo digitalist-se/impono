@@ -1,0 +1,6 @@
+---
+- name: Installs postfix.
+  yum:
+    name: postfix
+    state: present
+  become: true

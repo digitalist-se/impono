@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: vagrant
+  vars_files:
+    - ../VagrantVariables.yml
+  roles:
+    - system
+    - server

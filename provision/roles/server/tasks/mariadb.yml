@@ -1,0 +1,38 @@
+---
+- name: Install mariadb.
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - mariadb-server
+    - mariadb
+  become: true
+
+- name: Ensure mariadb is (re)started.
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+  become: true
+
+- name: Add mariadb my.cnf file.
+  template:
+    src: mariadb.my.cnf.j2
+    dest: /etc/my.cnf.d/digitalist.my.cnf
+  become: true
+
+- name: Update root password for all root accounts
+  mysql_user:
+    name: root
+    host: "{{ wk_box.server.database.host }}"
+    check_implicit_admin: yes
+    password: "{{ wk_box.server.database.password }}"
+    login_user: "{{ wk_box.server.database.user }}"
+    login_password: "{{ wk_box.server.database.password }}"
+
+- name: Create databases.
+  mysql_db:
+    name: "{{ wk_box.server.database.name }}"
+    state: present
+    login_user: "{{ wk_box.server.database.user }}"
+    login_password: "{{ wk_box.server.database.password }}"

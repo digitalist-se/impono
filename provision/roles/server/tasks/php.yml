@@ -1,0 +1,28 @@
+---
+- name: Installing php 7.0 and modules.
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - php70w
+    - php70w-cli
+    - php70w-common
+    - php70w-curl
+    - php70w-pecl-imagick
+    - php70w-json
+    - php70w-soap
+    - php70w-mcrypt
+    - php70w-mysql
+    - php70w-xml
+    - php70w-xmlrpc
+    - php70w-devel
+    - php70w-mbstring
+    - php70w-gd
+    - php70w-opcache
+  become: true
+
+- name: Copy apache php.ini.
+  template:
+    src: php.digitalist.php.ini.j2
+    dest: /etc/php.d/digitalist.php.ini
+  become: true
