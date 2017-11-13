@@ -1,45 +1,30 @@
-**This is a backup of seventag when it was still open source from https://github.com/seventag/seventag**
+# Impono
 
-impono is the easy-to-use tag manager for the busy marketer.
+## Open source tag manager
 
-# Features:
+impono aim is to be an use to use tag manager.
 
-- Manage All Your Tags in One Place - Save time by managing all your tags in one place. You can add, change, and remove any tag across all websites with just a few clicks.
+## How to install impono?
 
-- Collect Certain Information with Triggers - Set up your tags to send information from your websites based on certain actions, such as when a user visits a page or downloads a file.
+- Simple (needs to be written)
 
-- Specify When a Trigger is Fired with Conditions - Limit firing tags based on user-defined rules to the specific URL paths, DOM elements or individual forms.
-
-- Test & Debug Your Tags Before They Go Live - Avoid having to play catch up and fix broken tags in the live environment by previewing your tags and removing bugs before they are deployed.
-
-- Control User Access & Permissions - Create numerous user accounts and set granular permissions for viewing, editing, and publishing tags.
-
-- Fast Loading with CDN Hosting - Your tags will always load instantly thanks to impono’s integration with all the popular Content Delivery Networks (CDN).
-
-- API available - Keep all your marketing tools in one place by adding impono to your marketing stack with the impono API.
-
-# How to install impono?
-
-- You can find installation instructions at: [https://web.archive.org/web/20160803173643/https://impono.org/docs/installation/](https://web.archive.org/web/20160803173643/https://impono.org/docs/installation/).
-
-- There is also another way of building project from scratch for advanced users: [instructions](doc/INSTALLATION.md).
+- Advanced users: [instructions](doc/INSTALLATION.md).
 
 ## Documentation
 
-Documentation is available at [https://web.archive.org/web/20160803173703/https://impono.org/docs/introduction/](https://web.archive.org/web/20160803173703/https://impono.org/docs/introduction/).
-
-## Technology stack
-
-**impono** is an application composed of components mostly written in: 
-
-- Javascript (CORE), 
-
-- [AngularJS](https://angularjs.org/) framework (GUI),
-
-- [Symfony2](http://symfony.com) framework (API)
+(Needs to be written.)
 
 ## Bug tracking
-impono uses GitHub issues. If you have found bug, please create an issue.
+impono uses GitHub issues. If you find a bug, please create an issue.
 
-## License
+# History
+Once upon a time there was an open source tag manager called 7tag that was
+wiped from Github. This is built on that open source tag manager, rebranded as
+impono.
+
+# Future
+The goal is to make this a full featured tag manager. And yes, we want your
+help.
+
+# License
 - Free Software Foundation’s [GNU AGPL, Version 3](LICENSE).
