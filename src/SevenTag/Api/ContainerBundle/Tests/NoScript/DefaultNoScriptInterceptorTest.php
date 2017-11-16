@@ -56,12 +56,12 @@ EOD;
 
         $code2 = <<<EOD
 <noscript>
-    <iframe src="http://7tag.org"></iframe>
-    <img src="http://7tag.org/favicon.png"/>
+    <iframe src="https://impono.org"></iframe>
+    <img src="https://impono.org/favicon.png"/>
     <div>
         <p>Info</p>
         <div>
-            <img src="http://7tag.org/favicon2.png"/>
+            <img src="https://impono.org/favicon2.png"/>
         </div>
     </div>
 </noscript>
@@ -74,10 +74,10 @@ EOD;
         $interceptor = new DefaultNoScriptInterceptor(new NoScriptCrawler());
 
         // @codingStandardsIgnoreStart
-        $this->assertEquals("<p><img src=\"http://piwik-server.com/piwik.php?idsite=1\" style=\"border:0\" alt=\"\"></p><iframe src=\"http://7tag.org\"></iframe><img src=\"http://7tag.org/favicon.png\"><div>
+        $this->assertEquals("<p><img src=\"http://piwik-server.com/piwik.php?idsite=1\" style=\"border:0\" alt=\"\"></p><iframe src=\"https://impono.org\"></iframe><img src=\"https://impono.org/favicon.png\"><div>
         <p>Info</p>
         <div>
-            <img src=\"http://7tag.org/favicon2.png\">
+            <img src=\"https://impono.org/favicon2.png\">
 </div>
     </div>", $interceptor->intercept($container));
         // @codingStandardsIgnoreEnd

@@ -35,7 +35,7 @@ Feature: As a user I want add tag from custom template
   Scenario: Create "Piwik" tag from custom template
     When I add Piwik custom template tag to container "1"
       | name                | piwikSiteId    |  piwikUrl        |
-      | Tag Name Post 1     | 123456         |  http://7tag.org |
+      | Tag Name Post 1     | 123456         |  https://impono.org |
     Then I expect successful create response
     And I expect valid json response
     And response should contains valid tag

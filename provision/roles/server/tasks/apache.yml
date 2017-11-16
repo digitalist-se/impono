@@ -20,7 +20,7 @@
 - name: Copy default virtual host configuration.
   template:
     src: apache.vhost.conf.j2
-    dest: /etc/httpd/conf.d/drupal.conf
+    dest: /etc/httpd/conf.d/impono.conf
   become: true
 
 - name: Copy apache server name conf.
