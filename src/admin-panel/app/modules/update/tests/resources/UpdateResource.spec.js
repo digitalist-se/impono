@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2015 Digimedia Sp. z.o.o. d/b/a Clearcode
+ * Impono Tag Manager
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License as published by the Free
@@ -84,7 +84,7 @@ describe('Unit: UpdateResource', () => {
         var httpRequestHandler, currentVersion;
 
         beforeEach(() => {
-            httpRequestHandler = $httpBackend.whenGET(/\/\/download.7tag.org\/version.json?(.*)/);
+            httpRequestHandler = $httpBackend.whenGET(/\/\/download.impono.org\/version.json?(.*)/);
             currentVersion = '1.0.0';
         });
 

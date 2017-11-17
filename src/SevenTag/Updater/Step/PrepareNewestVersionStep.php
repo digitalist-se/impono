@@ -30,7 +30,7 @@ use SevenTag\Updater\Utils\NewestVersionCheckerInterface;
  */
 class PrepareNewestVersionStep extends LocalInstanceStep
 {
-    const VERSION_RESOURCE = '//download.7tag.org/version.json';
+    const VERSION_RESOURCE = '//download.impono.org/version.json';
 
     /**
      * @var NewestVersionCheckerInterface

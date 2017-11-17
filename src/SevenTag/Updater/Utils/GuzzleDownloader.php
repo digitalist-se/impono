@@ -64,7 +64,7 @@ class GuzzleDownloader implements DownloaderInterface
             'CURLOPT_FILE' => $handle
         ]]);
 
-        $client->get(sprintf('http://download.7tag.org/seventag-%s.zip?version=%s&domain=%s', $version, $currentVersion, $this->downloader->getDomain()))
+        $client->get(sprintf('https://download.impono.org/seventag-%s.zip?version=%s&domain=%s', $version, $currentVersion, $this->downloader->getDomain()))
             ->send();
 
         fclose($handle);

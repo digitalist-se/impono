@@ -7,22 +7,29 @@ Impono Taga Manager the best open source tag manager available.
 For now this, is just for development.
 `vagrant up`
 `nvm use`
-`ant build`
+`npm install` or `yarn install`
 `gulp build`
+`composer install`
 
-edit `app/config/parameters.yml`:
+In composer install the settings for the project is added in `app/config/parameters.yml` 
+- this could be needed to be edited later if you added wrong details.
+
+Settings you should provide for the parameters are (this is for the vagrant box):
 
 ```
-parameters:
-  database_driver: pdo_mysql
-  database_host: 127.0.0.1
-  database_port: null
-  database_name: <database_name>
-  database_user: <user>
-  database_password: <password>
+    database_host: 127.0.0.1
+    database_name: tag_manager_admin
+    database_user: root
+    database_password: password
+    seventag_domain: 'http://impono.dev'
+
 ```
 
-Create database schema:
+The rest of the default settings should be ok.
+
+`vagrant ssh`
+
+Create database schema (standing in in `/srv/www/impono`):
 
 `bin/console doctrine:schema:create`
 

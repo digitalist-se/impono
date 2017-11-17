@@ -31,7 +31,7 @@ On client side you must implement tag provider to tell Angular that your custom 
 
 ```
 /**
- * Copyright (C) 2015 Digimedia Sp. z.o.o. d/b/a Clearcode
+ * Impono Tag Manager
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License as published by the Free
