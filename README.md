@@ -1,10 +1,16 @@
 # Impono Tag Manager
 
 This project is based on seventag, when it was open source. Our goal is to make
-Impono Taga Manager the best open source tag manager available.
+Impono Tag Manager the best open source tag manager available.
 
-## How to install Impono
-For now this, is just for development.
+## Stable?
+Not at all. We do use it for testing right now. Because of deleted documentation 
+by the company that did 7tag, many things are unknown. API is needed to be 
+documented. And so on. But. We are using release 0.0.5 right now for production
+use. So it do work. But there are many unknowns unknown.
+
+## How to install Impono with Vagrant
+
 `vagrant up`
 `nvm use`
 `npm install` or `yarn install`
@@ -49,3 +55,4 @@ password: testing
 
 ## License
 - Free Software Foundation’s [GNU AGPL, Version 3](LICENSE).
+
