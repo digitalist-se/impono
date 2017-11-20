@@ -67,6 +67,13 @@ With an existing integration user
 curl -X POST -d "client_id=12_5qpf73hq93swccow0844gko0g04g40s8soc0ssckoco4c0s0cc&client_secret=5rpg2t9bszs4g4o44gksgw8ggc8coo8408s080ko8kcgcwcggs&grant_type=client_credentials" http://impono.dev/api/oauth/v2/token
 ```
 
+or with JSON
+
+```
+curl -X POST -H "Content-Type: application/json" -d '{"client_id":"12_1n8epty5f9dwgo00048ggocksk0ogsogkw84w4c00w8w8080cs" , "client_secret":"4mko84fwz6gw8wc0sgc0sks8kksw480c4sw4g88wos4ggsksgw", "grant_type" : "client_credentials"}' http://impono.dev/api/oauth/v2/token
+
+```
+
 Getting back:
 ```
 {"access_token":"NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw","expires_in":3600,"token_type":"bearer","scope":"user"}%   
@@ -83,7 +90,7 @@ curl --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI
 Getting back:
 
 ```
-{"data":[{"id":11,"name":"Container name 10","description":"Container description 10","websites":[],"created_at":"2017-11-19T18:25:53+0000","updated_at":"2017-11-19T18:25:54+0000","has_unpublished_changes":true,"published_at":null,"permissions":["view","edit","publish","operator"]}],"total":1}% 
+{"data":[{"id":11,"name":"Container name 10","description":"Container description 10","websites":[],"created_at":"2017-11-19T18:25:53+0000","updated_at":"2017-11-19T18:25:54+0000","has_unpublished_changes":true,"published_at":null,"permissions":["view","edit","publish","operator"]}],"total":1}%
 ```
 
 So with this result - I can see that the user has access to one container, `Container name 10`
