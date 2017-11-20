@@ -3,10 +3,10 @@ parameters:
     database_driver:   pdo_sqlite
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     tag_manager_admin
+    database_name:     impono
     database_user:     ~
     database_password: ~
-    database_path:     "%kernel.root_dir%/tag_manager_admin.db3"
+    database_path:     "%kernel.root_dir%/impono.db3"
 
     mailer_transport:           smtp
     mailer_host:                127.0.0.1
@@ -26,7 +26,7 @@ parameters:
     seventag_tagtree_template_path: '%kernel.root_dir%/Resources/container-lib/tagTree.js.dist'
     seventag_tagtree_sync_template_path: '%kernel.root_dir%/Resources/container-lib-sync/tagTree.js.dist'
     seventag_javascript_debugger_path: '%kernel.root_dir%/../web/container-debugger/debug.js'
-    seventag_domain: 'http://7tag.dev'
+    seventag_domain: 'http://impono.dev'
     seventag_javascript_library_path: '%kernel.root_dir%/Resources/container-lib/library.js.dist'
     seventag_javascript_library_sync_path: '%kernel.root_dir%/Resources/container-lib-sync/library.js.dist'
     seventag_javascript_bootstrap_path: '%kernel.root_dir%/Resources/container-lib/bootstrap.js.dist'

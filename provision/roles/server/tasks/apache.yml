@@ -28,16 +28,3 @@
     src: apache.servername.conf.j2
     dest: /etc/httpd/conf.d/servername.conf
   become: true
-
-- name: Ensure Apache is running and make sure it is enabled at boot.
-  service:
-    name: httpd
-    state: started
-    enabled: yes
-  become: true
-
-- name: (Re)start apache
-  service:
-    name: httpd
-    state: restarted
-  become: true

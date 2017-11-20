@@ -8,7 +8,7 @@ wk_box:
     hostname: impono.dev
     webroot: /srv/www/impono/web
     database:
-      name: tag_db1
+      name: impono_db
       user: root
       password: password
       host: localhost

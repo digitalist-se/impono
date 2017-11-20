@@ -3,7 +3,7 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     tag_manager_admin
+    database_name:     impono
     database_user:     ~
     database_password: ~
     database_path:     ~
