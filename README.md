@@ -6,8 +6,7 @@ Impono Tag Manager the best open source tag manager available.
 ## Stable?
 Not at all. We do use it for testing right now. Because of deleted documentation
 by the company that did 7tag, many things are unknown. API is needed to be
-documented. And so on. But. We are using release 0.0.5 right now for production
-use. So it do work. But there are many unknowns unknown.
+documented fully (you get most of the API documentation at /api/doc). There are many unknowns unknown.
 
 ## How to install Impono with Vagrant
 
@@ -55,3 +54,60 @@ password: testing
 
 ## License
 - Free Software Foundation’s [GNU AGPL, Version 3](LICENSE).
+
+
+## Using API
+
+API is just now undocumented, but here are some examples.
+
+### Example login
+With an existing integration user
+
+```
+curl -X POST -d "client_id=12_5qpf73hq93swccow0844gko0g04g40s8soc0ssckoco4c0s0cc&client_secret=5rpg2t9bszs4g4o44gksgw8ggc8coo8408s080ko8kcgcwcggs&grant_type=client_credentials" http://impono.dev/api/oauth/v2/token
+```
+
+Getting back:
+```
+{"access_token":"NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw","expires_in":3600,"token_type":"bearer","scope":"user"}%   
+```
+
+With this my Authorization: Bearer is `NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw` and I should use that to authorize requests.
+
+### Example call
+
+```
+curl --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/containers
+```
+
+Getting back:
+
+```
+{"data":[{"id":11,"name":"Container name 10","description":"Container description 10","websites":[],"created_at":"2017-11-19T18:25:53+0000","updated_at":"2017-11-19T18:25:54+0000","has_unpublished_changes":true,"published_at":null,"permissions":["view","edit","publish","operator"]}],"total":1}% 
+```
+
+So with this result - I can see that the user has access to one container, `Container name 10`
+
+### Getting a tag
+
+```
+curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/tags/120
+```
+
+### Deleting a tag
+
+```
+curl -X "DELETE" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/tags/120
+```
+
+### Info about your user
+
+```
+curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/users/me
+```
+
+### Logout your user
+
+```
+curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/users/me/logout
+```
