@@ -11,10 +11,18 @@ documented fully (you get most of the API documentation at /api/doc). There are 
 ## How to install Impono with Vagrant
 
 `vagrant up`
-`nvm use`
-`npm install` or `yarn install`
-`gulp build`
-`composer install`
+`nvm use` (locall)
+`npm install` or `yarn install` (local)
+`gulp build` (local)
+`composer install` (inside box)
+`bin/console doctrine:schema:create` (inside box)
+`bin/console fos:user:create admin --super-admin` (inside box)
+`bin/console c:c`
+`bin/console c:w`
+
+Create oauth2 client:
+
+`mysql -uroot -ppassword impono < oauth/oauth2_client.sql`
 
 In composer install the settings for the project is added in `app/config/parameters.yml`
 - this could be needed to be edited later if you added wrong details.
