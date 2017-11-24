@@ -2,7 +2,7 @@
  * Created by marnits on 01/03/16.
  */
 /**
- * Impono Tag Manager
+ * Copyright (C) 2015 Digimedia Sp. z.o.o. d/b/a Clearcode
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License as published by the Free

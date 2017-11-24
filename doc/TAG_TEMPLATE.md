@@ -25,13 +25,13 @@ Service should also implements `SevenTag\Api\TagBundle\Template\ProviderInterfac
 1. getKey - should return unique provider key (eq. google_adwords)
 2. getFormType - should return `Symfony\Component\Form\FormTypeInterface` or string (tagged Symfony2 form type). Custom form type is responsible for validating additional template options before persist them in database.
 3. generateCode - method is responsible for generating code before persisting `SevenTag\Component\Tag\Model\TagInterface` in database.
-4. prePersist - methods is called before persisting `SevenTag\Component\Tag\Model\TagInterface` in database. 
+4. prePersist - methods is called before persisting `SevenTag\Component\Tag\Model\TagInterface` in database.
 
 On client side you must implement tag provider to tell Angular that your custom template exists, for example:
 
 ```
 /**
- * Impono Tag Manager
+ * Copyright (C) 2015 Digimedia Sp. z.o.o. d/b/a Clearcode
  *
  * This program is free software: you can redistribute it and/or modify it under
  * the terms of the GNU Affero General Public License as published by the Free
@@ -46,21 +46,21 @@ On client side you must implement tag provider to tell Angular that your custom 
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 (function () {
     'use strict';
- 
+
     var MODULE_NAME = 'admin.application.plugins';
     var TAG_MODULE = 'clearcode.tm.tag';
     var TEMPLATE_ID = 'google_adwords';
     var TEMPLATE_NAME = 'Google AdWords';
- 
+
     angular
         .module(MODULE_NAME)
         .run([
             TAG_MODULE + '.$template',
             function ($templateProvider) {
- 
+
                 $templateProvider
                     .add(TEMPLATE_ID, TEMPLATE_NAME)
                     .addBrand('/bundles/seventagplugingoogleadwordscustomtemplate/img/gaw.svg')
@@ -82,7 +82,7 @@ On client side you must implement tag provider to tell Angular that your custom 
                             }
                         })
                         .addHiddenField('remarketingOnly', false);
- 
+
                 $templateProvider
                     .get(TEMPLATE_ID)
                     .addType('remarketing', 'Remarketing')
@@ -103,11 +103,11 @@ On client side you must implement tag provider to tell Angular that your custom 
                             }
                         })
                         .addHiddenField('remarketingOnly', true);
- 
+
             }
- 
+
         ]);
- 
+
 }());
 ```
-As you can see, we add to namespace admin.application.plugins new provider and inside provider code we configure provider by adding field and another options. 
+As you can see, we add to namespace admin.application.plugins new provider and inside provider code we configure provider by adding field and another options.

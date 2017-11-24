@@ -14,6 +14,7 @@ documented fully (you get most of the API documentation at /api/doc). There are 
 `nvm use` (locall)
 `npm install` or `yarn install` (local)
 `gulp build` (local)
+(haved a bug when I had xdebug extension enabled, so better disable before next step)
 `composer install` (inside box)
 `bin/console doctrine:schema:create` (inside box)
 `bin/console fos:user:create admin --super-admin` (inside box)
