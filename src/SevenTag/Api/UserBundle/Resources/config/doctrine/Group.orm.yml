@@ -1,6 +1,6 @@
 SevenTag\Api\UserBundle\Entity\Group:
     type:  entity
-    table: `group`
+    table: group
     id:
         id:
             type: integer

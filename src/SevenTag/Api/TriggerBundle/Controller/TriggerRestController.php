@@ -60,8 +60,8 @@ class TriggerRestController extends RestController
      * @Rest\View(serializerEnableMaxDepthChecks="true", serializerGroups={"triggers"})
      * @Rest\QueryParam(name="offset", requirements="\d+", default="0", description="Offset for triggers list pagination")
      * @Rest\QueryParam(name="limit", requirements="\d+", default="20", description="Limit for triggers list pagination")
-     * @Rest\QueryParam(name="exclude", array=true, requirements="\d+", strict=true, nullable=true, description="Exclude selected trigger Id's")
-     * @Rest\QueryParam(name="types", array=true, requirements="\d+", strict=true, nullable=true, description="Include selected trigger types")
+     * @Rest\QueryParam(name="exclude", map=true, requirements="\d+", strict=true, nullable=true, description="Exclude selected trigger Id's")
+     * @Rest\QueryParam(name="types", map=true, requirements="\d+", strict=true, nullable=true, description="Include selected trigger types")
      *
      * @param ContainerInterface $container
      * @param ParamFetcherInterface $paramFetcher

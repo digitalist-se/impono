@@ -22,14 +22,16 @@ use SevenTag\Api\ContainerBundle\Entity\ContainerPermission;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermissionRepository;
 use SevenTag\Api\SecurityBundle\Acl\PermissionMap;
 use SevenTag\Api\UserBundle\Entity\User;
-use Symfony\Component\Security\Core\Authorization\Voter\AbstractVoter;
+use SevenTag\Api\ContainerBundle\Entity\Container;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Class ContainerPermissionsVoter
  * @package SevenTag\Api\ContainerBundle\Voter
  */
-class ContainerPermissionsVoter extends AbstractVoter
+class ContainerPermissionsVoter extends Voter
 {
     /**
      * @var ContainerPermissionRepository
@@ -44,7 +46,21 @@ class ContainerPermissionsVoter extends AbstractVoter
         $this->containerPermissionRepository = $containerPermissionRepository;
     }
 
-    /**
+  protected function supports($attribute, $subject) {
+    return $subject instanceof Container && in_array($attribute,[
+            PermissionMap::PERMISSION_PUBLISH,
+            PermissionMap::PERMISSION_DELETE,
+            PermissionMap::PERMISSION_VIEW,
+            PermissionMap::PERMISSION_EDIT,
+            PermissionMap::PERMISSION_OPERATOR
+        ]);
+  }
+
+  protected function voteOnAttribute($attribute, $subject, TokenInterface $token) {
+    return $this->isGranted($attribute, $subject, $token->getUser());
+  }
+
+  /**
      * {@inheritdoc}
      */
     protected function getSupportedAttributes()

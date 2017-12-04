@@ -9,24 +9,24 @@ services:
 
     seven_tag.warmer.assets_warmer:
         class: SevenTag\Api\AppBundle\Plugin\AssetsWarmer
-        arguments: [@kernel]
+        arguments: ['@kernel']
         tags:
             - { name: kernel.cache_warmer }
 
     seven_tag.locale.locale_finder:
         class: SevenTag\Api\AppBundle\Locale\LocaleFinder
         arguments:
-            - @symfony.finder
+            - '@symfony.finder'
             - '%kernel.root_dir%'
             - '%seven_tag_app.plugins_dir%'
 
     seven_tag.locale.locale_provider:
         class: SevenTag\Api\AppBundle\Locale\LocaleProvider
-        arguments: [@seven_tag.locale.locale_finder]
+        arguments: ['@seven_tag.locale.locale_finder']
 
     seven_tag.language.language_provider:
         class: SevenTag\Api\AppBundle\Language\LanguageProvider
-        arguments: [@seven_tag.locale.locale_provider]
+        arguments: ['@seven_tag.locale.locale_provider']
 
     seven_tag.locale_listener:
         class: SevenTag\Api\AppBundle\EventListener\LocaleListener
@@ -39,7 +39,7 @@ services:
 
     seven_tag.manifest_containerjs_code_provider:
         class: SevenTag\Api\AppBundle\Plugin\ManifestContainerjsCodeProvider
-        arguments: [@seven_tag.manifest_registry, %web_dir%]
+        arguments: ['@seven_tag.manifest_registry', '%web_dir%']
 
     seven_tag.api.twig.variable_extension:
             class: SevenTag\Api\AppBundle\Twig\VariableExtension

@@ -21,16 +21,25 @@ use SevenTag\Api\AppBundle\Kernel\Kernel;
 /**
  * Class AppKernel
  */
-class AppKernel extends Kernel
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function registerBundles()
-    {
-        return array_merge(
-            parent::registerBundles(),
-            $this->registerPluginBundles(__DIR__ . '/../src/SevenTag/Plugin')
-        );
-    }
+class AppKernel extends Kernel {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function registerBundles() {
+    return array_merge(
+      parent::registerBundles(),
+      $this->registerPluginBundles(__DIR__ . '/../src/SevenTag/Plugin')
+    );
+  }
+
+  public function getCacheDir() {
+    return $this->rootDir . '/../var/cache/' . $this->environment;
+  }
+
+  public function getLogDir() {
+    return $this->rootDir . '/../var/logs';
+  }
+
+
 }

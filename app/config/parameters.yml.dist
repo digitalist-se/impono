@@ -18,9 +18,9 @@ parameters:
 
     locale:            en
 
-    secret:            "&-2_W\$/N=auNLuE?NM6:G:w-V{5,_"
+    secret:            '&-2_W\$/N=auNLuE?NM6:G:w-V{5,_'
 
-    datetime_default_format: "Y-m-d\TH:i:sO"
+    datetime_default_format: 'Y-m-d\TH:i:sO'
 
     seventag_licence_template_path: '%kernel.root_dir%/Resources/container-lib/licence.dist'
     seventag_tagtree_template_path: '%kernel.root_dir%/Resources/container-lib/tagTree.js.dist'

@@ -6,16 +6,16 @@ services:
     seven_tag_variable.variable_provider:
         class: SevenTag\Api\VariableBundle\Provider\VariableProvider
         arguments:
-            - %variables%
+            - '%variables%'
     seven_tag_variable.variable_type_provider:
         class: SevenTag\Api\VariableBundle\Provider\VariableTypeProvider
         arguments:
-            - @translator.default
-            - %variable_types%
-            - @event_dispatcher
+            - '@translator.default'
+            - '%variable_types%'
+            - '@event_dispatcher'
     seven_tag_variable.variable_manager:
         class: SevenTag\Api\VariableBundle\Manager\VariableManager
         arguments:
-            - @seven_tag_variable.repository.variable_repository
-            - @seven_tag_variable.variable_provider
-            - @seven_tag_variable.variable_type_provider
+            - '@seven_tag_variable.repository.variable_repository'
+            - '@seven_tag_variable.variable_provider'
+            - '@seven_tag_variable.variable_type_provider'

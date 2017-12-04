@@ -12,4 +12,4 @@ services:
     seven_tag_app.versionable.subscriber.accessible_form:
         class: SevenTag\Api\AppBundle\Versionable\Listener\AccessibleFormSubscriber
         arguments:
-          - @doctrine.orm.entity_manager
+          - '@doctrine.orm.entity_manager'

@@ -9,22 +9,22 @@ services:
 
     seven_tag_security.logout_handler.rest_logout:
         class: SevenTag\Api\SecurityBundle\Http\Logout\RestLogoutHandler
-        arguments: [@security.token_storage, @seven_tag_security.repository.access_token_repository]
+        arguments: ['@security.token_storage', '@seven_tag_security.repository.access_token_repository']
 
     seven_tag_security.utils.bitmask_to_permissions_mapper:
         class: SevenTag\Api\SecurityBundle\Utils\BitMaskToPermissionsMapper
 
     seven_tag_security.utils.user_mask_resolver:
         class: SevenTag\Api\SecurityBundle\Utils\UserMaskResolver
-        arguments: [@seven_tag_container.repository.container_permissions_repository]
+        arguments: ['@seven_tag_container.repository.container_permissions_repository']
 
     seven_tag_security.utils.user_permissions_map_provider:
         class: SevenTag\Api\SecurityBundle\Utils\UserPermissionsMapProvider
-        arguments: [@seven_tag_container.repository.container_permissions_repository, @seven_tag_security.utils.bitmask_to_permissions_mapper]
+        arguments: ['@seven_tag_container.repository.container_permissions_repository', '@seven_tag_security.utils.bitmask_to_permissions_mapper']
 
     seven_tag_security.voter.container_permissions_voter:
         class: SevenTag\Api\SecurityBundle\Voter\ContainerPermissionsVoter
-        arguments: [@seven_tag_container.repository.container_permissions_repository]
+        arguments: ['@seven_tag_container.repository.container_permissions_repository']
         public:     false
         tags:
            - { name: security.voter }
@@ -33,24 +33,24 @@ services:
         class: SevenTag\Api\SecurityBundle\Serializer\Subscriber\AbstractContainersPermissionsSubscriber
         abstract: true
         calls:
-          - [ setTokenStorage, [@security.token_storage] ]
-          - [ setBitMaskToPermissionsMapper, [@seven_tag_security.utils.bitmask_to_permissions_mapper] ]
+          - [ setTokenStorage, ['@security.token_storage'] ]
+          - [ setBitMaskToPermissionsMapper, ['@seven_tag_security.utils.bitmask_to_permissions_mapper'] ]
 
     seven_tag_security.oauth_server.storage:
         class: SevenTag\Api\SecurityBundle\OAuth\Storage\UserCheckerStorage
         parent: fos_oauth_server.storage.default
         calls:
-          - [setUserChecker, [@security.user_checker]]
+          - [setUserChecker, ['@security.user_checker']]
 
     seven_tag_security.security.oauth_token_user_resolver:
         class: SevenTag\Api\SecurityBundle\Security\Firewall\OAuthTokenUserResolver
-        arguments: [@fos_oauth_server.access_token_manager.default]
+        arguments: ['@fos_oauth_server.access_token_manager.default']
 
     seven_tag_security.integration.user_manipulator:
         class: SevenTag\Api\SecurityBundle\Integration\UserManipulator\UserManipulator
 
     seven_tag_security.warmer.oauth_client_settings_warmer:
         class: SevenTag\Api\SecurityBundle\Warmer\OAuthClientSettingsWarmer
-        arguments: [@service_container]
+        arguments: ['@service_container']
         tags:
             - { name: kernel.cache_warmer }

@@ -33,6 +33,7 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    cache: false
 
 # Assetic Configuration
 assetic:
@@ -52,7 +53,7 @@ swiftmailer:
     delivery_address: "%mailer_delivery_address%"
 
 sensio_framework_extra:
-    view:    { annotations: false }
+    view:    { annotations: true }
     request: { converters: true }
     router:  { annotations: true }
     security:    { annotations: true }
