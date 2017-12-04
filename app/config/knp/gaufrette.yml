@@ -2,7 +2,7 @@ knp_gaufrette:
     adapters:
         container_library:
             local:
-                directory: %seventag_javascript_cache_dir%
+                directory: '%seventag_javascript_cache_dir%'
                 create: true
         container_library_mock:
             local:
