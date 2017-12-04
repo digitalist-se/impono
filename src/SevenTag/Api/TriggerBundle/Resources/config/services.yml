@@ -24,8 +24,7 @@ services:
 
     seven_tag.repository.trigger_repository:
         class: Doctrine\ORM\EntityRepository
-        factory_service: doctrine.orm.default_entity_manager
-        factory_method: getRepository
+        factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
         arguments: [ SevenTag\Api\TriggerBundle\Entity\Trigger ]
 
     seven_tag.validator.trigger_type_validator:

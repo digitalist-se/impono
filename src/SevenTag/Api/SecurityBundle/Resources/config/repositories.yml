@@ -1,13 +1,11 @@
 services:
     seven_tag_security.repository.access_token_repository:
         class: Doctrine\ORM\EntityRepository
-        factory_service: doctrine.orm.default_entity_manager
-        factory_method: getRepository
+        factory: [ '@doctrine.orm.default_entity_manager', getRepository ]
         arguments:
             - SevenTag\Api\SecurityBundle\Entity\AccessToken
     seven_tag_security.repository.integration_repository:
         class: Doctrine\ORM\EntityRepository
-        factory_service: doctrine.orm.default_entity_manager
-        factory_method: getRepository
+        factory: [ '@doctrine.orm.default_entity_manager' , getRepository ]
         arguments:
             - SevenTag\Api\SecurityBundle\Entity\Integration
