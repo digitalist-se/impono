@@ -3,7 +3,7 @@ parameters:
     database_driver:   pdo_sqlite
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     impono
+    database_name:     impono_db
     database_user:     ~
     database_password: ~
     database_path:     "%kernel.root_dir%/impono.db3"
