@@ -22,6 +22,7 @@ use SevenTag\Api\AppBundle\DataTransformer\StringToBooleanDataTransformer;
 use SevenTag\Plugin\OptimizelyCustomTemplateBundle\ContentTracking;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Exception;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Choice;
@@ -41,7 +42,7 @@ class OptimizelyTemplateFormType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('projectId', 'text');
+        $builder->add('projectId', TextType::class);
     }
 
     /**

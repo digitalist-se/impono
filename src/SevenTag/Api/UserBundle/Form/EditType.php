@@ -20,6 +20,8 @@ namespace SevenTag\Api\UserBundle\Form;
 
 use SevenTag\Api\UserBundle\RoleListProvider\RoleListProviderInterface;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -51,14 +53,14 @@ class EditType extends AbstractType
         $builder
             ->add('firstName')
             ->add('lastName')
-            ->add('plainPassword', 'repeated', [
+            ->add('plainPassword', RepeatedType::class, [
                 'type' => 'password',
                 'options' => ['translation_domain' => 'FOSUserBundle'],
                 'first_options' => ['label' => 'form.new_password'],
                 'second_options' => ['label' => 'form.new_password_confirmation'],
                 'invalid_message' => 'fos_user.password.mismatch',
             ])
-            ->add('roles', 'choice', [
+            ->add('roles', ChoiceType::class, [
                 'multiple' => true,
                 'choices' => $this->roleListProvider->getRoles()
             ]);

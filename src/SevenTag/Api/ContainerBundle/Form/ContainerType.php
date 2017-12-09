@@ -19,6 +19,7 @@
 namespace SevenTag\Api\ContainerBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -37,7 +38,7 @@ class ContainerType extends AbstractType
             ->add('name', null, [
                 'description' => 'Container name'
             ])
-            ->add('delay', 'integer', [
+            ->add('delay', IntegerType::class, [
                 'empty_data' => '500',
                 'description' => 'Delay for all catch callbacks'
             ])

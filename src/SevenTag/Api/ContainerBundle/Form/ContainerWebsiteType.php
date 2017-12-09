@@ -19,6 +19,7 @@
 namespace SevenTag\Api\ContainerBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -34,7 +35,7 @@ class ContainerWebsiteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('websites', 'collection', [
+            ->add('websites', CollectionType::class, [
                 'type' => 'seventag_container_website_type',
                 'allow_add' => true,
                 'allow_delete' => true,

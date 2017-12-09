@@ -42,11 +42,11 @@
         "aws/aws-sdk-php" : "2.8.*",
         "league/flysystem" : "1.0.*",
         "guzzlehttp/guzzle": "~6.3.0",
-        "symfony/process" : "2.7.*",
+        "symfony/process" : "3.4.*",
         "raven/raven": "^0.15.0",
         "sonata-project/notification-bundle": "^3.2",
         "liip/monitor-bundle": "^2.5",
-        "symfony/dom-crawler" : "2.7.*",
+        "symfony/dom-crawler" : "3.4.*",
         "php-coveralls/php-coveralls": "~1.0"
     },
     "require-dev": {
@@ -66,7 +66,8 @@
         "codeception/codeception" : "~2.2",
         "coduo/php-matcher" : "2.1.*",
         "behat/mink-selenium2-driver": "^1.2",
-        "satooshi/php-coveralls": "dev-master"
+        "satooshi/php-coveralls": "dev-master",
+        "symfony/web-server-bundle": "^3.4"
     },
     "scripts": {
         "post-install-cmd": [
@@ -100,9 +101,6 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.7-dev"
         }
     }
 }

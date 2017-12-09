@@ -52,7 +52,7 @@ class ConfigurationController extends Controller
 
         }
 
-        $parameters = Yaml::parse($this->get('kernel')->getRootDir() . '/config/parameters.yml.dist');
+        $parameters = Yaml::parseFile($this->get('kernel')->getRootDir() . '/config/parameters.yml.dist');
 
         $parametersPath = $this->get('kernel')->getRootDir() . '/config/parameters.yml';
 
@@ -91,7 +91,7 @@ class ConfigurationController extends Controller
     {
         $error = false;
         $form = $this->createForm(
-            new DatabaseConfigurationFormType()
+           'SevenTag\InstallerBundle\Form\DatabaseConfigurationFormType' // new DatabaseConfigurationFormType()
         );
         $session = $this->get('session');
 

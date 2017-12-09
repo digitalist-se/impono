@@ -46,7 +46,7 @@ class UserController extends Controller
     public function createAdminAction(Request $request)
     {
         $form = $this->createForm(
-            new AdminUserFormType()
+           'SevenTag\InstallerBundle\Form\AdminUserFormType'
         );
 
         if ($request->isMethod('POST')) {

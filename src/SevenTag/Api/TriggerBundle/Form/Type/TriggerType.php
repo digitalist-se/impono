@@ -19,6 +19,7 @@
 namespace SevenTag\Api\TriggerBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -33,7 +34,7 @@ class TriggerType extends AbstractType
             ->add('name', null, [
                 'description' => 'Trigger name'
             ])
-            ->add('conditions', 'collection', [
+            ->add('conditions',  CollectionType::class, [
                 'type' => new ConditionType,
                 'allow_add' => true,
                 'allow_delete' => true,

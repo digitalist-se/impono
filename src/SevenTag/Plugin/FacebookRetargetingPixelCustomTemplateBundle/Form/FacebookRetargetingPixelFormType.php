@@ -20,6 +20,8 @@ namespace SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\Form;
 
 use SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\FacebookRetargetingPixelEvent;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Collection;
@@ -37,8 +39,8 @@ class FacebookRetargetingPixelFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('pixelId', 'text')
-            ->add('event', 'choice', [
+            ->add('pixelId', TextType::class)
+            ->add('event', ChoiceType::class, [
                 'choices' => $this->getChoices(),
                 'required' => true,
             ]);

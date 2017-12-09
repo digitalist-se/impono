@@ -18,8 +18,11 @@
 
 namespace SevenTag\Api\TagBundle\Form;
 
+use SevenTag\Api\AppBundle\Versionable\Form\Type\AccessibleType;
 use SevenTag\Api\TagBundle\Template\HolderInterface;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
@@ -59,14 +62,14 @@ class TagType extends AbstractType
             ->add('isActive', null, ['description' => 'Is tag active'])
             ->add(
                 'triggers',
-                'accessible',
+                AccessibleType::class,
                 [
                     'class' => 'SevenTag\Api\TriggerBundle\Entity\Trigger',
                     'description' => 'Trigger assigned to tag'
                 ]
             )
-            ->add('priority', 'integer', ['description' => 'Tag priority'])
-            ->add('template', 'text', ['description' => 'One of predefined tag templates']);
+            ->add('priority', IntegerType::class, ['description' => 'Tag priority'])
+            ->add('template', TextType::class, ['description' => 'One of predefined tag templates']);
 
         $builder->addEventListener(
             FormEvents::PRE_SUBMIT,

@@ -20,6 +20,8 @@ namespace SevenTag\Plugin\PiwikCustomTemplateBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Exception;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Collection;
@@ -38,8 +40,8 @@ class PiwikTrackGoalFormType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('id', 'integer')
-            ->add('value', 'text');
+        $builder->add('id', IntegerType::class)
+            ->add('value', TextType::class);
     }
 
     /**

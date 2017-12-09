@@ -20,6 +20,9 @@ namespace SevenTag\Plugin\GoogleAdwordsCustomTemplateBundle\Form;
 
 use SevenTag\Api\AppBundle\DataTransformer\StringToBooleanDataTransformer;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Choice;
@@ -46,11 +49,11 @@ class GoogleAdwordsTemplateFormType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('conversionId', 'text')
-            ->add('conversionLabel', 'text')
-            ->add('remarketingOnly', 'checkbox')
-            ->add('type', 'choice', ['choices' => $this->getAllowedTypes()])
-            ->add('conversionValue', 'text');
+        $builder->add('conversionId', TextType::class)
+            ->add('conversionLabel', TextType::class)
+            ->add('remarketingOnly', CheckboxType::class)
+            ->add('type', ChoiceType::class, ['choices' => $this->getAllowedTypes()])
+            ->add('conversionValue', TextType::class);
 
         $builder->get('remarketingOnly')
             ->addModelTransformer(new StringToBooleanDataTransformer());

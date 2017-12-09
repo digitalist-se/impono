@@ -20,6 +20,7 @@ namespace SevenTag\Api\UserBundle\Form;
 
 use SevenTag\Api\AppBundle\Language\LanguageProvider;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\LocaleType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -50,7 +51,7 @@ class OthersSettingsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('language', 'locale', [
+            ->add('language', LocaleType::class, [
                 'choices' => $this->languageProvider->getLanguages()
             ]);
     }

@@ -19,6 +19,9 @@
 namespace SevenTag\InstallerBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -38,7 +41,7 @@ class DatabaseConfigurationFormType extends AbstractType
         $builder
             ->add(
                 'hostname',
-                'text',
+                TextType::class,
                 [
                     'constraints' => [
                         new NotBlank()
@@ -50,7 +53,7 @@ class DatabaseConfigurationFormType extends AbstractType
             )
             ->add(
                 'name',
-                'text',
+                TextType::class,
                 [
                     'constraints' => [
                         new NotBlank(),
@@ -68,7 +71,7 @@ class DatabaseConfigurationFormType extends AbstractType
             )
             ->add(
                 'username',
-                'text',
+                TextType::class,
                 [
                     'constraints' => [
                         new NotBlank()
@@ -80,7 +83,7 @@ class DatabaseConfigurationFormType extends AbstractType
             )
             ->add(
                 'password',
-                'password',
+                PasswordType::class,
                 [
 
                     'attr' => [
@@ -90,7 +93,7 @@ class DatabaseConfigurationFormType extends AbstractType
             )
             ->add(
                 'createDatabase',
-                'checkbox'
+                CheckboxType::class
             );
     }
 

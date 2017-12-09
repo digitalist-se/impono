@@ -22,7 +22,9 @@ use FOS\OAuthServerBundle\Security\Firewall\OAuthListener as BaseOAuthListener;
 use OAuth2\OAuth2;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
-use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
+
+;
 
 /**
  * Class OAuthListener
@@ -44,7 +46,7 @@ class OAuthListener extends BaseOAuthListener
      * @param OAuthTokenUserResolver $tokenUserResolver
      */
     public function __construct(
-        SecurityContextInterface $securityContext,
+        TokenStorageInterface $securityContext,
         AuthenticationManagerInterface $authenticationManager,
         OAuth2 $serverService,
         OAuthTokenUserResolver $tokenUserResolver

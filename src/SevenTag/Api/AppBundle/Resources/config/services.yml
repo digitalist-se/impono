@@ -36,6 +36,7 @@ services:
 
     seven_tag.manifest_registry:
         class: SevenTag\Api\AppBundle\Plugin\ManifestRegistry
+        public: true
 
     seven_tag.manifest_containerjs_code_provider:
         class: SevenTag\Api\AppBundle\Plugin\ManifestContainerjsCodeProvider

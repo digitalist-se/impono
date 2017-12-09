@@ -20,6 +20,8 @@ namespace SevenTag\Plugin\PiwikCustomTemplateBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Exception;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Collection;
@@ -37,9 +39,9 @@ class PiwikTrackEventFormType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('category', 'text')
-            ->add('action', 'text')
-            ->add('values', 'collection', [
+        $builder->add('category', TextType::class)
+            ->add('action', TextType::class)
+            ->add('values', CollectionType::class, [
                 'type' => 'text',
                 'allow_add' => true,
                 'allow_delete' => true,

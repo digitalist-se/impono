@@ -22,6 +22,8 @@ use SevenTag\Api\AppBundle\DataTransformer\StringToBooleanDataTransformer;
 use SevenTag\Plugin\PiwikCustomTemplateBundle\ContentTracking;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Exception;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Choice;
@@ -41,8 +43,8 @@ class PiwikTemplateFormType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('piwikUrl', 'text')
-            ->add('piwikSiteId', 'integer');
+        $builder->add('piwikUrl', TextType::class)
+            ->add('piwikSiteId', IntegerType::class);
     }
 
     /**

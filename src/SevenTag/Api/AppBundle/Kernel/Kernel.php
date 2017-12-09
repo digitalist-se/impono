@@ -72,6 +72,7 @@ abstract class Kernel extends BaseKernel
             $bundles[] = new \Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
             $bundles[] = new \Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
+            $bundles[] = new \Symfony\Bundle\WebServerBundle\WebServerBundle();
         }
 
         return $bundles;

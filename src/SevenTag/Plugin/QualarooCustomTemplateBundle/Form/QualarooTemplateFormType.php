@@ -19,6 +19,7 @@
 namespace SevenTag\Plugin\QualarooCustomTemplateBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Collection;
@@ -36,8 +37,8 @@ class QualarooTemplateFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('customerId', 'text')
-            ->add('siteToken', 'text');
+            ->add('customerId', TextType::class)
+            ->add('siteToken', TextType::class);
     }
 
     /**

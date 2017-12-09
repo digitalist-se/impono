@@ -18,6 +18,7 @@
 
 namespace SevenTag\Api\UserBundle\Form;
 
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -36,7 +37,7 @@ class CreateType extends EditType
         parent::buildForm($builder, $options);
 
         $builder
-            ->add('email', 'email');
+            ->add('email', EmailType::class);
     }
 
     /**
