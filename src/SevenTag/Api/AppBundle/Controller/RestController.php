@@ -40,7 +40,7 @@ abstract class RestController extends BaseFOSRestController
             ->get('form.factory')
             ->createNamed(
                 '',
-                $formType,
+                get_class($formType),
                 $data,
                 [
                     'method' => $method,
