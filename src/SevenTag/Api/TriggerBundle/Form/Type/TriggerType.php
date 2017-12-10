@@ -35,7 +35,7 @@ class TriggerType extends AbstractType
                 'description' => 'Trigger name'
             ])
             ->add('conditions',  CollectionType::class, [
-                'type' => new ConditionType,
+                'entry_type' => ConditionType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference' => false

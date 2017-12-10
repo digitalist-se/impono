@@ -35,7 +35,7 @@ class CreateIntegrationType extends IntegrationType
         parent::buildForm($builder, $options);
 
         $builder
-            ->add('user', new IntegrationUserType());
+            ->add('user', IntegrationUserType::class);
     }
 
     /**

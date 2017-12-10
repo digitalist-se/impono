@@ -36,7 +36,7 @@ class ContainerWebsiteType extends AbstractType
     {
         $builder
             ->add('websites', CollectionType::class, [
-                'type' => 'seventag_container_website_type',
+                'entry_type' => 'seventag_container_website_type',
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference'=> false
