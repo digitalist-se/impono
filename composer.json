@@ -14,7 +14,7 @@
         "php": ">=5.3.3",
         "symfony/symfony": "3.4.*",
         "doctrine/orm": "^2.5.13",
-        "doctrine/dbal": "~2.5.13",
+        "doctrine/dbal": "2.5.13",
         "doctrine/doctrine-bundle": "~1.8",
         "twig/extensions": "~1.5",
         "symfony/assetic-bundle": "~2.8",
@@ -43,7 +43,7 @@
         "league/flysystem" : "1.0.*",
         "guzzlehttp/guzzle": "~6.3.0",
         "symfony/process" : "3.4.*",
-        "raven/raven": "^0.15.0",
+        "sentry/sentry-symfony": "^1.0",
         "sonata-project/notification-bundle": "^3.2",
         "liip/monitor-bundle": "^2.5",
         "symfony/dom-crawler" : "3.4.*",
@@ -67,7 +67,8 @@
         "coduo/php-matcher" : "2.1.*",
         "behat/mink-selenium2-driver": "^1.2",
         "satooshi/php-coveralls": "dev-master",
-        "symfony/web-server-bundle": "^3.4"
+        "symfony/web-server-bundle": "^3.4",
+        "mayflower/php-codebrowser": "^1.1"
     },
     "scripts": {
         "post-install-cmd": [

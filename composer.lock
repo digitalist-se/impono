@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf9fcc936d036ef2a9784bfd46fb13ae",
+    "content-hash": "f60e12b5abf971843e3a58f951fcb0a9",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -3833,61 +3833,6 @@
             "time": "2017-01-02T13:31:39+00:00"
         },
         {
-            "name": "raven/raven",
-            "version": "0.15.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/getsentry/raven-php.git",
-                "reference": "d544c531a34a1b0f69271a11a887b775be12b3d2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/raven-php/zipball/d544c531a34a1b0f69271a11a887b775be12b3d2",
-                "reference": "d544c531a34a1b0f69271a11a887b775be12b3d2",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "php": ">=5.2.4"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "^1.8.0",
-                "phpunit/phpunit": "^4.6.6"
-            },
-            "bin": [
-                "bin/raven"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.14.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Raven_": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "David Cramer",
-                    "email": "dcramer@gmail.com"
-                }
-            ],
-            "description": "A PHP client for Sentry (http://getsentry.com)",
-            "homepage": "http://getsentry.com",
-            "keywords": [
-                "log",
-                "logging"
-            ],
-            "abandoned": "sentry/sentry",
-            "time": "2016-04-29T11:50:04+00:00"
-        },
-        {
             "name": "sensio/distribution-bundle",
             "version": "v5.0.21",
             "source": {
@@ -4107,6 +4052,137 @@
             ],
             "description": "A security checker for your composer.lock",
             "time": "2017-10-29T18:48:08+00:00"
+        },
+        {
+            "name": "sentry/sentry",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsentry/sentry-php.git",
+                "reference": "3e4bb1486cd4e09869cb3342aef374788d540f1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/3e4bb1486cd4e09869cb3342aef374788d540f1c",
+                "reference": "3e4bb1486cd4e09869cb3342aef374788d540f1c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": "^5.3|^7.0"
+            },
+            "conflict": {
+                "raven/raven": "*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.8.0",
+                "monolog/monolog": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "suggest": {
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "monolog/monolog": "Automatically capture Monolog events as breadcrumbs"
+            },
+            "bin": [
+                "bin/sentry"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Raven_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "David Cramer",
+                    "email": "dcramer@gmail.com"
+                }
+            ],
+            "description": "A PHP client for Sentry (http://getsentry.com)",
+            "homepage": "http://getsentry.com",
+            "keywords": [
+                "log",
+                "logging"
+            ],
+            "time": "2017-11-09T17:44:23+00:00"
+        },
+        {
+            "name": "sentry/sentry-symfony",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getsentry/sentry-symfony.git",
+                "reference": "988a3d931a15afb54cda5af291c8966689e4b468"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getsentry/sentry-symfony/zipball/988a3d931a15afb54cda5af291c8966689e4b468",
+                "reference": "988a3d931a15afb54cda5af291c8966689e4b468",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6|^7.0",
+                "sentry/sentry": "^1.8",
+                "symfony/config": "^2.7|^3.0",
+                "symfony/console": "^2.7|^3.0",
+                "symfony/dependency-injection": "^2.7|^3.0",
+                "symfony/event-dispatcher": "^2.7|^3.0",
+                "symfony/http-kernel": "^2.7|^3.0",
+                "symfony/security-core": "^2.7|^3.0",
+                "symfony/yaml": "^2.7|^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.5",
+                "phpunit/phpunit": "^5.7|^6.0",
+                "scrutinizer/ocular": "^1.4"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "master": "2.0.x-dev",
+                    "releases/0.8.x": "0.8.x-dev",
+                    "releases/1.x": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sentry\\SentryBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Cramer",
+                    "email": "dcramer@gmail.com"
+                },
+                {
+                    "name": "Alessandro Lai",
+                    "email": "alessandro.lai85@gmail.com"
+                }
+            ],
+            "description": "Symfony integration for Sentry (http://getsentry.com)",
+            "homepage": "http://getsentry.com",
+            "keywords": [
+                "errors",
+                "logging",
+                "sentry",
+                "symfony"
+            ],
+            "time": "2017-12-04T13:42:45+00:00"
         },
         {
             "name": "sonata-project/core-bundle",
@@ -6671,6 +6747,56 @@
                 "Symfony2"
             ],
             "time": "2017-06-19T09:12:22+00:00"
+        },
+        {
+            "name": "mayflower/php-codebrowser",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mayflower/PHP_CodeBrowser.git",
+                "reference": "e4f9e29f4aaea3c636254978b239900bd54df51c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mayflower/PHP_CodeBrowser/zipball/e4f9e29f4aaea3c636254978b239900bd54df51c",
+                "reference": "e4f9e29f4aaea3c636254978b239900bd54df51c",
+                "shasum": ""
+            },
+            "require": {
+                "monolog/monolog": "~1.7",
+                "phpunit/php-file-iterator": "~1.3",
+                "symfony/console": "~2.1|~3.0"
+            },
+            "require-dev": {
+                "phploc/phploc": "*",
+                "phpmd/phpmd": "1.5.*",
+                "phpunit/phpunit": "3.7.*",
+                "sebastian/phpcpd": "*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "bin": [
+                "bin/phpcb"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPCodeBrowser\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Robin Gloster",
+                    "email": "robin.gloster@mayflower.de",
+                    "role": "developer"
+                }
+            ],
+            "description": "A code browser that augments the code with information from various QA tools.",
+            "homepage": "https://github.com/Mayflower/PHP_CodeBrowser",
+            "time": "2017-12-06T14:41:26+00:00"
         },
         {
             "name": "openlss/lib-array2xml",
