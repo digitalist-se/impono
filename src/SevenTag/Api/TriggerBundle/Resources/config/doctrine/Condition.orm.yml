@@ -1,6 +1,6 @@
 SevenTag\Api\TriggerBundle\Entity\Condition:
   type: entity
-  table: condition
+  table: '`condition`'
   repositoryClass: SevenTag\Api\TriggerBundle\Entity\TriggerRepository
   id:
     id:
@@ -13,7 +13,7 @@ SevenTag\Api\TriggerBundle\Entity\Condition:
       type: string
       length: 255
     condition:
-      column: condition
+      column: '`condition`'
       type: string
       length: 255
     value:
