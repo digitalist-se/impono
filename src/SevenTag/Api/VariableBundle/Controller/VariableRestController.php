@@ -20,7 +20,7 @@ namespace SevenTag\Api\VariableBundle\Controller;
 
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\View\View;
-use FOS\RestBundle\Util\Codes;
+use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -137,7 +137,7 @@ class VariableRestController extends RestController
             return ['data' => $variable];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -182,7 +182,7 @@ class VariableRestController extends RestController
         $this->get('seven_tag_variable.repository.variable_repository')
             ->delete($variable);
 
-        return $this->view('', Codes::HTTP_NO_CONTENT);
+        return $this->view('', Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -270,7 +270,7 @@ class VariableRestController extends RestController
             return ['data' => $variable];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**

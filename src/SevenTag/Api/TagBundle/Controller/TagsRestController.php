@@ -24,7 +24,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcherInterface;
-use FOS\RestBundle\Util\Codes;
+use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use SevenTag\Component\Tag\Model\Tag;
 use SevenTag\Component\Tag\Model\TagInterface;
@@ -139,7 +139,7 @@ class TagsRestController extends RestController
             return ['data' => $tag];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -179,7 +179,7 @@ class TagsRestController extends RestController
         $this->get('seven_tag_tag.repository.tag_repository')
             ->delete($tag);
 
-        return $this->view('', Codes::HTTP_NO_CONTENT);
+        return $this->view('', Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -328,6 +328,6 @@ class TagsRestController extends RestController
             return ['data' => $tag];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 }

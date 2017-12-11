@@ -1,6 +1,6 @@
 SevenTag\Api\UserBundle\Entity\User:
     type: entity
-    table: user
+    table: '`user`'
     repositoryClass: SevenTag\Api\UserBundle\Entity\UserRepository
     manyToMany:
         groups:

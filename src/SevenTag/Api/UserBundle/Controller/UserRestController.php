@@ -20,7 +20,6 @@ namespace SevenTag\Api\UserBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcherInterface;
-use FOS\RestBundle\Util\Codes;
 use FOS\RestBundle\View\View;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -29,6 +28,7 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use SevenTag\Api\UserBundle\Entity\User;
 use SevenTag\Api\UserBundle\Entity\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use SevenTag\Api\AppBundle\Controller\RestController;
@@ -79,7 +79,7 @@ class UserRestController extends RestController
             return ['data' => $user];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -108,7 +108,7 @@ class UserRestController extends RestController
             return ['data' => $user];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -155,7 +155,7 @@ class UserRestController extends RestController
             ];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -172,7 +172,7 @@ class UserRestController extends RestController
     {
         $this->get('seven_tag_user.reset_password.request')->handle($userRequest);
 
-        return $this->view('', Codes::HTTP_NO_CONTENT);
+        return $this->view('', Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -190,7 +190,7 @@ class UserRestController extends RestController
         $this->get('fos_user.user_manager')
             ->deleteUser($userRequest);
 
-        return $this->view('', Codes::HTTP_NO_CONTENT);
+        return $this->view('', Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -257,7 +257,7 @@ class UserRestController extends RestController
             return ['data' => $user];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -285,7 +285,7 @@ class UserRestController extends RestController
             return ['data' => $user];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**

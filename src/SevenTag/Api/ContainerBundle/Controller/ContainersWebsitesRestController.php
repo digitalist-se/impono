@@ -20,7 +20,7 @@ namespace SevenTag\Api\ContainerBundle\Controller;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use FOS\RestBundle\Util\Codes;
+use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -135,6 +135,6 @@ class ContainersWebsitesRestController extends RestController
             return ['data' => $container];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 }

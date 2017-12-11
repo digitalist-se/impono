@@ -20,7 +20,7 @@ namespace SevenTag\Api\ContainerBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcherInterface;
-use FOS\RestBundle\Util\Codes;
+use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use SevenTag\Api\AppBundle\Rest\View as RestView;
@@ -295,7 +295,7 @@ class ContainersRestController extends RestController
 
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -362,7 +362,7 @@ class ContainersRestController extends RestController
 
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 
     /**
@@ -461,7 +461,7 @@ class ContainersRestController extends RestController
         $this->get('event_dispatcher')
             ->dispatch(Events::CONTAINER_REMOVED, new ContainerLibraryEvent($container));
 
-        return $this->view('', Codes::HTTP_NO_CONTENT);
+        return $this->view('', Response::HTTP_NO_CONTENT);
     }
 
     /**
@@ -572,6 +572,6 @@ class ContainersRestController extends RestController
             return ['data' => $container];
         }
 
-        return $this->view($form, Codes::HTTP_BAD_REQUEST);
+        return $this->view($form, Response::HTTP_BAD_REQUEST);
     }
 }
