@@ -37,7 +37,7 @@ let gulp = require('gulp-help')(require('gulp')),
     path = require('path');
 
 let env = argv.env || 'prod',
-    baseUrl = argv.specs || 'http://7tag.dev/';
+    baseUrl = argv.specs || 'http://impono.dev/';
 
 process.env.PHANTOMJS_BIN = 'node_modules/.bin/phantomjs';
 
