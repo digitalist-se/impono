@@ -334,7 +334,7 @@ class ContainersRestController extends RestController
      * )
      *
      * @param ContainerInterface $container
-     * @return array
+     * @return View|array
      */
     public function putContainersPermissionsAction(ContainerInterface $container)
     {

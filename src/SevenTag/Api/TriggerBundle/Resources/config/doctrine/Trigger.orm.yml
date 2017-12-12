@@ -1,6 +1,6 @@
 SevenTag\Api\TriggerBundle\Entity\Trigger:
   type: entity
-  table: "`trigger`"
+  table: '`trigger`'
   repositoryClass: SevenTag\Api\TriggerBundle\Entity\TriggerRepository
   indexes:
     triggerUpdatedAt:

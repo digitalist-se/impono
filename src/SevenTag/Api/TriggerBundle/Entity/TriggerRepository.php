@@ -22,7 +22,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\QueryBuilder;
 use SevenTag\Api\AppBundle\Versionable\VersionableRepositoryInterface;
-use SevenTag\Component\Container\Model\Container;
+use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Component\Model\Repository\EntityRepository;
 
 class TriggerRepository extends EntityRepository implements VersionableRepositoryInterface
@@ -42,14 +42,14 @@ class TriggerRepository extends EntityRepository implements VersionableRepositor
     }
 
     /**
-     * @param Container $container
+     * @param ContainerInterface $container
      * @param integer $limit
      * @param integer $offset
      * @param array $excludeTriggers
      *
      * @return ArrayCollection
      */
-    public function findByContainer(Container $container, $limit = 20, $offset = 0, array $excludeTriggers = [], array $types = [])
+    public function findByContainer(ContainerInterface $container, $limit = 20, $offset = 0, array $excludeTriggers = [], array $types = [])
     {
         $queryBuilder = $this->getBaseQuery(true)
             ->select('t')
@@ -77,12 +77,12 @@ class TriggerRepository extends EntityRepository implements VersionableRepositor
     }
 
     /**
-     * @param Container $container
+     * @param ContainerInterface $container
      * @param array $excludeTriggers
      *
      * @return int
      */
-    public function countByContainer(Container $container, array $excludeTriggers = [], array $types = [])
+    public function countByContainer(ContainerInterface $container, array $excludeTriggers = [], array $types = [])
     {
         $queryBuilder = $this->getBaseQuery(true)
             ->select('count(t.id)')
