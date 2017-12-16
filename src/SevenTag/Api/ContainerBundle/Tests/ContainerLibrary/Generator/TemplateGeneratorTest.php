@@ -20,9 +20,9 @@ namespace SevenTag\Api\ContainerBundle\Tests\ContainerLibrary\Generator;
 
 use Prophecy\Argument;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Generator\TemplateGenerator;
-use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Loader\LoaderInterface;
-use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\HandlerInterface;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
+use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\HandlerInterface;
+use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Loader\LoaderInterface;
 
 /**
  * Class TemplateGeneratorTest

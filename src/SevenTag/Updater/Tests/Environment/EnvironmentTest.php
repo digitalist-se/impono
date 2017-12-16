@@ -18,9 +18,9 @@
 
 namespace SevenTag\Updater\Tests\Environment;
 
+use Psr\Log\LoggerInterface;
 use SevenTag\Updater\Environment\Environment;
 use SevenTag\Updater\Instance\InstanceInterface;
-use Psr\Log\LoggerInterface;
 
 /**
  * Class EnvironmentTest

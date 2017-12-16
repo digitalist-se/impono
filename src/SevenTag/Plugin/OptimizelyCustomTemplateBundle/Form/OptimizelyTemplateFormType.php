@@ -66,7 +66,7 @@ class OptimizelyTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'optimizely_template_form_type';
     }

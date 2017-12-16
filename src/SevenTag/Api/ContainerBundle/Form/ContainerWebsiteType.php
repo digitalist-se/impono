@@ -56,7 +56,7 @@ class ContainerWebsiteType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'seventag_container_container_website_type';
     }

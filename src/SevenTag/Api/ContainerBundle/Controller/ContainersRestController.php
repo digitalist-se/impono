@@ -20,20 +20,20 @@ namespace SevenTag\Api\ContainerBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcherInterface;
-use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use SevenTag\Api\AppBundle\Controller\RestController;
 use SevenTag\Api\AppBundle\Rest\View as RestView;
 use SevenTag\Api\AppBundle\Search\Criteria;
-use SevenTag\Api\ContainerBundle\Entity\ContainerPermission;
-use SevenTag\Api\AppBundle\Controller\RestController;
-use SevenTag\Component\Container\Model\Container;
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\ContainerLibraryEvent;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Events;
+use SevenTag\Api\ContainerBundle\Entity\ContainerPermission;
 use SevenTag\Api\ContainerBundle\Entity\ContainerRepository;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use SevenTag\Api\SecurityBundle\Acl\PermissionMap;
+use SevenTag\Component\Container\Model\Container;
+use SevenTag\Component\Container\Model\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class ContainersRestController

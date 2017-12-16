@@ -20,11 +20,11 @@ namespace SevenTag\Api\SecurityBundle\Serializer\Subscriber;
 
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\ObjectEvent;
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\ContainerBundle\Entity\Container;
 use SevenTag\Api\SecurityBundle\Utils\BitMaskToPermissionsMapperInterface;
 use SevenTag\Api\SecurityBundle\Utils\UserMaskResolverInterface;
 use SevenTag\Api\UserBundle\Entity\User;
+use SevenTag\Component\Container\Model\ContainerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 

@@ -19,9 +19,9 @@
 namespace SevenTag\Api\ContainerBundle\Tests\ContainerLibrary\Template\Handler;
 
 use Prophecy\Argument;
+use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\ChainHandler;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\HandlerInterface;
-use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
 
 /**
  * Class ChainHandlerTest

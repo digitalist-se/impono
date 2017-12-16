@@ -70,7 +70,7 @@ class PiwikTrackEventFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'piwik_track_event_form_type';
     }

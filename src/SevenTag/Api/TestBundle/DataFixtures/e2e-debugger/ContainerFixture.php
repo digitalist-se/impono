@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\TestBundle\DataFixtures\e2eDebugger;
 
-use SevenTag\Api\ContainerBundle\Entity\Container;
-use SevenTag\Api\UserBundle\DataFixtures\ORM\UserFixture;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use SevenTag\Api\ContainerBundle\Entity\Container;
+use SevenTag\Api\UserBundle\DataFixtures\ORM\UserFixture;
 
 /**
  * Class ContainerFixture

@@ -18,11 +18,11 @@
 
 namespace SevenTag\Component\Tag\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use SevenTag\Api\AppBundle\Versionable\VersionableInterface;
 use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Component\Model\Model\TimestampableInterface;
 use SevenTag\Component\Trigger\Model\TriggerInterface;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Interface TagInterface

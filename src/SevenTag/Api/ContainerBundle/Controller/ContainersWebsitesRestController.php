@@ -20,7 +20,6 @@ namespace SevenTag\Api\ContainerBundle\Controller;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -28,6 +27,7 @@ use SevenTag\Api\AppBundle\Controller\RestController;
 use SevenTag\Api\AppBundle\Rest\View as RestView;
 use SevenTag\Api\SecurityBundle\Acl\PermissionMap;
 use SevenTag\Component\Container\Model\ContainerInterface;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class ContainersRestController

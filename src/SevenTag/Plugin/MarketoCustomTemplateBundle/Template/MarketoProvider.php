@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\MarketoCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\MarketoCustomTemplateBundle\Form\MarketoFormType;
 use Symfony\Component\Form\FormTypeInterface;
 
 /**
@@ -43,7 +44,7 @@ class MarketoProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'marketo_form_type';
+        return MarketoFormType::class;
     }
 
     /**

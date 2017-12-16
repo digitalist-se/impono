@@ -18,15 +18,15 @@
 
 namespace SevenTag\Api\AppBundle\Serializer\Handler;
 
-use JMS\Serializer\Handler\SubscribingHandlerInterface;
-use JMS\Serializer\YamlSerializationVisitor;
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\GraphNavigator;
 use JMS\Serializer\GenericSerializationVisitor;
+use JMS\Serializer\GraphNavigator;
+use JMS\Serializer\Handler\SubscribingHandlerInterface;
+use JMS\Serializer\JsonSerializationVisitor;
+use JMS\Serializer\XmlSerializationVisitor;
+use JMS\Serializer\YamlSerializationVisitor;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Translation\TranslatorInterface;
-use JMS\Serializer\XmlSerializationVisitor;
 
 /**
  * Class ExceptionWrapperHandler

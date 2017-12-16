@@ -18,18 +18,18 @@
 
 namespace SevenTag\Api\TagBundle\Controller;
 
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use SevenTag\Api\SecurityBundle\Acl\PermissionMap;
 use Doctrine\Common\Collections\ArrayCollection;
-use FOS\RestBundle\View\View;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcherInterface;
-use Symfony\Component\HttpFoundation\Response;
+use FOS\RestBundle\View\View;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use SevenTag\Api\AppBundle\Controller\RestController;
+use SevenTag\Api\SecurityBundle\Acl\PermissionMap;
+use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Component\Tag\Model\Tag;
 use SevenTag\Component\Tag\Model\TagInterface;
-use SevenTag\Component\Container\Model\ContainerInterface;
-use SevenTag\Api\AppBundle\Controller\RestController;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class TagsRestController

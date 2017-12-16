@@ -20,11 +20,11 @@ namespace SevenTag\Component\Trigger\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use SevenTag\Api\AppBundle\Versionable\Traits\VersionableEntity;
-use SevenTag\Component\Model\Traits\TimestampableEntity;
+use SevenTag\Api\TriggerBundle\TriggerType\Type\TypeInterface;
 use SevenTag\Component\Condition\Model\ConditionInterface;
 use SevenTag\Component\Container\Model\ContainerInterface;
+use SevenTag\Component\Model\Traits\TimestampableEntity;
 use SevenTag\Component\Tag\Model\TagInterface;
-use SevenTag\Api\TriggerBundle\TriggerType\Type\TypeInterface;
 
 class Trigger implements TriggerInterface
 {

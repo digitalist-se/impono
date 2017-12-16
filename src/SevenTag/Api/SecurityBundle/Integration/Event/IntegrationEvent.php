@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\SecurityBundle\Integration\Event;
 
-use Symfony\Component\EventDispatcher\Event;
 use SevenTag\Component\Integration\Model\IntegrationInterface;
+use Symfony\Component\EventDispatcher\Event;
 
 /**
  * Class IntegrationEvent

@@ -21,10 +21,10 @@ namespace SevenTag\Api\TestBundle\DataFixtures\e2eDebugger;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\Proxy\Exception\OutOfBoundsException;
+use SevenTag\Api\TriggerBundle\Entity\Condition;
 use SevenTag\Api\TriggerBundle\Entity\Trigger;
 use SevenTag\Api\TriggerBundle\TriggerType\Type\TypeInterface;
-use SevenTag\Api\TriggerBundle\Entity\Condition;
-use Doctrine\Common\Proxy\Exception\OutOfBoundsException;
 
 /**
  * Class TriggerFixture

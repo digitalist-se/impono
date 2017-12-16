@@ -19,12 +19,12 @@
 namespace SevenTag\Api\SecurityBundle\Tests\Utils;
 
 use Prophecy\Argument;
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermission;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermissionRepository;
 use SevenTag\Api\SecurityBundle\Acl\MaskBuilder;
-use SevenTag\Api\UserBundle\Entity\User;
 use SevenTag\Api\SecurityBundle\Utils\UserMaskResolver;
+use SevenTag\Api\UserBundle\Entity\User;
+use SevenTag\Component\Container\Model\ContainerInterface;
 
 /**
  * Class UserMaskResolverTest

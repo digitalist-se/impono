@@ -19,6 +19,7 @@
 namespace SevenTag\Api\AppBundle\Tests\Versionable;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Callback;
@@ -37,7 +38,7 @@ class NestedType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nested_name', 'text', [
+            ->add('nested_name', TextType::class, [
                 'constraints' => [
                     new NotBlank()
                 ]
@@ -69,7 +70,7 @@ class NestedType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'nexted';
     }

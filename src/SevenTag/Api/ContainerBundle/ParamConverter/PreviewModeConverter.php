@@ -22,10 +22,10 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\ParamConverterInterface;
 use SevenTag\Api\ContainerBundle\Entity\ContainerRepository;
+use SevenTag\Api\ContainerBundle\ModeResolver\ModeResolverInterface;
+use SevenTag\Component\Container\Model\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use SevenTag\Component\Container\Model\ContainerInterface;
-use SevenTag\Api\ContainerBundle\ModeResolver\ModeResolverInterface;
 
 /**
  * Class PreviewModeConverter

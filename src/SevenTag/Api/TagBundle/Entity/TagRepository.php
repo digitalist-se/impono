@@ -22,9 +22,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Query\Expr;
 use Doctrine\ORM\QueryBuilder;
 use SevenTag\Api\AppBundle\Versionable\VersionableRepositoryInterface;
+use SevenTag\Api\UserBundle\Entity\User;
 use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Component\Model\Repository\EntityRepository as BaseEntityRepository;
-use SevenTag\Api\UserBundle\Entity\User;
 
 /**
  * TagRepository

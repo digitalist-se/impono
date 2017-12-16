@@ -22,9 +22,9 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use SevenTag\Api\TestBundle\DataFixtures\e2e\ContainerFixture;
-use SevenTag\Api\TriggerBundle\Entity\Trigger;
 use SevenTag\Api\TestBundle\DataFixtures\e2e\TagFixture;
 use SevenTag\Api\TriggerBundle\Entity\Condition;
+use SevenTag\Api\TriggerBundle\Entity\Trigger;
 
 /**
  * Class TriggerFixture

@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\CrazyEggCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\CrazyEggCustomTemplateBundle\Form\CrazyEggTemplateFormType;
 
 /**
  * Class CrazyEggProvider
@@ -42,7 +43,7 @@ class CrazyEggProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'crazy_egg_template_form_type';
+        return CrazyEggTemplateFormType::class;
     }
 
     /**

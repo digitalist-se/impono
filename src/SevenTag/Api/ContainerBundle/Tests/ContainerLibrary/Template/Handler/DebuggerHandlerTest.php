@@ -19,9 +19,9 @@
 namespace SevenTag\Api\ContainerBundle\Tests\ContainerLibrary\Template\Handler;
 
 use Prophecy\Argument;
+use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\DebuggerHandler;
 use SevenTag\Api\ContainerBundle\ModeResolver\ModeResolverInterface;
-use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
 use SevenTag\Component\Container\Model\ContainerInterface;
 
 /**

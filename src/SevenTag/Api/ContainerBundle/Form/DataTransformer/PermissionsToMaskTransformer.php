@@ -19,8 +19,8 @@
 namespace SevenTag\Api\ContainerBundle\Form\DataTransformer;
 
 use SevenTag\Api\SecurityBundle\Acl\MaskBuilder;
-use Symfony\Component\Form\DataTransformerInterface;
 use SevenTag\Api\SecurityBundle\Permissions;
+use Symfony\Component\Form\DataTransformerInterface;
 
 /**
  * Class PermissionsToMaskTransformer

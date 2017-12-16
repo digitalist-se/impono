@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\TriggerBundle\Validator\Constraints;
 
-use SevenTag\Component\Trigger\Model\TriggerInterface;
 use SevenTag\Api\TriggerBundle\TriggerType\Holder\HolderInterface;
+use SevenTag\Component\Trigger\Model\TriggerInterface;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 

@@ -18,13 +18,13 @@
 
 namespace SevenTag\Api\TriggerBundle\TriggerType\ViewPreparator;
 
-use Prophecy\Argument;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\EntityRepository;
+use Prophecy\Argument;
 use SevenTag\Api\TriggerBundle\TriggerType\Holder\HolderInterface;
+use SevenTag\Api\VariableBundle\Provider\VariableProvider;
 use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Component\Variable\Model\Variable;
-use Doctrine\ORM\EntityRepository;
-use SevenTag\Api\VariableBundle\Provider\VariableProvider;
 
 /**
  * Class ViewPreparatorTest

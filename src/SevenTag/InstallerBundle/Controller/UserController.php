@@ -18,10 +18,10 @@
 
 namespace SevenTag\InstallerBundle\Controller;
 
-use SevenTag\InstallerBundle\Form\AdminUserFormType;
-use SevenTag\InstallerBundle\Service\ConnectionProvider;
 use SevenTag\Api\SecurityBundle\Entity\Client;
 use SevenTag\Api\UserBundle\Entity\User;
+use SevenTag\InstallerBundle\Form\AdminUserFormType;
+use SevenTag\InstallerBundle\Service\ConnectionProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Form\FormInterface;

@@ -23,8 +23,8 @@ use SevenTag\Api\ContainerBundle\Entity\ContainerPermissionRepository;
 use SevenTag\Api\SecurityBundle\Acl\MaskBuilder;
 use SevenTag\Api\SecurityBundle\Permissions;
 use SevenTag\Api\SecurityBundle\Utils\BitMaskToPermissionsMapper;
-use SevenTag\Api\UserBundle\Entity\User;
 use SevenTag\Api\SecurityBundle\Utils\UserPermissionsMapProvider;
+use SevenTag\Api\UserBundle\Entity\User;
 
 /**
  * Class UserPermissionsMapProviderTest

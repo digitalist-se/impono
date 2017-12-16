@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\TestBundle\DataFixtures\e2e;
 
-use SevenTag\Api\TestBundle\DataFixtures\e2e\ContainerFixture;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use SevenTag\Api\TagBundle\Entity\Tag;
+use SevenTag\Api\TestBundle\DataFixtures\e2e\ContainerFixture;
 
 /**
  * Class TagFixture

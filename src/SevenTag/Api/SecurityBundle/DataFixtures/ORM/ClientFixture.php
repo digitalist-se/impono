@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\SecurityBundle\DataFixtures\ORM;
 
-use SevenTag\Api\SecurityBundle\Entity\Client;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use SevenTag\Api\SecurityBundle\Entity\Client;
 
 class ClientFixture extends AbstractFixture implements OrderedFixtureInterface
 {

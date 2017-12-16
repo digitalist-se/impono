@@ -18,6 +18,7 @@
 
 namespace SevenTag\Api\ContainerBundle\Command;
 
+use Gaufrette\Filesystem;
 use SevenTag\Api\AppBundle\Versionable\VersionManager\VersionManager;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Generator\GeneratorInterface;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
@@ -26,7 +27,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Gaufrette\Filesystem;
 
 class JavascriptGeneratorCommand extends Command
 {

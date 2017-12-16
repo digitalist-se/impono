@@ -64,7 +64,7 @@ class FacebookRetargetingPixelFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'facebook_retargeting_pixel_form_type';
     }

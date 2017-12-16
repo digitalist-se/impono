@@ -20,8 +20,8 @@ namespace SevenTag\Api\ContainerBundle\Tests\ContainerLibrary\Template\Handler;
 
 use Prophecy\Argument;
 use SevenTag\Api\AppBundle\Plugin\ManifestContainerjsCodeProvider;
-use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\ContainerjsConfigHandler;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
+use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\ContainerjsConfigHandler;
 
 /**
  * Class ContainerjsConfigHandlerTest

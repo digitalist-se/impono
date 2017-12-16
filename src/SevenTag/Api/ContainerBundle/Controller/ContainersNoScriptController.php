@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\ContainerBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use SevenTag\Api\AppBundle\Controller\RestController;
 use SevenTag\Component\Container\Model\ContainerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class ContainersNoScriptController extends RestController
 {

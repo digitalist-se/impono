@@ -57,7 +57,7 @@ class GoogleAnalyticsTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'google_analytics_template_form_type';
     }

@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\ClickTaleCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\ClickTaleCustomTemplateBundle\Form\ClickTaleTemplateFormType;
 
 /**
  * Class ClickTaleProvider
@@ -42,7 +43,7 @@ class ClickTaleProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'click_tale_template_form_type';
+        return ClickTaleTemplateFormType::class;
     }
 
     /**

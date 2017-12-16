@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\SecurityBundle\Http\Logout;
 
-use SevenTag\Api\SecurityBundle\Entity\AccessTokenRepository;
 use FOS\OAuthServerBundle\Security\Authentication\Token\OAuthToken;
+use SevenTag\Api\SecurityBundle\Entity\AccessTokenRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;

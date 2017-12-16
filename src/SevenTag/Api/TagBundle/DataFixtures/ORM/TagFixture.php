@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\TagBundle\DataFixtures\ORM;
 
-use SevenTag\Api\AppBundle\DataFixtures\ORM\VersionFixture;
-use SevenTag\Api\ContainerBundle\DataFixtures\ORM\ContainerFixture;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use SevenTag\Api\AppBundle\DataFixtures\ORM\VersionFixture;
+use SevenTag\Api\ContainerBundle\DataFixtures\ORM\ContainerFixture;
 use SevenTag\Api\TagBundle\Entity\Tag;
 
 /**

@@ -56,7 +56,7 @@ class CrazyEggTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'crazy_egg_template_form_type';
     }

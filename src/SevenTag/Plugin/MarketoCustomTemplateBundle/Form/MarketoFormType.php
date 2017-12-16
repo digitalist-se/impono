@@ -56,7 +56,7 @@ class MarketoFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'marketo_form_type';
     }

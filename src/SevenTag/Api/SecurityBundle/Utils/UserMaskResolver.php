@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\SecurityBundle\Utils;
 
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermission;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermissionRepository;
 use SevenTag\Api\SecurityBundle\Acl\MaskBuilder;
 use SevenTag\Api\UserBundle\Entity\User;
+use SevenTag\Component\Container\Model\ContainerInterface;
 
 /**
  * Class UserMaskResolver

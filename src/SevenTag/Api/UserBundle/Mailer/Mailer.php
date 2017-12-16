@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\UserBundle\Mailer;
 
-use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\Templating\EngineInterface;
 use FOS\UserBundle\Mailer\MailerInterface;
 use FOS\UserBundle\Model\UserInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Templating\EngineInterface;
 
 class Mailer implements MailerInterface
 {

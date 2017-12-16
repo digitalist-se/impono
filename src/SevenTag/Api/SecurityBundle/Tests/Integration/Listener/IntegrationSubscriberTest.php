@@ -19,11 +19,11 @@
 namespace SevenTag\Api\SecurityBundle\Tests\Integration\Listener;
 
 use Prophecy\Argument;
-use SevenTag\Api\UserBundle\Entity\User;
 use SevenTag\Api\SecurityBundle\Entity\Integration;
 use SevenTag\Api\SecurityBundle\Integration\Event\IntegrationEvent;
 use SevenTag\Api\SecurityBundle\Integration\Listener\IntegrationSubscriber;
 use SevenTag\Api\SecurityBundle\Integration\UserManipulator\UserManipulator;
+use SevenTag\Api\UserBundle\Entity\User;
 
 /**
  * Class IntegrationSubscriberTest

@@ -19,9 +19,9 @@
 namespace SevenTag\Api\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
-use SevenTag\Component\User\Model\UserInterface;
 use SevenTag\Component\Model\Model\TimestampableInterface;
 use SevenTag\Component\Model\Traits\TimestampableEntity;
+use SevenTag\Component\User\Model\UserInterface;
 
 /**
  * Class User

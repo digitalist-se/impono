@@ -20,8 +20,8 @@ namespace SevenTag\Plugin\MarketoCustomTemplateBundle\Tests\Template;
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 use SevenTag\Api\TagBundle\Entity\Tag;
-use SevenTag\Plugin\MarketoCustomTemplateBundle\Template\MarketoProvider;
 use SevenTag\Plugin\MarketoCustomTemplateBundle\Form\MarketoFormType;
+use SevenTag\Plugin\MarketoCustomTemplateBundle\Template\MarketoProvider;
 
 /**
  * Class MarketoProviderTest

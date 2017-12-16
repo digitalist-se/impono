@@ -50,7 +50,7 @@ class IntegrationUserType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'seventag_securitybundle_integrationuser_type';
     }

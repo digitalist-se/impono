@@ -17,12 +17,12 @@
  */
 namespace SevenTag\InstallerBundle\Service;
 
+use SevenTag\InstallerBundle\Service\Requirement\DatabaseRequirement;
+use SevenTag\InstallerBundle\Service\Requirement\PhpRequirement;
 use SevenTag\InstallerBundle\Service\Requirement\RequirementCollection;
+use SevenTag\InstallerBundle\Service\Requirement\SystemRequirement;
 use SevenTag\InstallerBundle\Service\SystemContext;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use SevenTag\InstallerBundle\Service\Requirement\PhpRequirement;
-use SevenTag\InstallerBundle\Service\Requirement\DatabaseRequirement;
-use SevenTag\InstallerBundle\Service\Requirement\SystemRequirement;
 
 /**
  * Bridge between system and application.

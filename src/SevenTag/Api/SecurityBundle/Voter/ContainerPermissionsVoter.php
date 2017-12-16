@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\SecurityBundle\Voter;
 
+use SevenTag\Api\ContainerBundle\Entity\Container;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermission;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermissionRepository;
 use SevenTag\Api\SecurityBundle\Acl\PermissionMap;
 use SevenTag\Api\UserBundle\Entity\User;
-use SevenTag\Api\ContainerBundle\Entity\Container;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Symfony\Component\Security\Core\User\UserInterface;

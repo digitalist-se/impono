@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\OptimizelyCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\OptimizelyCustomTemplateBundle\Form\OptimizelyTemplateFormType;
 
 /**
  * Class OptimizelyProvider
@@ -42,7 +43,7 @@ class OptimizelyProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'optimizely_template_form_type';
+        return OptimizelyTemplateFormType::class;
     }
 
     /**

@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\ContainerBundle\TagTree\Builder;
 
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\ContainerBundle\TagTree\Handler\HandlerInterface;
+use SevenTag\Component\Container\Model\ContainerInterface;
 
 /**
  * Class TagTreeBuilder

@@ -19,10 +19,10 @@
 namespace SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\Tests\Template;
 
 use Liip\FunctionalTestBundle\Test\WebTestCase;
+use SevenTag\Api\TagBundle\Entity\Tag;
 use SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\FacebookRetargetingPixelEvent;
 use SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\Form\FacebookRetargetingPixelFormType;
 use SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\Template\FacebookRetargetingPixelProvider;
-use SevenTag\Api\TagBundle\Entity\Tag;
 
 /**
  * Class FacebookRetargetingPixelProviderTest

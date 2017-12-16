@@ -18,6 +18,7 @@
 
 namespace SevenTag\Api\ContainerBundle\Command;
 
+use Gaufrette\Filesystem;
 use SevenTag\Api\ContainerBundle\Entity\ContainerRepository;
 use SevenTag\Api\ContainerBundle\TagTree\Builder\TagTreeBuilderInterface;
 use Symfony\Bridge\Twig\TwigEngine;
@@ -25,7 +26,6 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Gaufrette\Filesystem;
 use Symfony\Component\Form\Extension\Templating\TemplatingExtension;
 use Symfony\Component\Form\Extension\Templating\TemplatingRendererEngine;
 

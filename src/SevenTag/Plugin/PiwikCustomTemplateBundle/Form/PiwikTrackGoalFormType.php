@@ -69,7 +69,7 @@ class PiwikTrackGoalFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'piwik_track_goal_form_type';
     }

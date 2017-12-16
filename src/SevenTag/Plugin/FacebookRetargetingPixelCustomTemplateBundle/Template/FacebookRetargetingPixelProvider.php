@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\FacebookRetargetingPixelCustomTemplateBundle\Form\FacebookRetargetingPixelFormType;
 use Symfony\Component\Form\FormTypeInterface;
 
 /**
@@ -43,7 +44,7 @@ class FacebookRetargetingPixelProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'facebook_retargeting_pixel_form_type';
+        return FacebookRetargetingPixelFormType::class;
     }
 
     /**

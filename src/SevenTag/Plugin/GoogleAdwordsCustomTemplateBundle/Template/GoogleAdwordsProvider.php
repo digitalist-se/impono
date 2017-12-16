@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\GoogleAdwordsCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\GoogleAdwordsCustomTemplateBundle\Form\GoogleAdwordsTemplateFormType;
 
 /**
  * Class GoogleAdwordsProvider
@@ -42,7 +43,7 @@ class GoogleAdwordsProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'google_adwords_template_form_type';
+        return GoogleAdwordsTemplateFormType::class;
     }
 
     /**

@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\TagBundle\Tests\Template;
 
-use SevenTag\Api\TagBundle\Template\ProviderInterface;
 use SevenTag\Api\TagBundle\Template\Holder;
+use SevenTag\Api\TagBundle\Template\ProviderInterface;
 
 /**
  * Class HolderTest

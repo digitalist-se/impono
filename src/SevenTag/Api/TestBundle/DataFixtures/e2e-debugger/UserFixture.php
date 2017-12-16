@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\TestBundle\DataFixtures\e2eDebugger;
 
-use SevenTag\Api\UserBundle\Entity\User;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use SevenTag\Api\UserBundle\Entity\User;
 use SevenTag\Component\User\Model\UserInterface;
 
 /**

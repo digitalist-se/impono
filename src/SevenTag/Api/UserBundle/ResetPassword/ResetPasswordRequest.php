@@ -19,9 +19,9 @@
 namespace SevenTag\Api\UserBundle\ResetPassword;
 
 use FOS\UserBundle\Mailer\MailerInterface;
+use FOS\UserBundle\Model\UserInterface;
 use FOS\UserBundle\Model\UserManagerInterface;
 use FOS\UserBundle\Util\TokenGeneratorInterface;
-use FOS\UserBundle\Model\UserInterface;
 
 /**
  * Class ResetPasswordRequest

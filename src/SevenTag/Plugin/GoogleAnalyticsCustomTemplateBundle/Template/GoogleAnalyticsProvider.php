@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\GoogleAnalyticsCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\GoogleAnalyticsCustomTemplateBundle\Form\GoogleAnalyticsTemplateFormType;
 
 /**
  * Class GoogleAnalyticsProvider
@@ -42,7 +43,7 @@ class GoogleAnalyticsProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'google_analytics_template_form_type';
+        return GoogleAnalyticsTemplateFormType::class;
     }
 
     /**

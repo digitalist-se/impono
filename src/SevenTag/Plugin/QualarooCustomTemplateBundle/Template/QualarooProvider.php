@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\QualarooCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\QualarooCustomTemplateBundle\Form\QualarooTemplateFormType;
 
 /**
  * Class QualarooProvider
@@ -42,7 +43,7 @@ class QualarooProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'qualaroo_template_form_type';
+        return QualarooTemplateFormType::class;
     }
 
     /**

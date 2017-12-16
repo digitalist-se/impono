@@ -19,16 +19,16 @@
 namespace SevenTag\Api\TriggerBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use SevenTag\Api\AppBundle\Controller\RestController;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\View\View;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use SevenTag\Component\Container\Model\ContainerInterface;
-use SevenTag\Component\Trigger\Model\TriggerInterface;
+use SevenTag\Api\AppBundle\Controller\RestController;
 use SevenTag\Api\SecurityBundle\Acl\PermissionMap;
 use SevenTag\Api\TriggerBundle\Entity\TriggerRepository;
 use SevenTag\Api\TriggerBundle\Form\Type\TriggerType;
+use SevenTag\Component\Container\Model\ContainerInterface;
+use SevenTag\Component\Trigger\Model\TriggerInterface;
 use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\HttpFoundation\Response;
 

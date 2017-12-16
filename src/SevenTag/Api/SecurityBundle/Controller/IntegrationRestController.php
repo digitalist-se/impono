@@ -21,16 +21,16 @@ namespace SevenTag\Api\SecurityBundle\Controller;
 use Doctrine\Common\Collections\ArrayCollection;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcherInterface;
+use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use SevenTag\Api\AppBundle\Controller\RestController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use SevenTag\Api\AppBundle\Controller\RestController;
 use SevenTag\Api\SecurityBundle\Entity\IntegrationRepository;
 use SevenTag\Api\SecurityBundle\Integration\Event\IntegrationEvent;
 use SevenTag\Api\SecurityBundle\Integration\IntegrationEvents;
 use SevenTag\Component\Integration\Model\IntegrationInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use FOS\RestBundle\View\View;
 
 /**
  * Class IntegrationRestController

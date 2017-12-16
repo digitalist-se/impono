@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\TestBundle\Tests\TestCase;
 
-use SevenTag\Api\SecurityBundle\DataFixtures\ORM\ClientFixture;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
+use SevenTag\Api\SecurityBundle\DataFixtures\ORM\ClientFixture;
 
 /**
  * Class DoctrineORMTestCase

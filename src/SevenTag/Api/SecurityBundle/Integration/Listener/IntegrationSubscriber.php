@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\SecurityBundle\Integration\Listener;
 
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use SevenTag\Api\UserBundle\Entity\User;
-use SevenTag\Api\SecurityBundle\Integration\IntegrationEvents;
 use SevenTag\Api\SecurityBundle\Integration\Event\IntegrationEvent;
+use SevenTag\Api\SecurityBundle\Integration\IntegrationEvents;
 use SevenTag\Api\SecurityBundle\Integration\UserManipulator\UserManipulator;
+use SevenTag\Api\UserBundle\Entity\User;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Class IntegrationUserSubscriber

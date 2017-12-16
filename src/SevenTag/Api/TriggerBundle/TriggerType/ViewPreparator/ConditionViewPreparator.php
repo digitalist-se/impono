@@ -19,13 +19,13 @@
 namespace SevenTag\Api\TriggerBundle\TriggerType\ViewPreparator;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\EntityRepository;
 use SevenTag\Api\TriggerBundle\TriggerType\Holder\HolderInterface;
 use SevenTag\Api\TriggerBundle\TriggerType\Type\TypeInterface;
-use SevenTag\Component\Container\Model\ContainerInterface;
-use SevenTag\Component\Variable\Model\Variable;
-use Doctrine\ORM\EntityRepository;
 use SevenTag\Api\VariableBundle\Provider\VariableProvider;
 use SevenTag\Api\VariableBundle\Provider\VariableTypeProvider;
+use SevenTag\Component\Container\Model\ContainerInterface;
+use SevenTag\Component\Variable\Model\Variable;
 
 /**
  * Class ConditionViewPreparator

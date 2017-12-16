@@ -54,7 +54,7 @@ class ConditionType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'seventag_triggerbundle_condition_type';
     }

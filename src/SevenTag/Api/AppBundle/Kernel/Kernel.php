@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\AppBundle\Kernel;
 
-use Symfony\Component\HttpKernel\Kernel as BaseKernel;
+use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
-use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 
 /**
  * Class Kernel

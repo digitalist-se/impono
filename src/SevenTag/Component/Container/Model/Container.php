@@ -18,6 +18,8 @@
 
 namespace SevenTag\Component\Container\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use FOS\UserBundle\Model\UserInterface;
 use SevenTag\Api\AppBundle\Entity\VersionInterface;
 use SevenTag\Api\AppBundle\Versionable\Traits\VersionableEntity;
 use SevenTag\Api\ContainerBundle\Entity\ContainerWebsite;
@@ -25,8 +27,6 @@ use SevenTag\Component\Model\Traits\TimestampableEntity;
 use SevenTag\Component\Tag\Model\TagInterface;
 use SevenTag\Component\Trigger\Model\Trigger;
 use SevenTag\Component\Variable\Model\Variable;
-use Doctrine\Common\Collections\ArrayCollection;
-use FOS\UserBundle\Model\UserInterface;
 
 /**
  * Class Container

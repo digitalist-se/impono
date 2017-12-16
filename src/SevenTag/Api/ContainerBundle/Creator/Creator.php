@@ -20,9 +20,9 @@ namespace SevenTag\Api\ContainerBundle\Creator;
 
 use Doctrine\ORM\EntityManagerInterface;
 use FOS\UserBundle\Model\UserInterface;
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\ContainerBundle\Entity\ContainerPermission;
 use SevenTag\Api\SecurityBundle\Acl\MaskBuilder;
+use SevenTag\Component\Container\Model\ContainerInterface;
 
 /**
  * Class Creator

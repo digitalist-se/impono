@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\UserBundle\DataFixtures\ORM;
 
-use SevenTag\Api\UserBundle\Entity\User;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use SevenTag\Api\UserBundle\Entity\User;
 use SevenTag\Component\User\Model\UserInterface;
 
 class UserFixture extends AbstractFixture implements OrderedFixtureInterface

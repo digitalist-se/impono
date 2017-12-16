@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\ContainerBundle\CodeProvider;
 
-use Symfony\Bundle\TwigBundle\TwigEngine;
-use SevenTag\Component\Container\Model\ContainerInterface;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use MatthiasMullie\Minify;
+use SevenTag\Component\Container\Model\ContainerInterface;
+use Symfony\Bundle\TwigBundle\TwigEngine;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * Class SnippetCodeProvider

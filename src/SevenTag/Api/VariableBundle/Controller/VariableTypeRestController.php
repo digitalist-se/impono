@@ -18,9 +18,9 @@
 
 namespace SevenTag\Api\VariableBundle\Controller;
 
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use SevenTag\Api\AppBundle\Controller\RestController;
-use FOS\RestBundle\Controller\Annotations as Rest;
 
 /**
  * Class VariableTypeRestController

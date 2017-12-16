@@ -59,7 +59,7 @@ class ClickTaleTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'click_tale_template_form_type';
     }

@@ -19,10 +19,10 @@
 namespace SevenTag\Api\ContainerBundle\Tests\CodeProvider;
 
 use Prophecy\Argument;
-use Symfony\Bundle\TwigBundle\TwigEngine;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use SevenTag\Api\ContainerBundle\CodeProvider\SnippetCodeProvider;
 use SevenTag\Component\Container\Model\Container;
+use Symfony\Bundle\TwigBundle\TwigEngine;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class SnippetCodeProviderTest extends \PHPUnit_Framework_TestCase
 {

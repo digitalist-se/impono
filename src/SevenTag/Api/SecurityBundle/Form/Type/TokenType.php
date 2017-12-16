@@ -39,7 +39,7 @@ class TokenType extends AbstractType
      *
      * @return string The name of this type
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return '';
     }

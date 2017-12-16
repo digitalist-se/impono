@@ -56,7 +56,7 @@ class SalesManagoFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'sales_manago_form_type';
     }

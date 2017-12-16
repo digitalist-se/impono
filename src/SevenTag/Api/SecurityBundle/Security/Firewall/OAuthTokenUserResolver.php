@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\SecurityBundle\Security\Firewall;
 
-use FOS\OAuthServerBundle\Model\TokenManagerInterface;
 use FOS\OAuthServerBundle\Model\Token;
+use FOS\OAuthServerBundle\Model\TokenManagerInterface;
 use FOS\OAuthServerBundle\Security\Authentication\Token\OAuthToken;
 use FOS\UserBundle\Model\UserInterface;
 use SevenTag\Component\Integration\Model\IntegrationInterface;

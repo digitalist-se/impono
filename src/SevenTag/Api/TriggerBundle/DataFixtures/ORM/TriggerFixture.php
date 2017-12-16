@@ -23,9 +23,9 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use SevenTag\Api\AppBundle\DataFixtures\ORM\VersionFixture;
 use SevenTag\Api\ContainerBundle\DataFixtures\ORM\ContainerFixture;
-use SevenTag\Api\TriggerBundle\Entity\Trigger;
 use SevenTag\Api\TagBundle\DataFixtures\ORM\TagFixture;
 use SevenTag\Api\TriggerBundle\Entity\Condition;
+use SevenTag\Api\TriggerBundle\Entity\Trigger;
 
 class TriggerFixture extends AbstractFixture implements OrderedFixtureInterface
 {

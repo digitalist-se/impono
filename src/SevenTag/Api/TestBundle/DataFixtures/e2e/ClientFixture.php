@@ -18,10 +18,10 @@
 
 namespace SevenTag\Api\TestBundle\DataFixtures\e2e;
 
-use SevenTag\Api\SecurityBundle\Entity\Client;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use SevenTag\Api\SecurityBundle\Entity\Client;
 
 /**
  * Class ClientFixture

@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\VisualWebsiteOptimizerCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\VisualWebsiteOptimizerCustomTemplateBundle\Form\VisualWebsiteOptimizerTemplateFormType;
 
 /**
  * Class VisualWebsiteOptimizerProvider
@@ -42,7 +43,7 @@ class VisualWebsiteOptimizerProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'visual_website_optimizer_template_form_type';
+        return VisualWebsiteOptimizerTemplateFormType::class;
     }
 
     /**

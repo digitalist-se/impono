@@ -21,6 +21,7 @@ namespace SevenTag\Api\TagBundle\Form;
 use SevenTag\Api\AppBundle\Versionable\Form\Type\AccessibleType;
 use SevenTag\Api\TagBundle\Template\HolderInterface;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -79,7 +80,7 @@ class TagType extends AbstractType
 
                 if (isset($data['template']) && !empty($data['template'])) {
                     $formType = $this->templateHolder->has($data['template'])
-                        ? $this->templateHolder->get($data['template'])->getFormType() : 'collection';
+                        ? $this->templateHolder->get($data['template'])->getFormType() : CollectionType::class;
                     $form->add('templateOptions', $formType);
                 }
             }
@@ -101,7 +102,7 @@ class TagType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return '';
     }

@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\SecurityBundle\Utils;
 
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\UserBundle\Entity\User;
+use SevenTag\Component\Container\Model\ContainerInterface;
 
 /**
  * Interface UserMaskResolverInterface

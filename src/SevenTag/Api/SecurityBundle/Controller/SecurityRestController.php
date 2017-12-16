@@ -19,8 +19,8 @@
 namespace SevenTag\Api\SecurityBundle\Controller;
 
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Symfony\Component\HttpFoundation\Request;
 use SevenTag\Api\AppBundle\Controller\RestController;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class SecurityRestController

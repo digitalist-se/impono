@@ -69,7 +69,7 @@ class PiwikTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'piwik_template_form_type';
     }

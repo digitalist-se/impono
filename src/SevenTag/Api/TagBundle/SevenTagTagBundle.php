@@ -18,9 +18,9 @@
 
 namespace SevenTag\Api\TagBundle;
 
+use SevenTag\Api\TagBundle\DependencyInjection\Compiler;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use SevenTag\Api\TagBundle\DependencyInjection\Compiler;
 
 /**
  * Class SevenTagTagBundle

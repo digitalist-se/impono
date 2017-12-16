@@ -21,9 +21,9 @@ namespace SevenTag\Api\SecurityBundle\Serializer\Subscriber;
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use JMS\Serializer\EventDispatcher\PreSerializeEvent;
 use SevenTag\Api\AppBundle\Rest\View\ListView;
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\SecurityBundle\Utils\BitMaskToPermissionsMapperInterface;
 use SevenTag\Api\UserBundle\Entity\User;
+use SevenTag\Component\Container\Model\ContainerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 /**

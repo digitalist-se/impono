@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\ContainerBundle\ContainerLibrary\Generator;
 
-use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\HandlerInterface;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
+use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Handler\HandlerInterface;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Loader\LoaderInterface;
 
 /**

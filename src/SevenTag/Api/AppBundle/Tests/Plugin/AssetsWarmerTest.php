@@ -18,8 +18,8 @@
 
 namespace SevenTag\Api\AppBundle\Tests\Plugin;
 
-use SevenTag\Api\AppBundle\Plugin\AssetsWarmer;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
+use SevenTag\Api\AppBundle\Plugin\AssetsWarmer;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**

@@ -66,7 +66,7 @@ class VisualWebsiteOptimizerTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'visual_website_optimizer_template_form_type';
     }

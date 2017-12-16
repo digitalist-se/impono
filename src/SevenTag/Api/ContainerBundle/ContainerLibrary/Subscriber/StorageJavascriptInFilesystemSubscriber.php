@@ -19,12 +19,12 @@
 namespace SevenTag\Api\ContainerBundle\ContainerLibrary\Subscriber;
 
 use Gaufrette\Filesystem;
-use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Api\ContainerBundle\Cdn\CdnInterface;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\ContainerLibraryEvent;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Events;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Generator\GeneratorInterface;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
+use SevenTag\Component\Container\Model\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**

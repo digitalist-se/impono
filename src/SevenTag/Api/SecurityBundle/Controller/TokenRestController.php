@@ -18,11 +18,11 @@
 
 namespace SevenTag\Api\SecurityBundle\Controller;
 
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
-use Symfony\Component\HttpFoundation\Request;
-use OAuth2\OAuth2ServerException;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use OAuth2\OAuth2ServerException;
 use SevenTag\Api\AppBundle\Controller\RestController;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class TokenRestController

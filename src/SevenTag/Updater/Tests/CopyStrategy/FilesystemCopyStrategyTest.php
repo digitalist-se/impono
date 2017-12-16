@@ -20,9 +20,9 @@ namespace SevenTag\Updater\Tests\CopyStrategy;
 
 use League\Flysystem\FilesystemInterface;
 use Prophecy\Argument;
+use SevenTag\Updater\CopyStrategy\FilesystemCopyStrategy;
 use SevenTag\Updater\Instance\InstanceInterface;
 use Symfony\Component\Finder\SplFileInfo;
-use SevenTag\Updater\CopyStrategy\FilesystemCopyStrategy;
 
 /**
  * Class FilesystemCopyStrategyTest

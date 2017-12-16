@@ -83,7 +83,7 @@ class GoogleAdwordsTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'google_adwords_template_form_type';
     }

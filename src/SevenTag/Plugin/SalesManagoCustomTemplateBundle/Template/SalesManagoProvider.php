@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\SalesManagoCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\SalesManagoCustomTemplateBundle\Form\SalesManagoFormType;
 use Symfony\Component\Form\FormTypeInterface;
 
 /**
@@ -43,7 +44,7 @@ class SalesManagoProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'sales_manago_form_type';
+        return SalesManagoFormType::class;
     }
 
     /**

@@ -20,6 +20,7 @@ namespace SevenTag\Plugin\PiwikCustomTemplateBundle\Template;
 
 use SevenTag\Api\TagBundle\Template\TemplatingProvider;
 use SevenTag\Component\Tag\Model\TagInterface;
+use SevenTag\Plugin\PiwikCustomTemplateBundle\Form\PiwikTemplateFormType;
 
 /**
  * Class PiwikProvider
@@ -42,7 +43,7 @@ class PiwikProvider extends TemplatingProvider
      */
     public function getFormType()
     {
-        return 'piwik_template_form_type';
+        return PiwikTemplateFormType::class;
     }
 
     /**

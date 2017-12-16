@@ -55,7 +55,7 @@ class MeType extends AbstractType
     /**
      * @return string
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'seventag_userbundle_user_me';
     }

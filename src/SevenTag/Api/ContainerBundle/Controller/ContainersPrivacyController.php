@@ -19,12 +19,12 @@
 namespace SevenTag\Api\ContainerBundle\Controller;
 
 use JMS\Serializer\SerializationContext;
-use SevenTag\Component\Container\Model\ContainerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use SevenTag\Api\ContainerBundle\ContainerLibrary\Template\Context;
+use SevenTag\Component\Container\Model\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

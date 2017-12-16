@@ -18,10 +18,9 @@
 
 namespace SevenTag\Api\VariableBundle\Controller;
 
+use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Request\ParamFetcherInterface;
 use FOS\RestBundle\View\View;
-use Symfony\Component\HttpFoundation\Response;
-use FOS\RestBundle\Controller\Annotations as Rest;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use SevenTag\Api\AppBundle\Controller\RestController;
@@ -30,6 +29,7 @@ use SevenTag\Api\VariableBundle\Entity\Variable;
 use SevenTag\Component\Container\Model\ContainerInterface;
 use SevenTag\Component\Variable\Model\VariableInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class VariableRestController

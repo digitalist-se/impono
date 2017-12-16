@@ -59,7 +59,7 @@ class QualarooTemplateFormType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'qualaroo_template_form_type';
     }

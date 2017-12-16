@@ -18,9 +18,9 @@
 
 namespace SevenTag\Api\AppBundle\DBAL\Types;
 
-use Doctrine\DBAL\Types\DateTimeType;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
+use Doctrine\DBAL\Types\DateTimeType;
 
 /**
  * Class UTCDateTimeType
