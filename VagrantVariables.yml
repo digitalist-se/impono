@@ -4,8 +4,8 @@ wk_box:
   hostname: impono # Cannot contain any special characters.
   memory: 2048
   server:
-    hostnames: impono.dev
-    hostname: impono.dev
+    hostnames: impono.test
+    hostname: impono.test
     webroot: /srv/www/impono/web
     database:
       name: impono_db
