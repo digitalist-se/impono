@@ -65,13 +65,13 @@ class AccessibleType extends EntityType
         $builder->addEventSubscriber($this->subscriber);
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
-        return 'accessible';
+        return AccessibleType::class;
     }
 
     public function getParent()
     {
-        return 'entity';
+        return get_parent_class();
     }
 }
