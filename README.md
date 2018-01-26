@@ -8,6 +8,7 @@ Not at all. We do use it for testing right now. Because of deleted documentation
 by the company that did 7tag, many things are unknown. API is needed to be
 documented fully (you get most of the API documentation at /api/doc). There are many unknowns unknown.
 
+
 ## How to install Impono with Vagrant
 
 `vagrant up`
@@ -23,7 +24,7 @@ documented fully (you get most of the API documentation at /api/doc). There are 
 
 Create oauth2 client:
 
-`mysql -uroot -ppassword impono < oauth/oauth2_client.sql`
+`mysql -uroot -ppassword impono_db < oauth/oauth2_client.sql`
 
 In composer install the settings for the project is added in `app/config/parameters.yml`
 - this could be needed to be edited later if you added wrong details.
@@ -55,6 +56,14 @@ Data fixtures provides default user with following credentials:
 
 login: user1@example.com
 password: testing
+
+## Problem with install?
+If having problem with phantomjs not in PATH, try this:
+```
+sudo wget  https://github.com/Medium/phantomjs/releases/download/v1.9.19/phantomjs-1.9.8-linux-x86_64.tar.bz2
+sudo tar xvjf phantomjs-1.9.8-linux-x86_64.tar.bz2 -C /usr/local/share/
+sudo ln -s /usr/local/share/phantomjs-1.9.8-linux-x86_64/bin/phantomjs /usr/local/bin/
+```
 
 
 ## Documentation
