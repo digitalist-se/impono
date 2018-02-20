@@ -6,3 +6,4 @@
 - include: memcached.yml
 - include: composer.yml
 - include: postfix.yml
+- include: varnish.yml

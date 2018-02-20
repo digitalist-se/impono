@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  db:
+    image: mariadb
+    volumes:
+      - imponodata:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  app:
+    image: impono
+    ports:
+      - "80:80"
+    environment:
+      SYMFONY_ENV: prod
+      ENV: prod
+      TZ: "Europe/Stockholm"
+    volumes:
+      - "./docker-config/timezone.ini:/usr/local/etc/php/conf.d/timezone.ini"
+volumes:
+  imponodata:

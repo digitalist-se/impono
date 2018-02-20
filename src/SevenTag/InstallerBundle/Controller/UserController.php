@@ -115,7 +115,7 @@ class UserController extends Controller
 
         $em->persist($user);
 
-        // Create client for oauth to add posibility to login to application
+        // Create client for oauth to add possibility to login to application
         $client = new Client();
 
         $client->setSecret($session->get('oauth2_secret'));
