@@ -20,8 +20,11 @@ namespace SevenTag\InstallerBundle\Controller;
 
 use SevenTag\InstallerBundle\Service\SevenTagRequirements;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Output\BufferedOutput;
+
 
 /**
  * class MainController
@@ -53,5 +56,7 @@ class MainController extends Controller
     public function finishAction()
     {
         return $this->render('SevenTagInstallerBundle::finish.html.twig', []);
+
     }
+
 }

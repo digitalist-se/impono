@@ -12,7 +12,7 @@ documented fully (you get most of the API documentation at /api/doc). There are 
 ## How to install Impono with Vagrant
 
 `vagrant up`
-`nvm use` (locall)
+`nvm use` (local)
 `npm install` or `yarn install` (local)
 `gulp build` (local)
 (haved a bug when I had xdebug extension enabled, so better disable before next step)

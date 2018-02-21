@@ -1,4 +1,4 @@
-# Install
+# Install for dev.
 
 ## Requirements
 * node.js
@@ -7,7 +7,7 @@
 * yarn (https://yarnpkg.com/lang/en/docs/install/)
 
 ## Installing
-Working localy with the Vagrantbox, you preferably run the part to the console commands outside the box, and the rest must be done inside the box.
+Working locally with the Vagrantbox, you preferably run the part to the console commands outside the box, and the rest must be done inside the box.
 
 * `nvm use`
 * `npm install -g phantomjs`

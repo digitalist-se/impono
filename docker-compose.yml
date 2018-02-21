@@ -12,10 +12,15 @@ services:
     ports:
       - "80:80"
     environment:
+      DATABASE_PASSWORD: password
+      DATABASE_USER: root
+      DATABASE_HOST: db
+      DATABASE_NAME: impono_db
       SYMFONY_ENV: prod
       ENV: prod
       TZ: "Europe/Stockholm"
     volumes:
-      - "./docker-config/timezone.ini:/usr/local/etc/php/conf.d/timezone.ini"
+      - imponoconfig:/var/www/app/config
 volumes:
   imponodata:
+  imponoconfig:

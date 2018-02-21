@@ -16,17 +16,17 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Impono\Updater\Step;
+namespace SevenTag\Updater\Step;
 
-use Impono\Updater\Environment\EnvironmentInterface;
-use Impono\Updater\Exception\AbortedStepException;
-use Impono\Updater\Utils\DownloaderInterface;
-use Impono\Updater\Utils\NewestInstancePreparatorInterface;
-use Impono\Updater\Utils\NewestVersionCheckerInterface;
+use SevenTag\Updater\Environment\EnvironmentInterface;
+use SevenTag\Updater\Exception\AbortedStepException;
+use SevenTag\Updater\Utils\DownloaderInterface;
+use SevenTag\Updater\Utils\NewestInstancePreparatorInterface;
+use SevenTag\Updater\Utils\NewestVersionCheckerInterface;
 
 /**
  * Class PrepareNewestVersionStep
- * @package Impono\Updater\Step
+ * @package SevenTag\Updater\Step
  */
 class PrepareNewestVersionStep extends LocalInstanceStep
 {
@@ -34,7 +34,7 @@ class PrepareNewestVersionStep extends LocalInstanceStep
 
     /**
      * @var NewestVersionCheckerInterface
-     */
+     */ 
     private $newestVersionChecker;
 
     /**
@@ -72,7 +72,7 @@ class PrepareNewestVersionStep extends LocalInstanceStep
             if (!version_compare($newestVersion, $currentVersion, ">")) {
                 throw new AbortedStepException(
                     sprintf(
-                        'Your impono version "%s" is newest.',
+                        'Your Impono version "%s" is newest.',
                         $environment->getCurrentInstance()->getVersion()
                     )
                 );
@@ -108,7 +108,7 @@ class PrepareNewestVersionStep extends LocalInstanceStep
             return;
         }
 
-        throw new AbortedStepException(sprintf('Your current version "%s" of impono instance is newest.', $currentVersion));
+        throw new AbortedStepException(sprintf('Your current version "%s" of Impono instance is newest.', $currentVersion));
     }
 
     /**
