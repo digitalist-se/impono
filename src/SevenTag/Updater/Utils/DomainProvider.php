@@ -74,7 +74,7 @@ class DomainProvider implements DomainProviderInterface
                     $domain = $parameters['parameters']['seventag_domain'];
                 }
             } catch (FileNotFoundException $e) {
-                echo "parameters.yml not found";
+                echo "parameters.yml could not be read";
                 echo $e->getMessage();
             }
         }
