@@ -76,7 +76,11 @@ class DomainProvider implements DomainProviderInterface
             } catch (FileNotFoundException $e) {
                 echo "parameters.yml could not be read";
                 echo $e->getMessage();
+                return false;
             }
+        } else {
+            echo "Needed parameters.yml could not be read";
+            return false;
         }
         return $domain;
     }
