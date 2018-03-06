@@ -45,12 +45,19 @@ public function __construct(EnvironmentInterface $environment)
      */
 public function getDomain()
 {
-    $domain = 'localhost';
+  if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
+      $protocol = 'http://';
+  }
+  else {
+    $protocol = 'https://';
+  }
+
+    $domain = $protocol . 'localhost';
     if (isset($_SERVER['HTTP_HOST'])) {
-        $domain = $_SERVER['HTTP_HOST'];
+        $domain = $protocol . $_SERVER['HTTP_HOST'];
     }
     if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
-        $domain = $_SERVER['HTTP_X_FORWARDED_HOST'];
+        $domain = $protocol . $_SERVER['HTTP_X_FORWARDED_HOST'];
     }
     $filesystem = $this->environment->getCurrentInstance()
     ->getFilesystem();
