@@ -2,7 +2,6 @@ imports:
     - { resource: services.yml }
     - { resource: parameters.yml }
     - { resource: config.yml }
-    - { resource: fos/http_cache.yml }
 
 #framework:
 #    validation:

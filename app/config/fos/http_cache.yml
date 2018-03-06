@@ -1,25 +1,10 @@
 fos_http_cache:
-    cache_control:
-        defaults:
-            overwrite: true
-        rules:
-            -
-                match:
-                    attributes: { _route: "get_container_javascript" }
-                headers:
-                    cache_control: { public: true, max_age: 300, s_maxage: 500 }
-
-    proxy_client:
-        varnish:
-            tags_header: My-Cache-Tags
-            header_length: 1234
-            default_ban_headers:
-                Foo: Bar
-            http:
-                servers:
-                    - varnish
-                base_url: localhost
-    cache_manager:
-        enabled: true
-    invalidation:
-        enabled: true
+#    cache_control:
+#        defaults:
+#            overwrite: true
+#        rules:
+#            -
+#                match:
+#                    attributes: { _route: "get_container_javascript" }
+#                headers:
+#                    cache_control: { public: true, max_age: 300, s_maxage: 500 }
