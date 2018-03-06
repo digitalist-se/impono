@@ -20,6 +20,7 @@ namespace SevenTag\Updater\Utils;
 
 use SevenTag\Updater\Environment\EnvironmentInterface;
 use Symfony\Component\Yaml\Parser;
+use Symfony\Component\Filesystem\Exception\FileNotFoundException;
 
 /**
  * Class DomainProvider
@@ -30,46 +31,71 @@ class DomainProvider implements DomainProviderInterface
     /**
      * @var EnvironmentInterface
      */
-private $environment;
+    private $environment;
 
     /**
      * @param EnvironmentInterface $environment
      */
-public function __construct(EnvironmentInterface $environment)
-{
-    $this->environment = $environment;
-}
+    public function __construct(EnvironmentInterface $environment)
+    {
+        $this->environment = $environment;
+    }
 
     /**
      * {@inheritdoc}
      */
-public function getDomain()
-{
-  if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-      $protocol = 'http://';
-  }
-  else {
-    $protocol = 'https://';
-  }
-
-    $domain = $protocol . 'localhost';
-    if (isset($_SERVER['HTTP_HOST'])) {
-        $domain = $protocol . $_SERVER['HTTP_HOST'];
-    }
-    if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
-        $domain = $protocol . $_SERVER['HTTP_X_FORWARDED_HOST'];
-    }
-    $filesystem = $this->environment->getCurrentInstance()
-    ->getFilesystem();
-
-    $parameters = [];
-
-    if ($filesystem->has('app/config/parameters.yml')) {
-        $yaml = new Parser();
-        $parameters = $yaml->parse($filesystem->read('app/config/parameters.yml'));
-        if (isset($parameters['parameters']['seventag_domain'])) {
-            $domain = $parameters['parameters']['seventag_domain'];
+    public function getDomain()
+    {
+        if ($this->isSSL()) {
+            $protocol = 'https://';
+        } else {
+            $protocol = 'http://';
         }
+
+        $domain = $protocol . 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $domain = $protocol . $_SERVER['HTTP_HOST'];
+        }
+        if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
+            $domain = $protocol . $_SERVER['HTTP_X_FORWARDED_HOST'];
+        }
+        $filesystem = $this->environment->getCurrentInstance()
+            ->getFilesystem();
+
+        $parameters = [];
+
+
+
+        if ($filesystem->has('app/config/parameters.yml')) {
+            try {
+                $yaml = new Parser();
+                $parameters = $yaml->parse($filesystem->read('app/config/parameters.yml'));
+                if (isset($parameters['parameters']['seventag_domain'])) {
+                    $domain = $parameters['parameters']['seventag_domain'];
+                }
+            } catch (FileNotFoundException $e) {
+                echo "parameters.yml not found";
+                echo $e->getMessage();
+            }
+        }
+        return $domain;
     }
-    return $domain;
+
+    /**
+     * Check if we are on SSL
+     *
+     * @return bool
+     *
+     */
+    public function isSSL()
+    {
+        if (!empty($_SERVER['https'])) {
+            return true;
+        }
+
+        if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+            return true;
+        }
+        return false;
+    }
 }
