@@ -8,7 +8,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
   app:
-    image: digitalist/impono
+    image: digitalist/impono:latest
     ports:
       - "80:80"
     environment:

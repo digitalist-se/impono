@@ -30,31 +30,39 @@ class DomainProvider implements DomainProviderInterface
     /**
      * @var EnvironmentInterface
      */
-    private $environment;
+private $environment;
 
     /**
      * @param EnvironmentInterface $environment
      */
-    public function __construct(EnvironmentInterface $environment)
-    {
-        $this->environment = $environment;
-    }
+public function __construct(EnvironmentInterface $environment)
+{
+    $this->environment = $environment;
+}
 
     /**
      * {@inheritdoc}
      */
-    public function getDomain()
-    {
-        $filesystem = $this->environment->getCurrentInstance()
-            ->getFilesystem();
-
-        $parameters = [];
-
-        if ($filesystem->has('app/config/parameters.yml')) {
-            $yaml = new Parser();
-            $parameters = $yaml->parse($filesystem->read('app/config/parameters.yml'));
-        }
-
-        return isset($parameters['parameters']['seventag_domain']) ? $parameters['parameters']['seventag_domain'] : '';
+public function getDomain()
+{
+    $domain = 'localhost';
+    if (isset($_SERVER['HTTP_HOST'])) {
+        $domain = $_SERVER['HTTP_HOST'];
     }
+    if (isset($_SERVER['HTTP_X_FORWARDED_HOST'])) {
+        $domain = $_SERVER['HTTP_X_FORWARDED_HOST'];
+    }
+    $filesystem = $this->environment->getCurrentInstance()
+    ->getFilesystem();
+
+    $parameters = [];
+
+    if ($filesystem->has('app/config/parameters.yml')) {
+        $yaml = new Parser();
+        $parameters = $yaml->parse($filesystem->read('app/config/parameters.yml'));
+        if (isset($parameters['parameters']['seventag_domain'])) {
+            $domain = $parameters['parameters']['seventag_domain'];
+        }
+    }
+    return $domain;
 }
