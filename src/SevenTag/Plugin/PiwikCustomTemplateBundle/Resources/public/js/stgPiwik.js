@@ -34,9 +34,9 @@
             function ($templateProvider, $translate) {
 
                 $translate([
-                    'Piwik site url',
+                    'Matomo site url',
                     'Set url',
-                    'Piwik site id',
+                    'Matomo site id',
                     'Site id',
                     'The URL needs to start with http:// or https:// protocol definition.You can also use protocol-relative statement if you do not want to specify protocol.'
                 ]).then(function(translations) {
@@ -45,7 +45,7 @@
                         .addTextField({
                             /* eslint-disable */
                             name: 'piwikUrl',
-                            label: translations['Piwik site url'],
+                            label: translations['Matomo site url'],
                             placeholder: translations['Set url'],
                             helper: translations['The URL needs to start with http:// or https:// protocol definition.You can also use protocol-relative statement if you do not want to specify protocol.'],
                             roles: {
@@ -56,14 +56,14 @@
                         .addTextField({
                             /* eslint-disable */
                             name: 'piwikSiteId',
-                            label: translations['Piwik site id'],
+                            label: translations['Matomo site id'],
                             placeholder: translations['Site id'],
                             roles: {
                                 required: true
                             }
                             /* eslint-enable */
                         })
-                        .addBrand('/bundles/seventagpluginpiwikcustomtemplate/img/piwik.svg');
+                        .addBrand('/bundles/seventagpluginpiwikcustomtemplate/img/matomo.svg');
                 });
             }
         ]);

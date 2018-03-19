@@ -20,11 +20,12 @@ namespace SevenTag\Api\ContainerBundle\Command;
 
 use SevenTag\Api\ContainerBundle\Service\RepublishContainer;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Helper\DialogHelper;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class RepublishContainerCommand extends Command
 {
@@ -48,7 +49,8 @@ class RepublishContainerCommand extends Command
         $this
             ->setName('seventag:republish')
             ->setDescription('Republish containers or specified container')
-            ->addOption('containerId', 'c', InputOption::VALUE_OPTIONAL, 'If set, republished will be only this container.', null);
+            ->addOption('containerId', 'c', InputOption::VALUE_OPTIONAL, 'If set, republished will be only this container.', null)
+            ->addOption('force', 'f', InputOption::VALUE_NONE, 'Force republish without asking');
     }
 
     /**
@@ -58,19 +60,26 @@ class RepublishContainerCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $force = $input->getOption('force') ? false : true;
         $containers = $this->republish->getContainersToProcess($input->getOption('containerId'));
 
         if ($containers->isEmpty()) {
             $output->writeln('<comment>Nothing to republish.</comment>');
-
             return;
         }
 
-        /** @var DialogHelper $dialog */
-        $dialog = $this->getHelper('dialog');
-        if (!$dialog->askConfirmation($output, sprintf('<question>%d containers will be republished. Are you sure?', $containers->count(), false))) {
-            return;
+        if ($force == true) {
+            $number_of_containers = $containers->count();
+
+            /** @var QuestionHelper $helper */
+            $helper = $this->getHelper('question');
+            $question = new ConfirmationQuestion("$number_of_containers containers will be republished. Are you sure? ", false);
+
+            if (!$helper->ask($input, $output, $question)) {
+                return;
+            }
         }
+
 
         $progress = new ProgressBar($output, $containers->count());
 
