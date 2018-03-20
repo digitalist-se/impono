@@ -37,7 +37,8 @@ describe('Unit: OthersSettingsController', () => {
         $translation = {
             getLanguages: jasmine.createSpy('setPassword').and.returnValue([
                 { id: 'en', name: 'English' },
-                { id: 'pl', name: 'Polish' }
+                { id: 'pl', name: 'Polish' },
+                { id: 'se', name: 'Swedish' }
             ])
         };
 

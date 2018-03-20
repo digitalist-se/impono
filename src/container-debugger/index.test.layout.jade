@@ -13,8 +13,8 @@ html(lang=getLocale(), ng-app="application")
         include widgets/navbar/_navbar.html
         include widgets/tabs/_tabs.html
 
-        div(ui-view, style="clear:both") 
-        
+        div(ui-view, style="clear:both")
+
         include widgets/breakpoints/_breakpoints.html
 
         block content
@@ -24,7 +24,7 @@ html(lang=getLocale(), ng-app="application")
             i.help-tooltip
                 img(
                     tooltip-placement="{{ placement }}"
-                    tooltip-html-unsafe="{{ content }}"
+                    tooltip-html="{{ content }}"
                     ng-init="active = false; icon = 'circle'"
                     ng-mouseenter="active = true; icon = 'fill'"
                     ng-mouseleave="active = false; icon = 'circle'"

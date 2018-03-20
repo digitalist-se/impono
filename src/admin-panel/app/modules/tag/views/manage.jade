@@ -67,7 +67,7 @@ block content
                     ng-if="tag.respectVisitorsPrivacy",
                     tooltip-placement="right"
                     tooltip-class="help-tooltip-wrapper tag-manage-tracking-icon"
-                    tooltip-html-unsafe="{{'This tag is marked as \"Tracking tag\" because you have selected the \"respect visitors privacy\" option.'|translate}}" + "<br /><br />" +
+                    tooltip-html="{{'This tag is marked as \"Tracking tag\" because you have selected the \"respect visitors privacy\" option.'|translate}}" + "<br /><br />" +
                     "{{'This tag won`t be resolved when your visitors:'|translate}}" + "<br />" +
                     "{{'- select the Do Not Track option in their web browser'|translate}}" + "<br />" +
                     "{{'and/or'|translate}}" + " <br /> " +
@@ -89,7 +89,7 @@ block content
                     ng-class="view.getPublishedStatus(tag).class"
                     tooltip-placement="right"
                     tooltip-class="help-tooltip-wrapper"
-                    tooltip-html-unsafe="{{'Last edit date:'|translate}}" + "<br />" +
+                    tooltip-html="{{'Last edit date:'|translate}}" + "<br />" +
                     "{{ tag.updatedAt| date:'yyyy-MM-dd HH:mm' }}"
                 )
                     | {{ view.getPublishedStatus(tag).name |translate }}

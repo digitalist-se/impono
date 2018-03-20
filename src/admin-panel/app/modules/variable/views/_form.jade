@@ -44,7 +44,7 @@
                                     ng-click="view.setVariableType(type); view.validateVariable = false;",
                                     ng-class="{'active': view.variable.type.id === type.id || !view.formTouched }"
                                     tooltip-placement="right"
-                                    tooltip-html-unsafe="{{ type.helper }}"
+                                    tooltip-html="{{ type.helper }}"
                                     tooltip-class="help-tooltip-wrapper"
                                 ) {{ type.name|translate }}
         .stepper-step(ng-if="view.variable.type !== undefined")

@@ -35,7 +35,7 @@ include _templateChoosePanel.jade
                     placeholder="{{'Name your tag'|translate}}",
                     ng-disabled="!currentContainer.$container.hasPermission('edit')"
                 )
-                
+
                 .tag-template-chooser-label.form-group
                     label(translate='Choose template', class="control-label", ng-if="!view.hasSelectedTemplate()")
                     label(translate='Chosen tag template', class="control-label", ng-if="view.hasSelectedTemplate()")
@@ -129,7 +129,7 @@ include _templateChoosePanel.jade
                                         ng-class="{ 'icon-info-fill': active, 'icon-info-circle': !active }"
                                         tooltip-append-to-body="true"
                                         tooltip-placement="left"
-                                        tooltip-html-unsafe="{{'You can use previously defined variables in the tag code. Simply choose one from the list.'|translate}}"
+                                        tooltip-html="{{'You can use previously defined variables in the tag code. Simply choose one from the list.'|translate}}"
                                         tooltip-class="help-tooltip-wrapper"
                                     )
                                 ul.list-inline

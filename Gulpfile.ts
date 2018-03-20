@@ -702,7 +702,7 @@ gulp.task(
 
 // --------------- TEST -------------------------
 
-let karma = require('gulp-karma');
+let karma = require('karma').Server;
 
 let adminTestSource = SOURCE_DIR + '/' + ADMIN_NAMESPACE + '/**/*.spec.js',
     debuggerTestSource = TEST_DIR + '/' + DEBUGGER_NAMESPACE + '/**/*.spec.js',

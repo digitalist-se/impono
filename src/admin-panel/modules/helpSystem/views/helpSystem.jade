@@ -4,6 +4,6 @@ i.help-tooltip(
     ng-mouseleave="active = false"
     ng-class="{ 'icon-info-fill': active, 'icon-info-circle': !active }"
     tooltip-placement="{{ placement }}"
-    tooltip-html-unsafe="{{ content }}"
+    tooltip-html="{{ content }}"
     tooltip-class="help-tooltip-wrapper"
 )

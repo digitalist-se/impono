@@ -43,7 +43,7 @@
                   <div class="col-lg-8 col-md-12 col-sm-12">
                     <div class="row">
                       <div ng-repeat="type in view.types" class="col-md-4 col-sm-6">
-                        <div ng-click="view.setVariableType(type); view.validateVariable = false;" ng-class="{'active': view.variable.type.id === type.id || !view.formTouched }" tooltip-placement="right" tooltip-html-unsafe="{{ type.helper }}" tooltip-class="help-tooltip-wrapper" class="stg-tag-template stg-tag-template-btn">{{ type.name|translate }}</div>
+                        <div ng-click="view.setVariableType(type); view.validateVariable = false;" ng-class="{'active': view.variable.type.id === type.id || !view.formTouched }" tooltip-placement="right" tooltip-html="{{ type.helper }}" tooltip-class="help-tooltip-wrapper" class="stg-tag-template stg-tag-template-btn">{{ type.name|translate }}</div>
                       </div>
                     </div>
                   </div>
