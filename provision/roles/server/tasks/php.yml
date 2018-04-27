@@ -5,7 +5,7 @@
     state: present
   with_items:
     - php71w
-    - php71-cli
+    - php71w-cli
     - php71w-common
     - php71w-curl
     - php71w-pecl-imagick
@@ -19,6 +19,7 @@
     - php71w-mbstring
     - php71w-gd
     - php71w-opcache
+    - php71w-bcmath
   become: true
 
 - name: Copy apache php.ini.
