@@ -65,6 +65,6 @@ class WebsiteType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'seventag_container_website_type';
+        return '';
     }
 }

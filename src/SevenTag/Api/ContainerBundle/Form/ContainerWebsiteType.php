@@ -36,7 +36,7 @@ class ContainerWebsiteType extends AbstractType
     {
         $builder
             ->add('websites', CollectionType::class, [
-                'entry_type' => 'seventag_container_website_type',
+                'entry_type' => 'SevenTag\Api\ContainerBundle\Form\WebsiteType',
                 'allow_add' => true,
                 'allow_delete' => true,
                 'by_reference'=> false
@@ -58,6 +58,6 @@ class ContainerWebsiteType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'seventag_container_container_website_type';
+        return '';
     }
 }
