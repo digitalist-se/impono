@@ -65,7 +65,9 @@
         }
 
         function createSubmitCallback (eventName, event, targetElement) {
-            event.preventDefault();
+            // SKT-6: this _mecks_ with forms. We no likey-likey!
+            //        I want a better fix so this is here to remind us.
+            //event.preventDefault();
 
             return function(dataLayerElement, tagResolved, skipBrowserHandler) {
                 if (!skipBrowserHandler) {
