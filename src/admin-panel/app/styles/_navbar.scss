@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-$navbar-nav-pill-border-color: #287a47;
+$navbar-nav-pill-border-color: #000000;
 $navbar-nav-pill-divider-color: $navbar-nav-pill-border-color;
 $publish-btn-background: #F9B915;
 $navbar-debug-vertical-padding: 10px;
@@ -82,7 +82,7 @@ $navbar-buttons-border-radius: 2px;
 
 #navbar-debug{
   background-color: $navbar-debug-background;
-  
+
   .navbar-nav {
     width: 100%;
     text-align: center;
@@ -90,7 +90,7 @@ $navbar-buttons-border-radius: 2px;
     border-bottom: 1px solid $navbar-border-color;
     height: 0px;
     transition: height $navbar-debug-shown-animation-length linear;
-    
+
     &.shown{
       height: $navbar-debug-height;
       .form-group {
@@ -98,17 +98,17 @@ $navbar-buttons-border-radius: 2px;
       }
     }
   }
-  
+
   .form-group {
     opacity: 0;
     transition: opacity 0s linear $navbar-debug-shown-animation-length;
   }
-  
+
   .navbar-form{
     margin-top: $navbar-debug-vertical-padding;
     margin-bottom: $navbar-debug-vertical-padding;
   }
-  
+
   .navbar-debug-item {
     float: none;
     display: inline-block;
@@ -116,7 +116,7 @@ $navbar-buttons-border-radius: 2px;
       @extend %flicker-fix;
     }
   }
-  
+
   .btn{
     margin-left: 10px;
     @extend %flicker-fix;
@@ -127,7 +127,7 @@ $navbar-buttons-border-radius: 2px;
 
 .navbar-nav {
   margin-left: 10px;
-  
+
   .btn-primary {
     color: #fff;
     border-color: #226c3e;
@@ -136,7 +136,7 @@ $navbar-buttons-border-radius: 2px;
       color: #fff;
     }
   }
-  
+
   .btn-default {
     color: $btn-default-color;
     border-color: $btn-default-bg;
@@ -149,7 +149,7 @@ $navbar-buttons-border-radius: 2px;
       color: $btn-default-color;
     }
   }
-  
+
   .btn-publish {
     background: $publish-btn-background;
     border-color: darken($publish-btn-background, 10%);
@@ -207,18 +207,18 @@ $navbar-buttons-border-radius: 2px;
     margin-right: 10px;
     background-color: $navbar-dropdown-bg;
     border-radius: $navbar-buttons-border-radius;
-    
+
     &#top-menu-icon {
       width: 50px;
       padding-top: 8px;
     }
-    
+
     [class^=icon-] {
       color: white;
       font-size: 16px;
       padding-left: 3px;
     }
-    
+
     a, div {
       height: 100%;
 
@@ -239,7 +239,7 @@ $navbar-buttons-border-radius: 2px;
         border: none;
       }
     }
-    
+
     a:hover {
       color:white;
       &.btn-primary:first-child {
@@ -273,7 +273,7 @@ $navbar-buttons-border-radius: 2px;
             top:2px
           }
         }
-        
+
         span {
           @extend %flicker-fix;
         }
@@ -306,7 +306,7 @@ $navbar-buttons-border-radius: 2px;
         }
     }
   }
-  
+
 }
 
 
@@ -370,4 +370,3 @@ $navbar-buttons-border-radius: 2px;
         margin-left: 20px;
     }
 }
-

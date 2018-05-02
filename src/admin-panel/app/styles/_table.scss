@@ -18,7 +18,7 @@
 $table-border-radius: 2px;
 $table-rows-spacing: 10px;
 $badge-color-draft: #f9b016;
-$badge-color-published: $brand-primary;
+$badge-color-published: $brand-primary-dark;
 $badge-color-never-published: #f0752b;
 
 %table-cell {
@@ -220,8 +220,8 @@ td:not(.active).actions:hover, .icon-dots:hover {
   margin-left: 10px;
 
   &.stg-status-badge-published {
-    border-color: $brand-primary;
-    background-color: $brand-primary;
+    border-color: $brand-primary-dark;
+    background-color: $brand-primary-dark;
   }
 
   &.stg-status-badge-draft {

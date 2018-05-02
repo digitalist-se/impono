@@ -22,6 +22,7 @@ documented fully (you get most of the API documentation at /api/doc). There are 
 `bin/console c:c`
 `bin/console c:w`
 
+
 Create oauth2 client:
 
 `mysql -uroot -ppassword impono_db < oauth/oauth2_client.sql`
@@ -36,7 +37,7 @@ Settings you should provide for the parameters are (this is for the vagrant box)
     database_name: impono
     database_user: root
     database_password: password
-    seventag_domain: 'http://impono.dev'
+    seventag_domain: 'http://impono.test'
 
 ```
 

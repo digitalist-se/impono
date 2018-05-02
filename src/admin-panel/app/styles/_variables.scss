@@ -31,12 +31,12 @@ $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         #2e9354 !default; // #337ab7
-$brand-success:         #5cb85c !default;
-$brand-info:            #5bc0de !default;
+$brand-primary:         #96f1fb !default; // #337ab7
+$brand-success:         darken($brand-primary, 30%) !default;
+$brand-info:            #000000 !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
-
+$brand-primary-dark:    darken($brand-primary, 60%) !default;
 
 //== Scaffolding
 //
@@ -48,7 +48,7 @@ $body-bg:               #fff !default;
 $text-color:            #404040 !default;
 
 //** Global textual link color.
-$link-color:            $brand-primary !default;
+$link-color:            $brand-primary-dark !default;
 //** Link hover color set via `darken()` function.
 $link-hover-color:      darken($link-color, 15%) !default;
 //** Link hover decoration.
@@ -59,13 +59,13 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  Arial, Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "Open Sans", Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          14px !default;
+$font-size-base:          15px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
@@ -170,8 +170,8 @@ $btn-default-bg:                 #666 !default;
 $btn-default-border:             #ccc !default;
 
 $btn-primary-color:              #fff !default;
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             $brand-primary !default;
+$btn-primary-bg:                 $brand-primary-dark !default;
+$btn-primary-border:             $brand-primary-dark !default;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
@@ -300,7 +300,7 @@ $select-bg-btn:                 #fff !default;
 $select-bg-btn-hover:           #fff !default;
 $select-bg-li-hover:            #ededed !default;
 $select-border-color:           $input-border !default;
-$select-color-li-hover:         #2e9353 !default;
+$select-color-li-hover:         #000 !default;
 
 //-- Z-index master list
 //
@@ -413,13 +413,13 @@ $navbar-default-link-color:                #fff !default;
 $navbar-default-link-hover-color:          #fff !default;
 $navbar-default-link-hover-bg:             transparent !default;
 $navbar-default-link-active-color:         #fff !default;
-$navbar-default-link-active-bg:            #226c3e !default;
+$navbar-default-link-active-bg:            $brand-primary-dark !default;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
 // Navbar brand label
 $navbar-default-brand-color:               $navbar-default-link-color !default;
-$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-color:         lighten($brand-primary-dark, 10%) !default;
 $navbar-default-brand-hover-bg:            transparent !default;
 
 // Navbar toggle
@@ -430,8 +430,8 @@ $navbar-default-toggle-border-color:       #ddd !default;
 // Navbar dropdown
 $navbar-dropdown-width:             315px !default;
 $navbar-dropdown-height:            40px !default;
-$navbar-dropdown-bg:                #287B47 !default;
-$navbar-dropdown-bg-hover:          #1B6739 !default;
+$navbar-dropdown-bg:                $brand-primary-dark !default;
+$navbar-dropdown-bg-hover:          lighten($brand-primary-dark, 10%) !default;
 
 
 // Inverted navbar

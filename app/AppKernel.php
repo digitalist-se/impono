@@ -18,6 +18,7 @@
 
 use SevenTag\Api\AppBundle\Kernel\Kernel;
 
+
 /**
  * Class AppKernel
  */

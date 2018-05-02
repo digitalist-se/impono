@@ -115,10 +115,10 @@
         </div>
       </article>
     </section>
-    <div stg-set-version stg-version="0.0.10" ng-if="security.isAuthenticated()" class="stg-footer">
+    <div stg-set-version stg-version="0.0.11" ng-if="security.isAuthenticated()" class="stg-footer">
       <div class="container">
         <div ng-cloak class="row">
-          <div class="col-md-6 col-md-offset-3 stg-standalone-text"><span translate="7tag version"></span> 0.0.10.</div>
+          <div class="col-md-6 col-md-offset-3 stg-standalone-text"><span translate="7tag version"></span> 0.0.11.</div>
         </div>
       </div>
     </div>
