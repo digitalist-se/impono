@@ -1,5 +1,7 @@
 # Installation guide
 
+## This is a bit outdated, follow instructions in README.md
+
 At first clone repository from github:
 ```
 git clone git@github.com:tsteur/open-source-tag-manager.git
@@ -7,7 +9,7 @@ git clone git@github.com:tsteur/open-source-tag-manager.git
 
 Then configure server and project the same way as usual Symfony project.
 More instructions are available in official symfony [documentation](http://symfony.com/doc/current/book/installation.html).  
-You can also check if your machine meets [minimal requirements](https://7tag.org/docs/software-requirements/).
+
 
 **Remember to set up permissions for `var/cache`, `var/logs`, `/var/spool` and `/web/containers`.**
 

@@ -1,62 +1,54 @@
-# Impono Tag Manager
+# Impono - Open Source Tag Manager
 
-This project is based on seventag, when it was open source. Our goal is to make
-Impono Tag Manager the best open source tag manager available.
+This project is based on SevenTag, when it was open source, from a backup done by tsteur.
 
-## Stable?
-Not at all. We do use it for testing right now. Because of deleted documentation
-by the company that did 7tag, many things are unknown. API is needed to be
-documented fully (you get most of the API documentation at /api/doc). There are many unknowns unknown.
+Our goal is to make Impono Tag Manager the best open source tag manager available.
+Development is supported by [Digitalist](https://digitalist.se/).
 
+Impono uses Symfony, and a bunch of JavaScript frameworks and libraries - like Angular, Gulp, Bower etc.
 
 ## How to install Impono with Vagrant
-
-`vagrant up`
-`nvm use` (local)
-`npm install` or `yarn install` (local)
-`gulp build` (local)
-(haved a bug when I had xdebug extension enabled, so better disable before next step)
-`composer install` (inside box)
-`bin/console doctrine:schema:create` (inside box)
-`bin/console fos:user:create admin --super-admin` (inside box)
-`bin/console c:c`
-`bin/console c:w`
-
-
-Create oauth2 client:
-
-`mysql -uroot -ppassword impono_db < oauth/oauth2_client.sql`
-
-In composer install the settings for the project is added in `app/config/parameters.yml`
-- this could be needed to be edited later if you added wrong details.
-
-Settings you should provide for the parameters are (this is for the vagrant box):
-
 ```
-    database_host: 127.0.0.1
-    database_name: impono
-    database_user: root
-    database_password: password
-    seventag_domain: 'http://impono.test'
-
+vagrant up`
+nvm use (local)
+npm install or yarn install (local)
+gulp build (local)
+composer install (inside box)
 ```
 
-The rest of the default settings should be ok.
+In browser: http://impono.test/install.php and follow instructions.
 
-`vagrant ssh`
+## How to install Impono with test user and data
 
-Create database schema (standing in in `/srv/www/impono`):
+Follow the inctructions to install with Vagrant, ssh into box, go to `/var/www/web` then:
+```bin/console doctrine:fixtures:load```
 
-`bin/console doctrine:schema:create`
+Example user is user1@example.com and password istesting
 
-At the end load data fixtures in order to work on prepared data examples.
+## How to install in production.
+We recomend that you use the offical docker image at [Docker Hub](https://hub.docker.com/r/digitalist/impono/).
 
-`bin/console doctrine:fixtures:load`
 
-Data fixtures provides default user with following credentials:
+### Docker compose example:
 
-login: user1@example.com
-password: testing
+### Updating in production example:
+```
+docker-compose stop
+docker-compose pull
+docker volume prune -f
+docker-compose up --force-recreate -d
+docker exec -it application_app_1 composer bin/console a:i
+
+docker cp copy/parameters.yml application_app_1:/var/www/app/config/parameters.yml
+docker exec -it application_app_1 bin/console impono:republish -f
+docker exec -it application_app_1 bin/console c:c
+docker exec -it application_app_1 bin/console c:w
+docker exec -it application_app_1 chmod 777 -R var
+```
+
+You could also use the code repo and add your settings to parameters.yml.
+
+Impono follow the normal Symfony install procedure, see [Symfony documentation](https://symfony.com/doc/3.4/deployment.html).
 
 ## Problem with install?
 If having problem with phantomjs not in PATH, try this:
@@ -66,30 +58,31 @@ sudo tar xvjf phantomjs-1.9.8-linux-x86_64.tar.bz2 -C /usr/local/share/
 sudo ln -s /usr/local/share/phantomjs-1.9.8-linux-x86_64/bin/phantomjs /usr/local/bin/
 ```
 
-
 ## Documentation
+Documentation site is coming, for now see [api.html](..doc/api.html) in doc folder.
 
 ## Technology stack
+PHP 7.1
+MariaDB
+Apache 2
 
 ## License
 - Free Software Foundation’s [GNU AGPL, Version 3](LICENSE).
 
 
-## Using API
-
-API is just now undocumented, but here are some examples.
+## API examples
 
 ### Example login
 With an existing integration user
 
 ```
-curl -X POST -d "client_id=12_5qpf73hq93swccow0844gko0g04g40s8soc0ssckoco4c0s0cc&client_secret=5rpg2t9bszs4g4o44gksgw8ggc8coo8408s080ko8kcgcwcggs&grant_type=client_credentials" http://impono.dev/api/oauth/v2/token
+curl -X POST -d "client_id=12_5qpf73hq93swccow0844gko0g04g40s8soc0ssckoco4c0s0cc&client_secret=5rpg2t9bszs4g4o44gksgw8ggc8coo8408s080ko8kcgcwcggs&grant_type=client_credentials" http://impono.test/api/oauth/v2/token
 ```
 
 or with JSON
 
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"client_id":"12_1n8epty5f9dwgo00048ggocksk0ogsogkw84w4c00w8w8080cs" , "client_secret":"4mko84fwz6gw8wc0sgc0sks8kksw480c4sw4g88wos4ggsksgw", "grant_type" : "client_credentials"}' http://impono.dev/api/oauth/v2/token
+curl -X POST -H "Content-Type: application/json" -d '{"client_id":"12_1n8epty5f9dwgo00048ggocksk0ogsogkw84w4c00w8w8080cs" , "client_secret":"4mko84fwz6gw8wc0sgc0sks8kksw480c4sw4g88wos4ggsksgw", "grant_type" : "client_credentials"}' http://impono.test/api/oauth/v2/token
 
 ```
 
@@ -103,7 +96,7 @@ With this my Authorization: Bearer is `NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5N
 ### Example call
 
 ```
-curl --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/containers
+curl --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.test/api/containers
 ```
 
 Getting back:
@@ -117,23 +110,23 @@ So with this result - I can see that the user has access to one container, `Cont
 ### Getting a tag
 
 ```
-curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/tags/120
+curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.test/api/tags/120
 ```
 
 ### Deleting a tag
 
 ```
-curl -X "DELETE" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/tags/120
+curl -X "DELETE" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.test/api/tags/120
 ```
 
 ### Info about your user
 
 ```
-curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/users/me
+curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.test/api/users/me
 ```
 
 ### Logout your user
 
 ```
-curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.dev/api/users/me/logout
+curl -X "GET" --header "Authorization: Bearer NTY5OWM2OTBjYzdmOWQwMTFjZTQwZmYwZWU1Y2U5NWI1ZTU3MDU3NDI5MmIzYzc0YzY1YTUzMGZiZDdiMTZhYw" http://impono.test/api/users/me/logout
 ```
