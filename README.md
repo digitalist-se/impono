@@ -11,9 +11,10 @@ Impono uses Symfony, and a bunch of JavaScript frameworks and libraries - like A
 ```
 vagrant up`
 nvm use (local)
-npm install or yarn install (local)
+yarn install (local) [you need yarn installed for this - you could also use npm install]
 gulp build (local)
 composer install (inside box)
+bin/console a:i (inside box)
 ```
 
 In browser: http://impono.test/install.php and follow instructions.

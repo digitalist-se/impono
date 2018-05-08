@@ -47,7 +47,7 @@ class RepublishContainerCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('seventag:republish')
+            ->setName('impono:republish')
             ->setDescription('Republish containers or specified container')
             ->addOption('containerId', 'c', InputOption::VALUE_OPTIONAL, 'If set, republished will be only this container.', null)
             ->addOption('force', 'f', InputOption::VALUE_NONE, 'Force republish without asking');

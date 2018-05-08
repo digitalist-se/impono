@@ -181,7 +181,7 @@ class RepublishContainerCommandTest extends \PHPUnit_Framework_TestCase
         $application = new Application();
         $application->add(new RepublishContainerCommand($republishContainer));
 
-        $command = $application->find('seventag:republish');
+        $command = $application->find('impono:republish');
         $commandTester = new CommandTester($command);
 
         return [$command, $commandTester];
