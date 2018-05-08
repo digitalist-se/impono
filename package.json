@@ -1,6 +1,6 @@
 {
   "name": "impono",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Easy to use tag management tool",
   "main": "gulpfile.ts",
   "directories": {
