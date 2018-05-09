@@ -23,7 +23,7 @@ In browser: http://impono.test/install.php and follow instructions.
 
 ## How to install Impono with test user and data
 
-Follow the inctructions to install with Vagrant, ssh into box, go to `/var/www/web` then:
+Follow the inctructions to install with Vagrant, ssh into box, go to `/var/www/impono` then:
 ```bin/console doctrine:fixtures:load```
 
 Example user is user1@example.com and password istesting
