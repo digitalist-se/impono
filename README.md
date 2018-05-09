@@ -7,6 +7,8 @@ Development is supported by [Digitalist](https://digitalist.se/).
 
 Impono uses Symfony, and a bunch of JavaScript frameworks and libraries - like Angular, Gulp, Bower etc.
 
+(Documentation on the UI)[https://impono.org/how_to_use.html]
+
 ## How to install Impono with Vagrant
 ```
 vagrant up`
