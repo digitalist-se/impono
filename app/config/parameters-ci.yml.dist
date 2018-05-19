@@ -26,7 +26,7 @@ parameters:
     seventag_tagtree_template_path: '%kernel.root_dir%/Resources/container-lib/tagTree.js.dist'
     seventag_tagtree_sync_template_path: '%kernel.root_dir%/Resources/container-lib-sync/tagTree.js.dist'
     seventag_javascript_debugger_path: '%kernel.root_dir%/../web/container-debugger/debug.js'
-    seventag_domain: 'http://impono.dev'
+    seventag_domain: 'http://impono.test'
     seventag_javascript_library_path: '%kernel.root_dir%/Resources/container-lib/library.js.dist'
     seventag_javascript_library_sync_path: '%kernel.root_dir%/Resources/container-lib-sync/library.js.dist'
     seventag_javascript_bootstrap_path: '%kernel.root_dir%/Resources/container-lib/bootstrap.js.dist'
