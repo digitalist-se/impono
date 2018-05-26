@@ -31,6 +31,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = [
+            new Impono\VueBundle\ImponoVueBundle(),
         ];
         return array_merge(
             parent::registerBundles(),
