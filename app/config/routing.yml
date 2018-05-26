@@ -1,3 +1,7 @@
+impono_vue:
+    resource: "@ImponoVueBundle/Resources/config/routing.yml"
+    prefix:   /vue
+
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc

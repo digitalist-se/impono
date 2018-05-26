@@ -9,6 +9,7 @@ imports:
     - { resource: jms/serializer.yml }
     - { resource: stof/doctrine_extensions.yml }
     - { resource: variable/variable.yml }
+    - { resource: "@ImponoVueBundle/Resources/config/services.yml" }
 
 framework:
     translator:      { fallbacks: ["%locale%"] }

@@ -1,0 +1,3 @@
+impono_vue_homepage:
+    path:     /
+    defaults: { _controller: ImponoVueBundle:Default:index }
