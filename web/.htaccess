@@ -45,6 +45,7 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule container-debugger/(.*) container-debugger/$1 [L]
 
+    RewriteRule ^dist - [L,NC]
     RewriteCond %{REQUEST_URI} ^/$
     RewriteRule .? admin-panel/index.php [L]
 
