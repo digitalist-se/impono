@@ -8,6 +8,9 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ImponoVueBundle:Default:index.html.twig');
+        $variables = [
+            'client' => 'client'
+        ];
+        return $this->render('ImponoVueBundle:Default:index.html.twig', $variables);
     }
 }
