@@ -1,36 +1,33 @@
 <!doctype html>
 <html class="no-js" lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Impono test
+      Impono test
     </title>
+    {#
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
-</head>
-<body class="">
+    #}
+  </head>
+  <body class="">
+    <div id="app"></div>
 
-<h1>
-    This is index
-</h1>
+    {{ dump() }}
 
-<div id="app"></div>
+    {#
+    <script src="{{ 'bundles/fosjsrouting/js/router.js'|cdn_url }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+    #}
 
-{{ dump() }}
+    <script type="text/javascript">
+      var OAUTH_CLIENT_ID = '{{ client.id }}_{{ client.randomId }}';
+      var OAUTH_CLIENT_SECRET = '{{ client.secret }}';
+    </script>
+    {#
+    <script src="{{ asset('build/app.js') }}"></script>
+    #}
 
-
-{#
-<script src="{{ 'bundles/fosjsrouting/js/router.js'|cdn_url }}"></script>
-<script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
-#}
-
-
-<script type="text/javascript">
-    var OAUTH_CLIENT_ID = '{{ client.id }}_{{ client.randomId }}';
-    var OAUTH_CLIENT_SECRET = '{{ client.secret }}';
-</script>
-<script src="{{ asset('build/app.js') }}"></script>
-
-</body>
+  </body>
 </html>

@@ -46,6 +46,9 @@
     RewriteRule container-debugger/(.*) container-debugger/$1 [L]
 
     RewriteRule ^dist - [L,NC]
+    # RewriteRule ^static/(.*)$ /dist/static/$1 [L]
+    # RewriteRule ^app_dev.php/vue/ - [L,NC]
+
     RewriteCond %{REQUEST_URI} ^/$
     RewriteRule .? admin-panel/index.php [L]
 

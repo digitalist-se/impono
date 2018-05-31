@@ -50,9 +50,9 @@ module.exports = {
     index: path.resolve(__dirname, '../../../views/Default/index.html.twig'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, './../../../../../../../web/dist'),
+    assetsRoot: path.resolve(__dirname, './../../../../../../../web'),
     // assetsSubDirectory: 'static',
-    assetsSubDirectory: 'static',
+    assetsSubDirectory: 'dist/static',
 
     assetsPublicPath: '/',
 
