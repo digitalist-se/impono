@@ -80,3 +80,9 @@ tests/container-debugger/tests/mock/stg.js
 tests/containerjs/mock/tagTree.js
 .vagrant
 provision/playbook.retry
+
+
+# Vue
+
+web/dist/*
+src/Impono/VueBundle/Resources/views/Default/index.html.twig
