@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img src="./assets/impono.svg" width="500" class="text-center">
+    <h3>tjoo</h3>
     <router-view />
   </div>
 </template>

@@ -47,7 +47,7 @@ module.exports = {
     // Template for index.html
     // index: path.resolve(__dirname, './../../../../../../../web/dist/index.html'),
     // index: path.resolve(__dirname, './../../../../../../../web/dist/index.html'),
-    index: path.resolve(__dirname, '../dist/index.html.twig'),
+    index: path.resolve(__dirname, '../../../views/Default/index.html.twig'),
 
     // Paths
     assetsRoot: path.resolve(__dirname, './../../../../../../../web/dist'),
